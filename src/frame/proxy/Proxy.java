@@ -1,13 +1,13 @@
-package frame;
+package frame.proxy;
 
-import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
-@Target(METHOD)
-public @interface After {
-
+@Target(TYPE)
+public @interface Proxy {
+	String handlerClassName(); 
 }

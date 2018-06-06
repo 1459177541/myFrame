@@ -3,33 +3,53 @@ package factory;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import frame.config.FactoryConfig;
+
 public class BeanFactory implements Factory{
-	private final Factory parent;
+	/**
+	 * 配置类
+	 */
+	private FactoryConfig factoryConfig;
 	public BeanFactory() {
 		this(null);
 	}
-	public BeanFactory(Factory factory) {
-		this.parent = factory;
+	public BeanFactory(FactoryConfig factoryConfig) {
+		this.factoryConfig = factoryConfig;
+		factoryConfig.initConfig();
 	}
-	public Factory getParentFactory() {
-		return parent;
+	
+	public FactoryConfig getFactoryConfig() {
+		return factoryConfig;
 	}
+	public void setFactoryConfig(FactoryConfig factoryConfig) {
+		this.factoryConfig = factoryConfig;
+		factoryConfig.initConfig();
+	}
+	
+	/**
+	 * 通过类名或者配置中的名得到对应对象
+	 */
 	@Override
 	public Object get(final String name) {
-		Object o = null;
-		try {
-			Class<?> c = Class.forName(name);
-			o = get(c);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+		Class<?> c = factoryConfig.get(name);
+		if(null==c) {
+			try {
+				c = Class.forName(name);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
-		return o;
+		return get(c);
 	};
+	
+	/**
+	 * 通过类对象得到对应对象
+	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	public <T> T get(final Class<T> clazz) {
 		T o = null;
 		try {
+			@SuppressWarnings("unchecked")
 			Constructor<T>[] constructor = (Constructor<T>[]) clazz.getConstructors();
 			if(0>=constructor.length) {
 				return clazz.newInstance();

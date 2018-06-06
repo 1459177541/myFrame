@@ -1,4 +1,4 @@
-package frame;
+package frame.proxy;
 
 public interface ProxyImp {
 
