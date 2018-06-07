@@ -15,7 +15,6 @@ public class BeanFactory implements Factory{
 	}
 	public BeanFactory(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
-		factoryConfig.initConfig();
 	}
 	
 	public FactoryConfig getFactoryConfig() {
@@ -23,7 +22,6 @@ public class BeanFactory implements Factory{
 	}
 	public void setFactoryConfig(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
-		factoryConfig.initConfig();
 	}
 	
 	/**

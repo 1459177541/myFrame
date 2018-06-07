@@ -3,14 +3,25 @@ package frame.config;
 import java.util.HashMap;
 import java.util.Map;
 
-public interface FactoryConfig {
-	static Map<String, Class<?>> config = new HashMap<>();
+public abstract class FactoryConfig {
+	protected Map<String, Class<?>> config = null;
 	
-	public void initConfig();
-	default public Map<String, Class<?>> getConfig() {
+	public FactoryConfig() {
+		config = new HashMap<>();
+		initConfig();
+	}
+	
+	protected abstract void initConfig();
+	public Map<String, Class<?>> getConfig() {
+		if (null==config || 0==config.size()) {
+			initConfig();
+		}
 		return config;
 	}
-	default public Class<?> get(String name) {
+	public Class<?> get(String name) {
+		if (null==config || 0==config.size()) {
+			initConfig();
+		}
 		return config.get(name);
 	}
 	
