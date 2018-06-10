@@ -5,7 +5,16 @@ import frame.proxy.annotation.AfterReturn;
 import frame.proxy.annotation.Before;
 
 public interface TestImp extends ProxyImp {
-	@Before(methodName = {"aopTest"})
-	@AfterReturn(methodName = {"aopTest"})
+	@Before(methodClassName = {"aopTest"})
+	@AfterReturn(methodClassName = {"aopTest"})
 	public void print() ;
+	
+	@Before(methodClassName = {"aopTest"})
+	@AfterReturn(methodClassName = {"aopTest"})
+	public void print(String... arg) ;
+	
+	@Before(methodClassName = {"aopTest"})
+	@AfterReturn(methodClassName = {"aopTest"})
+	public void print(int arg, int arg2) ;
+	
 }

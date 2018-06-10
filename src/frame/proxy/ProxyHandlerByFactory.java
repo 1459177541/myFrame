@@ -36,21 +36,21 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		if(method.isAnnotationPresent(Before.class)) {
-			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodName()))
-				.forEach(e->((BeforeAction)factory.get(e)).beforeAction(args, args));
+			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))
+				.forEach(e->((BeforeAction)factory.get(e)).beforeAction(target, args));
 		}
 		Object obj = null;
 		try {
 			obj = method.invoke(target, args);
 		}catch (Throwable ex) {
 			if(method.isAnnotationPresent(ThrowsException.class)) {
-				new ArrayList<String>(Arrays.asList(method.getAnnotation(ThrowsException.class).methodName()))
-					.forEach(e->((ThrowsExceptionAction)factory.get(e)).throwExceptionAction(args, ex, args));
+				new ArrayList<String>(Arrays.asList(method.getAnnotation(ThrowsException.class).methodClassName()))
+					.forEach(e->((ThrowsExceptionAction)factory.get(e)).throwExceptionAction(target, ex, args));
 			}			
 		}
 		if(method.isAnnotationPresent(AfterReturn.class)) {
-			new ArrayList<String>(Arrays.asList(method.getAnnotation(AfterReturn.class).methodName()))
-				.forEach(e->((AfterReturnAction)factory.get(e)).afterReturnAction(args, args));
+			new ArrayList<String>(Arrays.asList(method.getAnnotation(AfterReturn.class).methodClassName()))
+				.forEach(e->((AfterReturnAction)factory.get(e)).afterReturnAction(target, args));
 		}
 		return obj;
 	}

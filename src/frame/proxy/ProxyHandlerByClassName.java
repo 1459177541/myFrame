@@ -71,7 +71,7 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		if(method.isAnnotationPresent(Before.class)) {
 			beforeAction.forEach(e->{
-				String[] methodNames = method.getAnnotation(Before.class).methodName();
+				String[] methodNames = method.getAnnotation(Before.class).methodClassName();
 				for (String methodName : methodNames) {
 					if (methodName.equals(e.getClass().getName())) {
 						e.beforeAction(target, args);
@@ -85,7 +85,7 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 		}catch (Throwable ex) {
 			if(method.isAnnotationPresent(ThrowsException.class)) {
 				throwsExceptionAction.forEach(e->{
-					String[] methodNames = method.getAnnotation(ThrowsException.class).methodName();
+					String[] methodNames = method.getAnnotation(ThrowsException.class).methodClassName();
 					for (String methodName : methodNames) {
 						if (methodName.equals(e.getClass().getName())) {
 							e.throwExceptionAction(target, ex, args);
@@ -96,7 +96,7 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 		}
 		if(method.isAnnotationPresent(AfterReturn.class)) {
 			afterReturnAction.forEach(e->{
-				String[] methodNames = method.getAnnotation(AfterReturn.class).methodName();
+				String[] methodNames = method.getAnnotation(AfterReturn.class).methodClassName();
 				for (String methodName : methodNames) {
 					if (methodName.equals(e.getClass().getName())) {
 						e.afterReturnAction(target, args);
