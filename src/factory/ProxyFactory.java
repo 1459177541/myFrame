@@ -5,6 +5,11 @@ import java.lang.reflect.Proxy;
 import frame.config.FactoryConfig;
 import frame.proxy.ProxyHandlerByFactory;
 
+/**
+ * 代理工厂类，产生代理对象
+ * @author 杨星辰
+ *
+ */
 public class ProxyFactory extends BeanFactory{
 	
 	private Factory handlerFactory;

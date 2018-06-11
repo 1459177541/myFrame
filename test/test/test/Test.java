@@ -6,7 +6,7 @@ import factory.Factory;
 import factory.ProxyFactory;
 import frame.config.FactoryConfig;
 
-public class Test implements TestImp{
+public class Test implements TestImp, TestImp2{
 	public static void main(String[] args) {
 		Factory f = new ProxyFactory(new FactoryConfig() {
 			@Override
@@ -16,14 +16,15 @@ public class Test implements TestImp{
 			}
 		});
 //		int s = f.get(int.class);
-		TestImp t =(TestImp) f.get("Test");
-		t.print();
+		Object t = f.get("Test");
+		((TestImp)t).print();
 		System.out.println();
-		t.print(new String[] {"Hello World"});
+		((TestImp2)t).print("Hello World");
 		System.out.println();
-		t.print(new String[] {"GOODBYE"," ","WORLD"});
+		((TestImp2)t).print("GOODBYE"," ","WORLD");
 		System.out.println();
-		t.print(5, 7);
+		((TestImp)t).print(5, 7);
+		System.out.println();
 	}
 	
 	@Override

@@ -5,6 +5,11 @@ import java.lang.reflect.InvocationTargetException;
 
 import frame.config.FactoryConfig;
 
+/**
+ * 工厂类，通过配置类产生对象
+ * @author 杨星辰
+ *
+ */
 public class BeanFactory implements Factory{
 	/**
 	 * 配置类
@@ -22,6 +27,12 @@ public class BeanFactory implements Factory{
 	}
 	public void setFactoryConfig(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
+	}
+	public void addFactoryConfig(String name,Class<?> clazz) {
+		this.factoryConfig.addConfig(name, clazz);
+	}
+	public void addFactoryConfig(FactoryConfig factoryConfig) {
+		this.factoryConfig.addConfig(factoryConfig);
 	}
 	
 	/**

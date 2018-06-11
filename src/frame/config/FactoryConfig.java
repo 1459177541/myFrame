@@ -19,10 +19,27 @@ public abstract class FactoryConfig {
 	 */
 	protected abstract void initConfig();
 	public Map<String, Class<?>> getConfig() {
-		if (null==config || 0==config.size()) {
-			initConfig();
-		}
+		check();
 		return config;
+	}
+	
+	/**
+	 * 添加配置
+	 * @param name 
+	 * @param clazz
+	 */
+	public void addConfig(String name, Class<?> clazz) {
+		check();
+		this.config.put(name, clazz);
+	}
+	
+	/**
+	 * 添加配置
+	 * @param config 配置对象
+	 */
+	public void addConfig(FactoryConfig config) {
+		check();
+		config.getConfig().forEach(this.config::put);
 	}
 	
 	/**
@@ -31,10 +48,14 @@ public abstract class FactoryConfig {
 	 * @return 对应类对象
 	 */
 	public Class<?> get(String name) {
+		check();
+		return config.get(name);
+	}
+	
+	private void check() {
 		if (null==config || 0==config.size()) {
 			initConfig();
 		}
-		return config.get(name);
 	}
 	
 }
