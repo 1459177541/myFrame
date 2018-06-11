@@ -6,6 +6,11 @@ import factory.Factory;
 import factory.ProxyFactory;
 import frame.config.FactoryConfig;
 
+/**
+ * 测试类
+ * @author 杨星辰
+ *
+ */
 public class Test implements TestImp, TestImp2{
 	public static void main(String[] args) {
 		Factory f = new ProxyFactory(new FactoryConfig() {
@@ -15,13 +20,14 @@ public class Test implements TestImp, TestImp2{
 				config.put("aopTest", AopTest.class);
 			}
 		});
-//		int s = f.get(int.class);
 		Object t = f.get("Test");
 		((TestImp)t).print();
 		System.out.println();
 		((TestImp2)t).print("Hello World");
 		System.out.println();
 		((TestImp2)t).print("GOODBYE"," ","WORLD");
+		System.out.println();
+		((TestImp2)t).print(new String[]{});
 		System.out.println();
 		((TestImp)t).print(5, 7);
 		System.out.println();

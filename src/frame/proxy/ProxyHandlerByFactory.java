@@ -9,9 +9,11 @@ import factory.Factory;
 import frame.config.FactoryConfig;
 import frame.proxy.action.AfterReturnAction;
 import frame.proxy.action.BeforeAction;
+import frame.proxy.action.CheckAction;
 import frame.proxy.action.ThrowsExceptionAction;
 import frame.proxy.annotation.AfterReturn;
 import frame.proxy.annotation.Before;
+import frame.proxy.annotation.Check;
 import frame.proxy.annotation.ThrowsException;
 
 /**
@@ -33,8 +35,23 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 		factory = new BeanFactory(config);
 	}
 	
+	
+	private boolean isExecute = true;
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		isExecute = true;
+		if(method.isAnnotationPresent(Check.class)) {
+			new ArrayList<String>(Arrays.asList(method.getAnnotation(Check.class).methodClassName()))
+			.forEach(e->{
+				boolean temp = ((CheckAction)factory.get(e)).checkAction(target, args);
+				if (!temp) {
+					isExecute = false;
+				}
+			});
+		}
+		if (!isExecute) {
+			return null;
+		}
 		if(method.isAnnotationPresent(Before.class)) {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))
 				.forEach(e->((BeforeAction)factory.get(e)).beforeAction(target, args));

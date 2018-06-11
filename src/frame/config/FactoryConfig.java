@@ -3,6 +3,11 @@ package frame.config;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 工厂配置类，完成工厂的配置设置
+ * @author 杨星辰
+ *
+ */
 public abstract class FactoryConfig {
 	protected Map<String, Class<?>> config = null;
 	
@@ -15,7 +20,7 @@ public abstract class FactoryConfig {
 	}
 	
 	/**
-	 * 子类应覆盖方法，将类初始化
+	 * 子类应覆盖方法，将配置初始化
 	 */
 	protected abstract void initConfig();
 	public Map<String, Class<?>> getConfig() {

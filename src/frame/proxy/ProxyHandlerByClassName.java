@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 import frame.proxy.action.AfterReturnAction;
 import frame.proxy.action.BeforeAction;
+import frame.proxy.action.CheckAction;
 import frame.proxy.action.ThrowsExceptionAction;
 import frame.proxy.annotation.AfterReturn;
 import frame.proxy.annotation.Before;
+import frame.proxy.annotation.Check;
 import frame.proxy.annotation.ThrowsException;
 
 /**
@@ -23,6 +25,7 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 	protected ArrayList<BeforeAction> beforeAction;
 	protected ArrayList<AfterReturnAction> afterReturnAction;
 	protected ArrayList<ThrowsExceptionAction> throwsExceptionAction;
+	protected ArrayList<CheckAction> checkAction;
 	
 	public ProxyHandlerByClassName() {
 		beforeAction = new ArrayList<>();
@@ -46,6 +49,10 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 		this.throwsExceptionAction = throwsExceptionAction;
 	}
 
+	public void setCheckAction(ArrayList<CheckAction> checkAction) {
+		this.checkAction = checkAction;
+	}
+
 	public void addBeforeAction(BeforeAction beforeAction) {
 		if (null==beforeAction) {
 			this.beforeAction = new ArrayList<>();
@@ -67,8 +74,33 @@ public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 		this.throwsExceptionAction.add(throwsExceptionAction);
 	}
 	
+	public void addCheckAction(CheckAction checkAction) {
+		if (null==checkAction) {
+			this.checkAction = new ArrayList<>();
+		}
+		this.checkAction.add(checkAction);
+	}
+	
+	private boolean isExecute = true;
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		isExecute = true;
+		if(method.isAnnotationPresent(Check.class)) {
+			checkAction.forEach(e->{
+				String[] methodNames = method.getAnnotation(Check.class).methodClassName();
+				for (String methodName : methodNames) {
+					if (methodName.equals(e.getClass().getName())) {
+						boolean temp = e.checkAction(target, args);
+						if (!temp) {
+							isExecute = false;
+						}						
+					}
+				}
+			});
+		}
+		if (!isExecute) {
+			return null;
+		}
 		if(method.isAnnotationPresent(Before.class)) {
 			beforeAction.forEach(e->{
 				String[] methodNames = method.getAnnotation(Before.class).methodClassName();
