@@ -11,5 +11,5 @@ public interface BeforeAction extends ProxyAction{
 	 * @param target 代理对象
 	 * @param args 方法参数
 	 */
-	public void beforeAction(Object target, Object... args);
+	public void beforeAction( Object target, Object... args);
 }

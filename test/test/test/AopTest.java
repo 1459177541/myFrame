@@ -21,8 +21,8 @@ public class AopTest implements AfterReturnAction, BeforeAction, CheckAction {
 	}
 
 	@Override
-	public void afterReturnAction(Object target, Object... args) {
-		System.out.print("AopTest afterReturnAction: target = "+target+"    arg =");
+	public void afterReturnAction(Object ret, Object target, Object... args) {
+		System.out.print("AopTest afterReturnAction: return="+ret+" target = "+target+"    arg =");
 		checkArgs(args);
 	}
 

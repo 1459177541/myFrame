@@ -37,6 +37,7 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 	
 	
 	private boolean isExecute = true;
+	private Object ret = null;
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		ArrayList<Method> unCheckMethodList = new ArrayList<>();
@@ -45,7 +46,7 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Check.class).methodClassName()))
 			.forEach(e->{
 				try {
-					Method unCheckMethod = CheckAction.class.getMethod("checkAction",Object.class, Object[].class);	//BUG!
+					Method unCheckMethod = CheckAction.class.getMethod("checkAction",Object.class, Object[].class);
 					boolean temp = (boolean) unCheckMethod.invoke(factory.get(e), target, args);
 					if (!temp) {
 						isExecute = false;
@@ -64,9 +65,9 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))
 				.forEach(e->((BeforeAction)factory.get(e)).beforeAction(target, args));
 		}
-		Object obj = null;
+		ret = null;
 		try {
-			obj = method.invoke(target, args);
+			ret = method.invoke(target, args);
 		}catch (Throwable ex) {
 			if(method.isAnnotationPresent(ThrowsException.class)) {
 				new ArrayList<String>(Arrays.asList(method.getAnnotation(ThrowsException.class).methodClassName()))
@@ -75,8 +76,8 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 		}
 		if(method.isAnnotationPresent(AfterReturn.class)) {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(AfterReturn.class).methodClassName()))
-				.forEach(e->((AfterReturnAction)factory.get(e)).afterReturnAction(target, args));
+				.forEach(e->((AfterReturnAction)factory.get(e)).afterReturnAction(ret, target, args));
 		}
-		return obj;
+		return ret;
 	}
 }

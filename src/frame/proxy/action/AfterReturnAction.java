@@ -11,5 +11,5 @@ public interface AfterReturnAction extends ProxyAction{
 	 * @param target 代理对象
 	 * @param args 方法参数
 	 */
-	public void afterReturnAction(Object target, Object... args);
+	public void afterReturnAction(Object ret, Object target, Object... args);
 }

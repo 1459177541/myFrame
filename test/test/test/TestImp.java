@@ -13,4 +13,8 @@ public interface TestImp extends ProxyImp {
 	@AfterReturn(methodClassName = {"aopTest"})
 	public void print(int arg, int arg2) ;
 	
+	@Before(methodClassName = {"aopTest"})
+	@AfterReturn(methodClassName = {"aopTest"})
+	public int add(int arg, int arg2) ;
+	
 }
