@@ -10,4 +10,5 @@ import java.lang.annotation.Target;
 @Target(METHOD)
 public @interface Check {
 	String[] methodClassName();
+	String UnCheckMethodClassName(); 
 }

@@ -1,5 +1,6 @@
 package test;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 import frame.proxy.action.AfterReturnAction;
@@ -32,7 +33,16 @@ public class AopTest implements AfterReturnAction, BeforeAction, CheckAction {
 		return 0!=((Object[])args[0]).length;
 	}
 	
-	private void checkArgs(Object...args) {
+	@Override
+	public Object unCheckAction(Method[] UnCheckMethod, Object target, Object... args) {
+		System.out.print("AopTest unCheckAction: target = "+target+"    arg =");
+		checkArgs(args);
+		System.out.print("\tmethod:");
+		checkArgs(UnCheckMethod);
+		return null;
+	}
+	
+	private void checkArgs(Object[] args) {
 		if (null!=args) {
 			Arrays.asList(args).forEach(es->Arrays.asList(es).forEach(e->{
 				if (e instanceof Object[]) {
@@ -46,5 +56,6 @@ public class AopTest implements AfterReturnAction, BeforeAction, CheckAction {
 			System.out.println("null");
 		}		
 	}
+
 
 }

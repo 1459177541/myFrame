@@ -1,5 +1,7 @@
 package frame.proxy.action;
 
+import java.lang.reflect.Method;
+
 /**
  * 检查动作接口
  * @author 杨星辰
@@ -13,4 +15,5 @@ public interface CheckAction extends ProxyAction{
 	 * @return 是否执行
 	 */
 	public boolean checkAction(Object target, Object...args);
+	public Object unCheckAction(Method[] UnCheckMethod, Object target, Object... args);
 }

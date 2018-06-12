@@ -21,16 +21,17 @@ public class Test implements TestImp, TestImp2{
 			}
 		});
 		Object t = f.get("Test");
+		System.out.println("--------------------------------------------------------------");
 		((TestImp)t).print();
-		System.out.println();
+		System.out.println("--------------------------------------------------------------");
 		((TestImp2)t).print("Hello World");
-		System.out.println();
+		System.out.println("--------------------------------------------------------------");
 		((TestImp2)t).print("GOODBYE"," ","WORLD");
-		System.out.println();
+		System.out.println("--------------------------------------------------------------");
 		((TestImp2)t).print(new String[]{});
-		System.out.println();
+		System.out.println("--------------------------------------------------------------");
 		((TestImp)t).print(5, 7);
-		System.out.println();
+		System.out.println("--------------------------------------------------------------");
 	}
 	
 	@Override

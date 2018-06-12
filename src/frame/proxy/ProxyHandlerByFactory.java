@@ -39,18 +39,26 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 	private boolean isExecute = true;
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		ArrayList<Method> unCheckMethodList = new ArrayList<>();
 		isExecute = true;
 		if(method.isAnnotationPresent(Check.class)) {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Check.class).methodClassName()))
 			.forEach(e->{
-				boolean temp = ((CheckAction)factory.get(e)).checkAction(target, args);
-				if (!temp) {
-					isExecute = false;
+				try {
+					Method unCheckMethod = CheckAction.class.getMethod("checkAction",Object.class, Object[].class);	//BUG!
+					boolean temp = (boolean) unCheckMethod.invoke(factory.get(e), target, args);
+					if (!temp) {
+						isExecute = false;
+						unCheckMethodList.add(unCheckMethod);
+					} 
+				} catch (Exception e2) {
+					e2.printStackTrace();
 				}
 			});
 		}
 		if (!isExecute) {
-			return null;
+			return ((CheckAction)factory.get(method.getAnnotation(Check.class).UnCheckMethodClassName()))
+					.unCheckAction(unCheckMethodList.toArray(new Method[unCheckMethodList.size()]), target, args);
 		}
 		if(method.isAnnotationPresent(Before.class)) {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))

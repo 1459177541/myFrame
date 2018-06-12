@@ -20,6 +20,7 @@ import frame.proxy.annotation.ThrowsException;
  *
  * @param <T>
  */
+@Deprecated
 public class ProxyHandlerByClassName<T> extends ProxyHandler<T> {
 	
 	protected ArrayList<BeforeAction> beforeAction;
