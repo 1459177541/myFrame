@@ -39,7 +39,6 @@ public class FactoryBuilder{
 	 */
 	public void setProxyActionFactoryConfig(FactoryConfig proxyActionFactoryConfig) {
 		setProxyActionFactoryConfig(new ConfigDefaultFactory(proxyActionFactoryConfig));
-		
 	}
 	
 	
@@ -89,6 +88,9 @@ public class FactoryBuilder{
 	public ConfigFactory get() {
 		ConfigFactory f = null;
 		f = new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有配置类"));
+		if (isSingle) {
+			f = new SingleFactory(f);
+		}
 		if (isProxy) {
 			f = new ProxyFactory(f);
 			if (null == proxyActionFactory) {
@@ -96,9 +98,6 @@ public class FactoryBuilder{
 			}else {
 				((ProxyFactory)f).setAction(proxyActionFactory);
 			}
-		}
-		if (isSingle) {
-			f = new SingleFactory(f);
 		}
 		return f;
 	}

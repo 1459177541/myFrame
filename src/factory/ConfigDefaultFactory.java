@@ -2,7 +2,10 @@ package factory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.NoSuchElementException;
+import frame.Autowired;
 import frame.config.FactoryConfig;
 
 /**
@@ -29,7 +32,15 @@ public class ConfigDefaultFactory extends ConfigFactory{
 			if(0>=constructor.length) {
 				return clazz.newInstance();
 			}
-			Constructor<T> m = constructor[0];
+			Constructor<T> m = null;
+			try {
+				m = Arrays.asList(constructor).stream()
+						.filter(c->c.isAnnotationPresent(Autowired.class))
+						.min(Comparator.comparing(c -> c.getAnnotation(Autowired.class).order()))
+						.get();
+			}catch (NoSuchElementException e) {
+				m = constructor[0];
+			}
 			Class<?>[] cs = m.getParameterTypes();
 			Object[] parameter = new Object[cs.length];
 			for(int i = 0 ; i < cs.length ; i++) {
@@ -47,6 +58,30 @@ public class ConfigDefaultFactory extends ConfigFactory{
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
 		}
+		autowiredMethod(o);
 		return o;
+	}
+	
+	
+	private <T> void autowiredMethod(T obj) {
+		Arrays.asList(obj.getClass().getMethods()).stream()
+			.filter(c->c.isAnnotationPresent(Autowired.class))
+			.forEach(e->{
+				Class<?>[] cs = e.getParameterTypes();
+				Object[] parameter = new Object[cs.length];
+				for (int i = 0; i < cs.length; i++) {
+					parameter[i] = get(cs[i]);
+				}
+				try {
+					e.invoke(obj, parameter);
+				} catch (IllegalAccessException e1) {
+					e1.printStackTrace();
+				} catch (IllegalArgumentException e1) {
+					e1.printStackTrace();
+				} catch (InvocationTargetException e1) {
+					e1.printStackTrace();
+				}
+		});
+		
 	}
 }
