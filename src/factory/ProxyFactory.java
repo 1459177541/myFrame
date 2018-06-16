@@ -2,7 +2,6 @@ package factory;
 
 import java.lang.reflect.Proxy;
 
-import frame.config.FactoryConfig;
 import frame.proxy.ProxyHandlerByFactory;
 
 /**
@@ -10,34 +9,33 @@ import frame.proxy.ProxyHandlerByFactory;
  * @author 杨星辰
  *
  */
-public class ProxyFactory extends BeanFactory{
+public class ProxyFactory extends ConfigFactory{
 	
-	private Factory handlerFactory;
+	private ConfigFactory handlerFactory;
+	private ConfigFactory factory;
 	
-	public ProxyFactory() {
-		super();
+	public ProxyFactory(ConfigFactory factory) {
+		this(factory,factory);
 	}
 	
-	public ProxyFactory(FactoryConfig factoryConfig) {
-		super(factoryConfig);
-		handlerFactory = new BeanFactory(factoryConfig);
+	public ProxyFactory(ConfigFactory factory, ConfigFactory handlerFactory) {
+		super(factory.getFactoryConfig());
+		this.factory = factory;
+		this.handlerFactory = handlerFactory;
 	}
 
-	public void setAction(Factory factory) {
+	public void setAction(ConfigFactory factory) {
 		this.handlerFactory = factory;
-	}
-	
-	public void setAction(FactoryConfig config) {
-		this.handlerFactory = new BeanFactory(config);
 	}
 	
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T get(Class<T> clazz) {
-		T o = super.get(clazz);
+		T o = factory.get(clazz);
 		ProxyHandlerByFactory<T> handler = new ProxyHandlerByFactory<>();
 		handler.setTarget(o);
 		handler.setFactory(handlerFactory);
 		return (T)Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), handler);
 	}
+
 }

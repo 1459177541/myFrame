@@ -4,8 +4,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import factory.BeanFactory;
-import factory.Factory;
+import factory.ConfigDefaultFactory;
+import factory.ConfigFactory;
 import frame.config.FactoryConfig;
 import frame.proxy.action.AfterReturnAction;
 import frame.proxy.action.BeforeAction;
@@ -25,16 +25,15 @@ import frame.proxy.annotation.ThrowsException;
  * @param <T>
  */
 public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
-	private Factory factory;
+	private ConfigFactory factory;
 
-	public void setFactory(Factory factory) {
+	public void setFactory(ConfigFactory factory) {
 		this.factory = factory;
 	}
 	
 	public void setConfig(FactoryConfig config) {
-		factory = new BeanFactory(config);
+		factory = new ConfigDefaultFactory(config);
 	}
-	
 	
 	private boolean isExecute = true;
 	private Object ret = null;

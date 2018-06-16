@@ -10,46 +10,12 @@ import frame.config.FactoryConfig;
  * @author 杨星辰
  *
  */
-public class BeanFactory implements Factory{
-	/**
-	 * 配置类
-	 */
-	private FactoryConfig factoryConfig;
-	public BeanFactory() {
-		this(null);
-	}
-	public BeanFactory(FactoryConfig factoryConfig) {
-		this.factoryConfig = factoryConfig;
-	}
+public class ConfigDefaultFactory extends ConfigFactory{
 	
-	public FactoryConfig getFactoryConfig() {
-		return factoryConfig;
-	}
-	public void setFactoryConfig(FactoryConfig factoryConfig) {
-		this.factoryConfig = factoryConfig;
-	}
-	public void addFactoryConfig(String name,Class<?> clazz) {
-		this.factoryConfig.addConfig(name, clazz);
-	}
-	public void addFactoryConfig(FactoryConfig factoryConfig) {
-		this.factoryConfig.addConfig(factoryConfig);
-	}
 	
-	/**
-	 * 通过类名或者配置中的名得到对应对象
-	 */
-	@Override
-	public Object get(final String name) {
-		Class<?> c = factoryConfig.get(name);
-		if(null==c) {
-			try {
-				c = Class.forName(name);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-		return get(c);
-	};
+	public ConfigDefaultFactory(FactoryConfig factoryConfig) {
+		super(factoryConfig);
+	}
 	
 	/**
 	 * 通过类对象得到对应对象
