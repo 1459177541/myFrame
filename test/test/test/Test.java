@@ -2,9 +2,8 @@ package test;
 
 import java.util.Arrays;
 
-import factory.ConfigDefaultFactory;
-import factory.Factory;
-import factory.ProxyFactory;
+import factory.ConfigFactory;
+import factory.FactoryBuilder;
 import frame.config.FactoryConfig;
 
 /**
@@ -14,13 +13,21 @@ import frame.config.FactoryConfig;
  */
 public class Test implements TestImp, TestImp2{
 	public static void main(String[] args) {
-		Factory f = new ProxyFactory(new ConfigDefaultFactory(new FactoryConfig() {
+//		Factory f = new ProxyFactory(new ConfigDefaultFactory(new FactoryConfig() {
+//			@Override
+//			public void initConfig() {
+//				config.put("Test", Test.class);
+//				config.put("aopTest", AopTest.class);
+//			}
+//		}));
+		FactoryBuilder fb = new FactoryBuilder(new FactoryConfig() {
 			@Override
 			public void initConfig() {
 				config.put("Test", Test.class);
 				config.put("aopTest", AopTest.class);
 			}
-		}));
+		});
+		ConfigFactory f = fb.get();
 		Object t = f.get("Test");
 		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
 		((TestImp)t).print();

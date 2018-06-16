@@ -5,7 +5,7 @@ import java.util.Map;
 
 import frame.Single;
 
-public class SingleFactory<T> extends ConfigFactory{
+public class SingleFactory extends ConfigFactory{
 	
 	private ConfigFactory factory;
 	private Map<Class<?>,Object> singleMap;
@@ -17,7 +17,7 @@ public class SingleFactory<T> extends ConfigFactory{
 	}
 	
 
-	@SuppressWarnings({ "unchecked", "hiding" })
+	@SuppressWarnings("unchecked")
 	@Override
 	public <T> T get(Class<T> clazz) {
 		if (!clazz.isAnnotationPresent(Single.class)) {
