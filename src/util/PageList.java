@@ -1,6 +1,7 @@
 package util;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * 分页列表
@@ -34,7 +35,6 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		this.list = list;
 		computePage(true);
 	}
-
 
 	public int getPageSize() {
 		return pageSize;
@@ -135,12 +135,14 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 
 	@Override
 	public boolean add(List<E> e) {
-		return list.addAll(e);
+		boolean flag = list.addAll(e);
+		computePage(true);
+		return flag;
 	}
 
 	@Override
 	public void add(int index, List<E> element) {
-		list.addAll(index, element);
+		computePage(list.addAll(index, element));
 	}
 
 	public boolean addElement(E e) {
@@ -170,19 +172,25 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	public int size() {
 		return list.size();
 	}
-
+	
+	/**
+	 * 请使用streamElement
+	 */
 	@Override
-	public Iterator<List<E>> iterator() {
-		return null;
+	@Deprecated
+	public Stream<List<E>> stream() {
+		return super.stream();
+	}
+	
+	public Stream<E> elementStream(){
+		return list.stream();
 	}
 
 	@Override
 	public List<E> get(int index) {
-		if (index>getPageSum() || index<1) {
-			throw new IndexOutOfBoundsException();
-		}
+		checkPage(index);
 		List<E> list = new ArrayList<>(pageSize);
-		Iterator<E> iterator = list.listIterator(index*pageSize);
+		Iterator<E> iterator = list.listIterator((index-1)*pageSize);
 		for(int i = 0;i<pageSize;i++) {
 			if (iterator.hasNext()) {
 				list.add(iterator.next());
@@ -217,5 +225,22 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	public List<E> finalPage(){
 		thisPage = getPageSum();
 		return get(thisPage);
+	}
+	
+	public List<E> updatePage(){
+		computePage(true);
+		return get(thisPage);
+	}
+	
+	public List<E> toPage(int index){
+		checkPage(index);
+		thisPage = index;
+		return get(thisPage);
+	}
+	
+	private void checkPage(int index) {
+		if (index>getPageSum() || index<1) {
+			throw new IndexOutOfBoundsException();
+		}
 	}
 }
