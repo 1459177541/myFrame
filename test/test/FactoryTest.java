@@ -12,7 +12,7 @@ import frame.config.FactoryConfig;
  * @author 杨星辰
  *
  */
-public class Test implements TestImp, TestImp2 {
+public class FactoryTest implements TestImp, TestImp2 {
 	public static void main(String[] args) {
 		// Factory f = new ProxyFactory(new ConfigDefaultFactory(new FactoryConfig() {
 		// @Override
@@ -24,7 +24,7 @@ public class Test implements TestImp, TestImp2 {
 		FactoryBuilder fb = new FactoryBuilder(new FactoryConfig() {
 			@Override
 			public void initConfig() {
-				config.put("Test", Test.class);
+				config.put("Test", FactoryTest.class);
 				config.put("aopTest", AopTest.class);
 			}
 		});
