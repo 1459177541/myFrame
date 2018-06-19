@@ -9,7 +9,7 @@ import java.util.stream.Stream;
  *
  * @param <E>
  */
-public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
+public class PageList<E> implements List<List<E>>{
 
 	private List<E> list;
 	private int thisPage;
@@ -27,7 +27,7 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 
 	public PageList(int pageSize) {
 		init(pageSize);
-		list = new ArrayList<>();
+		list = new ArrayList<>(128);
 	}
 
 	public PageList(int pageSize, List<E> list) {
@@ -42,6 +42,7 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
+		computePage(true);
 	}
 
 	public int getThisPage() {
@@ -76,13 +77,17 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	@Override
 	@Deprecated
 	public void sort(Comparator<? super List<E>> c) {
-		super.sort(c);
 	}
 	
 	public void sortElement(Comparator<? super E> c) {
 		list.sort(c);
 	}
 
+	
+	
+	
+	
+	
 	@Override
 	public boolean remove(Object o) {
 		boolean flag = list.remove(o);
@@ -119,6 +124,11 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		return e;
 	}
 	
+	
+	
+	
+	
+	
 	@Override
 	public int indexOf(Object o) {
 		return list.indexOf(o);
@@ -136,24 +146,11 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	public int lastPageOf(Object o) {
 		return lastIndexOf(o)/pageSize+1;
 	}
-
-	@Override
-	public boolean add(List<E> e) {
-		boolean flag = list.addAll(e);
-		computePage(flag);
-		return flag;
-	}
-
-	@Override
-	public void add(int index, List<E> element) {
-		computePage(list.addAll(index, element));
-	}
-
-	public boolean addElement(E e) {
-		boolean flag = list.add(e);
-		computePage(flag);
-		return flag;
-	}
+	
+	
+	
+	
+	
 	
 	@Override
 	public void clear() {
@@ -161,21 +158,14 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	}
 
 	@Override
-	public boolean addAll(int index, Collection<? extends List<E>> c) {
-		boolean flag = true;
-		for (List<E> e : c) {
-			if(!list.addAll(index,e)) {
-				flag = false;
-			}
-			index = e.size()+index;
-		}
-		return flag;
-	}
-
-	@Override
 	public int size() {
 		return list.size();
 	}
+	
+	
+	
+	
+	
 	
 	/**
 	 * 请使用streamElement
@@ -183,26 +173,17 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	@Override
 	@Deprecated
 	public Stream<List<E>> stream() {
-		return super.stream();
+		return null;
 	}
 	
 	public Stream<E> elementStream(){
 		return list.stream();
 	}
 
-	@Override
-	public List<E> get(int index) {
-		checkPage(index);
-		List<E> list = new ArrayList<>(pageSize);
-		Iterator<E> iterator = list.listIterator((index-1)*pageSize);
-		for(int i = 0;i<pageSize;i++) {
-			if (iterator.hasNext()) {
-				list.add(iterator.next());
-			}
-		}
-		return list;
-	}
-
+	
+	
+	
+	
 	@Override
 	public ListIterator<List<E>> listIterator() {
 		return new ListItr(pageSize);
@@ -288,14 +269,12 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		@Override
 		@Deprecated
 		public void remove() {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		@Deprecated
 		public void set(List<E> e) {
-			// TODO Auto-generated method stub
 			
 		}
 
@@ -307,6 +286,11 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		
 	}
 
+	
+	
+	
+	
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean equals(Object o) {
@@ -321,6 +305,23 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		return list.hashCode();
 	}
 
+	
+	
+	
+	
+	@Override
+	public List<E> get(int index) {
+		checkPage(index);
+		List<E> list = new ArrayList<>(pageSize);
+		Iterator<E> iterator = list.listIterator((index-1)*pageSize);
+		for(int i = 0;i<pageSize;i++) {
+			if (iterator.hasNext()) {
+				list.add(iterator.next());
+			}
+		}
+		return list;
+	}
+	
 	public List<E> firstPage(){
 		thisPage = 1;
 		return get(thisPage);
@@ -364,5 +365,105 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 		if (index>getPageSum() || index<1) {
 			throw new IndexOutOfBoundsException();
 		}
+	}
+	
+	
+	
+	
+	
+
+	@Override
+	public boolean isEmpty() {
+		return list.isEmpty();
+	}
+
+	@Override
+	public boolean contains(Object o) {
+		return list.contains(o);
+	}
+
+	@Override
+	public Object[] toArray() {
+		return list.toArray();
+	}
+
+	@Override
+	public <T> T[] toArray(T[] a) {
+		return list.toArray(a);
+	}
+
+	@Override
+	public boolean containsAll(Collection<?> c) {
+		return list.containsAll(c);
+	}
+
+	
+	
+	
+	
+	
+	@Override
+	public boolean add(List<E> e) {
+		boolean flag = list.addAll(e);
+		computePage(flag);
+		return flag;
+	}
+
+	@Override
+	public void add(int index, List<E> element) {
+		computePage(list.addAll(index, element));
+	}
+
+	public boolean addElement(E e) {
+		boolean flag = list.add(e);
+		computePage(flag);
+		return flag;
+	}
+	
+	@Override
+	public boolean addAll(Collection<? extends List<E>> c) {
+		boolean flag = true;
+		for (List<E> e : c) {
+			if(!list.addAll(e)) {
+				flag = false;
+			}
+		}
+		computePage(true);
+		return flag;
+	}
+
+	@Override
+	public boolean addAll(int index, Collection<? extends List<E>> c) {
+		boolean flag = true;
+		for (List<E> e : c) {
+			if(!list.addAll(index,e)) {
+				flag = false;
+			}
+			index = e.size()+index;
+		}
+		return flag;
+	}
+
+	
+	
+	
+	
+	
+	@Override
+	public boolean retainAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	@Deprecated
+	public List<E> set(int index, List<E> element) {
+		return null;
+	}
+
+	@Override
+	@Deprecated
+	public List<List<E>> subList(int fromIndex, int toIndex) {
+		return null;
 	}
 }
