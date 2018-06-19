@@ -1,6 +1,12 @@
 package util.asynchronized;
 
-public abstract class AsynEvent<T> implements Runnable{
+/**
+ * 可返回结果的线程类
+ * @author 杨星辰
+ *
+ * @param <T> 返回值
+ */
+public abstract class AsynAbstractResult<T> implements Runnable{
 	
 	private T result;
 	
@@ -10,7 +16,7 @@ public abstract class AsynEvent<T> implements Runnable{
 	
 	private Object lock;
 	
-	public AsynEvent() {
+	public AsynAbstractResult() {
 		lock = new Object();
 	}
 	

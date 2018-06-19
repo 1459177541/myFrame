@@ -4,10 +4,17 @@ import java.util.Objects;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
+/**
+ * 封装线程池工具类
+ * @author 杨星辰
+ *
+ * @param <T> 返回值
+ */
 public class AsynExecutor<T>{
 
-	private AsynEvent<T> event;
+	private AsynAbstractResult<T> event;
 	private static ThreadPoolExecutor threadPool;
 	private static LinkedBlockingQueue<Runnable> workQueue;
 
@@ -20,7 +27,7 @@ public class AsynExecutor<T>{
 				, workQueue);
 	}
 
-	public AsynExecutor(AsynEvent<T> event) {
+	public AsynExecutor(AsynAbstractResult<T> event) {
 		this.event = event;
 	}
 
@@ -36,7 +43,7 @@ public class AsynExecutor<T>{
 		}
 	}
 	
-	public void start(AsynEvent<T> event) {
+	public void start(AsynAbstractResult<T> event) {
 		this.event = event;
 		try {
 			threadPool.execute(event);
@@ -44,8 +51,27 @@ public class AsynExecutor<T>{
 			event.setException(e);
 		}
 	}
+	
+	public static <E,R> AsynAbstractResult<R> start(E arg, Function<E,R> function){
+		AsynAbstractResult<R> asynEvent = new AsynAbstractResult<R>() {
+			@Override
+			protected R execute() {
+				return function.apply(arg);
+			}
+		};
+		try {
+			threadPool.execute(asynEvent);
+		} catch (Exception e) {
+			asynEvent.setException(e);
+		}
+		return asynEvent;
+	}
 
 	public T getResult() throws Exception{
+		return AsynExecutor.getResult(event);
+	}
+	
+	public static <E> E getResult(AsynAbstractResult<E> event) throws Exception{
 		if (!event.isCompleted()) {
 			event.await();
 		}
@@ -53,6 +79,10 @@ public class AsynExecutor<T>{
 	}
 
 	public ThreadState getState() {
+		return AsynExecutor.getState(event);
+	}
+	
+	public static <E> ThreadState getState(AsynAbstractResult<E> event) {
 		return event.getState();
 	}
 
