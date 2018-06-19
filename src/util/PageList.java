@@ -47,6 +47,10 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	public int getThisPage() {
 		return thisPage;
 	}
+	
+	public List<E> getData(){
+		return list;
+	}
 
 	/**
 	 * 得到总页数
@@ -136,7 +140,7 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 	@Override
 	public boolean add(List<E> e) {
 		boolean flag = list.addAll(e);
-		computePage(true);
+		computePage(flag);
 		return flag;
 	}
 
@@ -197,6 +201,124 @@ public class PageList<E> extends AbstractList<List<E>> implements List<List<E>>{
 			}
 		}
 		return list;
+	}
+
+	@Override
+	public ListIterator<List<E>> listIterator() {
+		return new ListItr(pageSize);
+	}
+
+	@Override
+	public ListIterator<List<E>> listIterator(int index) {
+		return new ListItr(pageSize, index);
+	}
+	
+	@Override
+	public Iterator<List<E>> iterator() {
+		return listIterator();
+	}
+
+	private class ListItr implements ListIterator<List<E>> {
+
+		private int thisPage;
+		private int pageSum;
+		private int pageSize;
+		private ListIterator<E> iterator;
+		
+		public ListItr(int pageSize) {
+			this(pageSize, 1);
+		}
+		
+		public ListItr(int pageSize, int index) {
+			this.pageSize = pageSize;
+			thisPage = index;
+			pageSum = getPageSum();
+			iterator = list.listIterator((index-1)*this.pageSize);
+		}
+		
+		private List<E> get(){
+			List<E> list = new ArrayList<>(pageSize);
+			for(int i = 0; i<pageSize; i++) {
+				if(iterator.hasNext()) {
+					list.add(iterator.next());
+				}
+			}
+			return list;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			return thisPage<pageSum;
+		}
+
+		@Override
+		public List<E> next() {
+			thisPage++;
+			return get();
+		}
+
+		@Override
+		public boolean hasPrevious() {
+			return thisPage>1;
+		}
+
+		@Override
+		public List<E> previous() {
+			thisPage--;
+			for(int i = 0; i<pageSize;i++) {
+				iterator.previous();
+			}
+			return get();
+		}
+
+		@Override
+		public int nextIndex() {
+			return hasNext()
+						? thisPage+1
+						: pageSum;
+		}
+
+		@Override
+		public int previousIndex() {
+			return hasPrevious()
+						? thisPage-1
+						: 1;
+		}
+
+		@Override
+		@Deprecated
+		public void remove() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		@Deprecated
+		public void set(List<E> e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void add(List<E> e) {
+			computePage(list.addAll(e));
+			pageSum = getPageSum();
+		}
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(Object o) {
+		if (null==o || !(o instanceof PageList)) {
+			return false;
+		}
+		return list.equals(((PageList<E>)o).getData());
+	}
+
+	@Override
+	public int hashCode() {
+		return list.hashCode();
 	}
 
 	public List<E> firstPage(){
