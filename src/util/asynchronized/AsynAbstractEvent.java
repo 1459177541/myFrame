@@ -10,7 +10,7 @@ public abstract class AsynAbstractEvent implements Runnable{
 	/**
 	 * 状态
 	 */
-	protected ThreadState state = ThreadState.WAIT;
+	protected volatile ThreadState state = ThreadState.WAIT;
 
 	/**
 	 * 错误

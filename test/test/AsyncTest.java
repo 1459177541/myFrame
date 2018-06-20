@@ -1,7 +1,10 @@
 package test;
 
+import java.util.Random;
+
 import org.junit.Test;
 
+import util.asynchronized.AsynAbstractExecutor;
 import util.asynchronized.AsynResult;
 import util.asynchronized.AsynResultExecutor;
 import util.asynchronized.StaticAsyncExecuter;
@@ -16,7 +19,7 @@ public class AsyncTest {
 				for (int i = 1; i <= 1000; i++) {
 					cont+=i;
 					if (i%100==0) {
-						System.out.println(Thread.currentThread().getName()+": "+cont);
+						System.out.println(Thread.currentThread().getName()+"(e1)"+": "+cont);
 					}
 					try {
 						Thread.sleep(1);
@@ -24,9 +27,12 @@ public class AsyncTest {
 						e.printStackTrace();
 					}
 				}
+				System.err.println("e1 complete!");
 				return cont;
 			}
 		});
+		e1.start();
+		
 		AsynResultExecutor<Double> e2 = new AsynResultExecutor<>(new AsynResult<Double>() {
 			@Override
 			protected Double execute() {
@@ -34,17 +40,19 @@ public class AsyncTest {
 				for (int i = 1; i <= 100; i++) {
 					cont*=i;
 					if (i%10==0) {
-						System.out.println(Thread.currentThread().getName()+": "+cont);
+						System.out.println(Thread.currentThread().getName()+"(e2)"+": "+cont);
 					}
 					try {
-						Thread.sleep(1);
+						Thread.sleep(20);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 				}
+				System.err.println("e2 complete!");
 				return cont;
 			}
 		});
+		e2.start();
 		
 		AsynResult<String> e3 = StaticAsyncExecuter.startResult("hello world", a->{
 			try {
@@ -52,15 +60,35 @@ public class AsyncTest {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			System.err.println("e3 complete!");
 			return a.toUpperCase();
 		});
 		
-		e1.start();
-		e2.start();
-		System.err.println("wait...");
-		System.err.println("e1 complete: "+e1.getResult());
-		System.err.println("e2 complete: "+e2.getResult());
-		System.err.println("e3 complete: "+StaticAsyncExecuter.getResult(e3));
+		StaticAsyncExecuter.start(()->{
+			try {
+				Thread.sleep(500);
+			}catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			System.err.println("e4 complete!");
+		});
+		
+		for(int i = 1; i<=30; i++) {
+			StaticAsyncExecuter.start(i, e->{
+				try {
+					Thread.sleep(new Random().nextInt(500)+200);
+				} catch (InterruptedException e4) {
+					e4.printStackTrace();
+				}
+				System.err.println("E"+e+" complete!");
+			});
+		}
+		
+		Thread.sleep(600);
+		System.err.println("++++++执行:"+AsynAbstractExecutor.getExecuteSize()+" 等待:"+AsynAbstractExecutor.getWaitSize()+" 完成:"+AsynAbstractExecutor.getCompleteSize()+"++++++");
+		System.err.println("e1 result: "+e1.getResult());
+		System.err.println("e2 result: "+e2.getResult());
+		System.err.println("e3 result: "+StaticAsyncExecuter.getResult(e3));
 		
 	}
 
