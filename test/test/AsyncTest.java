@@ -2,13 +2,14 @@ package test;
 
 import org.junit.Test;
 
-import util.asynchronized.AsynAbstractResult;
-import util.asynchronized.AsynExecutor;
+import util.asynchronized.AsynResult;
+import util.asynchronized.AsynResultExecutor;
+import util.asynchronized.StaticAsyncExecuter;
 
 public class AsyncTest {
 	@Test
 	public void test1() throws Exception{
-		AsynExecutor<Integer> e1 = new AsynExecutor<>(new AsynAbstractResult<Integer>() {
+		AsynResultExecutor<Integer> e1 = new AsynResultExecutor<>(new AsynResult<Integer>() {
 			@Override
 			protected Integer execute() {
 				int cont = 0;
@@ -26,7 +27,7 @@ public class AsyncTest {
 				return cont;
 			}
 		});
-		AsynExecutor<Double> e2 = new AsynExecutor<>(new AsynAbstractResult<Double>() {
+		AsynResultExecutor<Double> e2 = new AsynResultExecutor<>(new AsynResult<Double>() {
 			@Override
 			protected Double execute() {
 				double cont = 1;
@@ -45,7 +46,7 @@ public class AsyncTest {
 			}
 		});
 		
-		AsynAbstractResult<String> e3 = AsynExecutor.start("hello world", a->{
+		AsynResult<String> e3 = StaticAsyncExecuter.startResult("hello world", a->{
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
@@ -59,7 +60,7 @@ public class AsyncTest {
 		System.err.println("wait...");
 		System.err.println("e1 complete: "+e1.getResult());
 		System.err.println("e2 complete: "+e2.getResult());
-		System.err.println("e3 complete: "+AsynExecutor.getResult(e3));
+		System.err.println("e3 complete: "+StaticAsyncExecuter.getResult(e3));
 		
 	}
 

@@ -14,4 +14,9 @@ public enum ThreadState {
 		return desc;
 	}
 	
+	@Override
+	public String toString() {
+		return desc;
+	}
+	
 }
