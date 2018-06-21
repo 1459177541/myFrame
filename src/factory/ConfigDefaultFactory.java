@@ -30,23 +30,19 @@ public class ConfigDefaultFactory extends ConfigFactory{
 			@SuppressWarnings("unchecked")
 			Constructor<T>[] constructor = (Constructor<T>[]) clazz.getConstructors();
 			if(0>=constructor.length) {
-				return clazz.newInstance();
+				o = clazz.newInstance();
+			}else {
+				Constructor<T> m = null;
+				try {
+					m = Arrays.asList(constructor).stream()
+							.filter(c->c.isAnnotationPresent(Autowired.class))
+							.min(Comparator.comparing(c -> c.getAnnotation(Autowired.class).order()))
+							.get();
+				}catch (NoSuchElementException e) {
+					m = constructor[0];
+				}
+				o =(T) m.newInstance(setParameter(m.getParameterTypes()));
 			}
-			Constructor<T> m = null;
-			try {
-				m = Arrays.asList(constructor).stream()
-						.filter(c->c.isAnnotationPresent(Autowired.class))
-						.min(Comparator.comparing(c -> c.getAnnotation(Autowired.class).order()))
-						.get();
-			}catch (NoSuchElementException e) {
-				m = constructor[0];
-			}
-			Class<?>[] cs = m.getParameterTypes();
-			Object[] parameter = new Object[cs.length];
-			for(int i = 0 ; i < cs.length ; i++) {
-				parameter[i] = get(cs[i]);
-			}
-			o =(T) m.newInstance(parameter);
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (InstantiationException e) {
@@ -59,6 +55,7 @@ public class ConfigDefaultFactory extends ConfigFactory{
 			e.printStackTrace();
 		}
 		autowiredMethod(o);
+		autowireField(o);
 		return o;
 	}
 	
@@ -69,14 +66,10 @@ public class ConfigDefaultFactory extends ConfigFactory{
 	private <T> void autowiredMethod(T obj) {
 		Arrays.asList(obj.getClass().getMethods()).stream()
 			.filter(c->c.isAnnotationPresent(Autowired.class))
+			.sorted(Comparator.comparing(c -> c.getAnnotation(Autowired.class).order()))
 			.forEach(e->{
-				Class<?>[] cs = e.getParameterTypes();
-				Object[] parameter = new Object[cs.length];
-				for (int i = 0; i < cs.length; i++) {
-					parameter[i] = get(cs[i]);
-				}
 				try {
-					e.invoke(obj, parameter);
+					e.invoke(obj, setParameter(e.getParameterTypes()));
 				} catch (IllegalAccessException e1) {
 					e1.printStackTrace();
 				} catch (IllegalArgumentException e1) {
@@ -85,6 +78,33 @@ public class ConfigDefaultFactory extends ConfigFactory{
 					e1.printStackTrace();
 				}
 		});
-		
+	}
+	
+	private <T> void autowireField(T obj) {
+		Arrays.asList(obj.getClass().getFields()).stream()
+			.filter(c->c.isAnnotationPresent(Autowired.class))
+			.sorted(Comparator.comparing(c -> c.getAnnotation(Autowired.class).order()))
+			.forEach(e->{
+				e.setAccessible(true);
+				Class<?> c = e.getClass();
+				try {
+					e.set(obj, get(c));
+				} catch (IllegalArgumentException e1) {
+					e1.printStackTrace();
+				} catch (IllegalAccessException e1) {
+					e1.printStackTrace();
+				}
+			});
+	}
+	
+	private Object[] setParameter(Class<?>[] cs) {
+		Object[] parameter = new Object[cs.length];
+		for (int i = 0; i < cs.length; i++) {
+			parameter[i] = get(cs[i]);
+		}	
+		return parameter;
 	}
 }
+
+
+
