@@ -2,7 +2,7 @@ package factory;
 
 import frame.config.FactoryConfig;
 
-public abstract class ConfigFactory implements Factory{
+public abstract class ConfigFactory implements Factory<String, Object>{
 	/**
 	 * 配置类
 	 */
@@ -40,4 +40,6 @@ public abstract class ConfigFactory implements Factory{
 		}
 		return get(c);
 	};
+	
+	public abstract <T> Object get(Class<T> clazz);
 }

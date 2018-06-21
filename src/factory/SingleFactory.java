@@ -23,7 +23,7 @@ public class SingleFactory extends ConfigFactory{
 	@SuppressWarnings("unchecked")
 	public synchronized <T> T get(Class<T> clazz) {
 		if (!clazz.isAnnotationPresent(Single.class)) {
-			return factory.get(clazz);
+			return (T) factory.get(clazz);
 		}
 		return (T) singleMap.computeIfAbsent(clazz, factory::get);
 	}

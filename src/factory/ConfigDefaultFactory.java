@@ -62,7 +62,10 @@ public class ConfigDefaultFactory extends ConfigFactory{
 		return o;
 	}
 	
-	
+	/**
+	 * setter注入
+	 * @param obj 注入的对象
+	 */
 	private <T> void autowiredMethod(T obj) {
 		Arrays.asList(obj.getClass().getMethods()).stream()
 			.filter(c->c.isAnnotationPresent(Autowired.class))
