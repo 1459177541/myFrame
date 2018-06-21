@@ -7,8 +7,8 @@ public class GetConn {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
 	static final String DB_URL = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=false";
 
-	private final static String USER_NAME = "root";
-	private final static String USER_PASSWORD = "816357492";
+	private final static String USER_NAME = "";
+	private final static String USER_PASSWORD = "";
 	
 	private static Connection connection = null;
 	
