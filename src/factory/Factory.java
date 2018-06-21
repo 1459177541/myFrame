@@ -1,10 +1,10 @@
 package factory;
 
-public interface Factory<S,R> {
+public interface Factory<K,V> {
 	/**
 	 * 通过名得到对象
 	 * @param name 名
 	 * @return 目标对象
 	 */
-	public R get(final S name);
+	public V get(final K key);
 }

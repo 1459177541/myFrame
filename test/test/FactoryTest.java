@@ -7,7 +7,7 @@ import factory.FactoryBuilder;
 import frame.config.FactoryConfig;
 
 /**
- * 测试类
+ * 测试工厂类
  * 
  * @author 杨星辰
  *

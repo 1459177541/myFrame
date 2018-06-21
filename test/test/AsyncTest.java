@@ -9,6 +9,11 @@ import util.asynchronized.AsynResult;
 import util.asynchronized.AsynResultExecutor;
 import util.asynchronized.StaticAsyncExecuter;
 
+/**
+ * 测试线程池类
+ * @author 杨星辰
+ *
+ */
 public class AsyncTest {
 	@Test
 	public void test1() throws Exception{
