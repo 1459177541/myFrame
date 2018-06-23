@@ -1,5 +1,6 @@
 package dao.db.sql;
 
+import dao.util.DBExecute;
 import dao.util.DBUtil;
 
 public class Edit<T> extends Update<T> {
@@ -33,6 +34,11 @@ public class Edit<T> extends Update<T> {
 		}
 		this.sql = sql.toString();
 		return this.sql;
+	}
+
+	@Override
+	public DBExecute getState() {
+		return DBExecute.EDIT;
 	}
 
 }

@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import dao.db.annotation.DB_column;
+import dao.util.DBExecute;
 import dao.util.DBUtil;
 
 public class CreateTable<T> extends Update<T> {
@@ -57,6 +58,10 @@ public class CreateTable<T> extends Update<T> {
 			this.sql=sql.toString();
 		}
 		return sql;
+	}
+	@Override
+	public DBExecute getState() {
+		return DBExecute.CREATE_TABLE;
 	}
 
 }

@@ -1,5 +1,6 @@
 package dao.db.sql;
 
+import dao.util.DBExecute;
 import dao.util.DBUtil;
 
 public class Add<T> extends Update<T> {
@@ -23,5 +24,10 @@ public class Add<T> extends Update<T> {
 					+ DBUtil.get(obj, DBUtil.value(obj), ",")+";";
 		}
 		return sql;
+	}
+
+	@Override
+	public DBExecute getState() {
+		return DBExecute.ADD;
 	}
 }

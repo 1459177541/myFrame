@@ -1,5 +1,6 @@
 package dao.db.sql;
 
+import dao.util.DBExecute;
 import dao.util.DBUtil;
 
 public class DelTable<T> extends Update<T> {
@@ -13,6 +14,11 @@ public class DelTable<T> extends Update<T> {
 			sql="DROP TABLE "+DBUtil.getTableName(obj)+";";
 		}
 		return sql;
+	}
+
+	@Override
+	public DBExecute getState() {
+		return DBExecute.DELETE_TABLE;
 	}
 
 }
