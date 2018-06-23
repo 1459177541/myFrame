@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dao.db.annotation.DB_column;
+import dao.util.DBUtil;
 
 public class Select<T> extends Result<T> {
 
@@ -20,15 +21,15 @@ public class Select<T> extends Result<T> {
 		}
 		if (null==sql) {
 			String string = " *";
-			if (null!=getName()) {
-				string = getName();
+			if (null!=DBUtil.get(obj, DBUtil.key(), ",")) {
+				string = DBUtil.get(obj, DBUtil.key(), ",");
 			}
 			String where = "";
 			if (null!=criteria) {
 				where = "WHERE "+criteria.toString();
 			}
 			this.sql = "SELECT"+string+" "
-					+ "FROM "+getTableName()+" "
+					+ "FROM "+DBUtil.getTableName(obj)+" "
 					+ where+";";
 		}
 		return sql;

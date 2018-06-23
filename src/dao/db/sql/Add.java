@@ -1,5 +1,7 @@
 package dao.db.sql;
 
+import dao.util.DBUtil;
+
 public class Add<T> extends Update<T> {
 
 	public Add() {
@@ -16,9 +18,9 @@ public class Add<T> extends Update<T> {
 			return null;
 		}
 		if (null==sql) {
-			sql="INSERT INTO "+getTableName()+getName()+" "
+			sql="INSERT INTO "+DBUtil.getTableName(obj)+DBUtil.get(obj, DBUtil.key(), ",")+" "
 					+ "VALUES"
-					+ getValue()+";";
+					+ DBUtil.get(obj, DBUtil.value(obj), ",")+";";
 		}
 		return sql;
 	}

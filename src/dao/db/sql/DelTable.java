@@ -1,5 +1,7 @@
 package dao.db.sql;
 
+import dao.util.DBUtil;
+
 public class DelTable<T> extends Update<T> {
 
 	@Override
@@ -8,7 +10,7 @@ public class DelTable<T> extends Update<T> {
 			return null;
 		}
 		if (null==sql) {
-			sql="DROP TABLE "+getTableName()+";";
+			sql="DROP TABLE "+DBUtil.getTableName(obj)+";";
 		}
 		return sql;
 	}

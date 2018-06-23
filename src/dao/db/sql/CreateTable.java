@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import dao.db.annotation.DB_column;
+import dao.util.DBUtil;
 
 public class CreateTable<T> extends Update<T> {
 
@@ -18,7 +19,7 @@ public class CreateTable<T> extends Update<T> {
 		}
 		if (null==this.sql) {
 			StringBuffer sql = new StringBuffer("CREATE TABLE ");
-			sql.append(getTableName()+"(");
+			sql.append(DBUtil.getTableName(obj)+"(");
 			Class<?> clazz = obj.getClass();
 			isAdd = false;
 			Stream<Field> stream = Arrays.asList(clazz.getDeclaredFields()).stream();
