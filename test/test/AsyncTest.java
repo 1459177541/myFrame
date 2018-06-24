@@ -1,13 +1,14 @@
 package test;
 
-import java.util.Random;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import util.asynchronized.AsynAbstractExecutor;
 import util.asynchronized.AsynResult;
 import util.asynchronized.AsynResultExecutor;
 import util.asynchronized.StaticAsyncExecuter;
+
+import java.util.Random;
+
+// import org.junit.Test;
 
 /**
  * 测试线程池类
@@ -17,7 +18,7 @@ import util.asynchronized.StaticAsyncExecuter;
 public class AsyncTest {
 	@Test
 	public void test1() throws Exception{
-		AsynResultExecutor<Integer> e1 = new AsynResultExecutor<>(new AsynResult<Integer>() {
+		AsynResultExecutor<Integer> e1 = new AsynResultExecutor<>(new AsynResult<>() {
 			@Override
 			protected Integer execute() {
 				int cont = 0;
@@ -38,7 +39,7 @@ public class AsyncTest {
 		});
 		e1.start();
 		
-		AsynResultExecutor<Double> e2 = new AsynResultExecutor<>(new AsynResult<Double>() {
+		AsynResultExecutor<Double> e2 = new AsynResultExecutor<>(new AsynResult<>() {
 			@Override
 			protected Double execute() {
 				double cont = 1;
@@ -89,8 +90,17 @@ public class AsyncTest {
 			});
 		}
 		
-		Thread.sleep(600);
-		System.err.println("++++++执行:"+AsynAbstractExecutor.getExecuteSize()+" 等待:"+AsynAbstractExecutor.getWaitSize()+" 完成:"+AsynAbstractExecutor.getCompleteSize()+"++++++");
+
+        StaticAsyncExecuter.start(()->{
+            while (true) {
+                try {
+                    Thread.sleep(20);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.err.println("++++++执行:" + AsynAbstractExecutor.getExecuteSize() + " 等待:" + AsynAbstractExecutor.getWaitSize() + " 完成:" + AsynAbstractExecutor.getCompleteSize() + "++++++");
+            }
+        });
 		System.err.println("e1 result: "+e1.getResult());
 		System.err.println("e2 result: "+e2.getResult());
 		System.err.println("e3 result: "+StaticAsyncExecuter.getResult(e3));
