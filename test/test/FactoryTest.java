@@ -1,10 +1,10 @@
 package test;
 
-import java.util.Arrays;
-
 import factory.ConfigFactory;
 import factory.FactoryBuilder;
 import frame.config.FactoryConfig;
+
+import java.util.Arrays;
 
 /**
  * 测试工厂类
@@ -30,7 +30,7 @@ public class FactoryTest implements TestImp, TestImp2 {
 		await();
 		((TestImp2) t).print("GOODBYE", " ", "WORLD");
 		await();
-		((TestImp2) t).print(new String[] {});
+		((TestImp2) t).print();
 		await();
 		((TestImp) t).print(5, 7);
 		await();
