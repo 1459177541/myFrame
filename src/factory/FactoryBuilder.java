@@ -3,6 +3,7 @@ package factory;
 import java.util.Objects;
 
 import frame.config.FactoryConfig;
+import frame.proxy.asyncProxyHandler;
 
 /**
  * 工厂类的建造方法，默认开启代理与单例
@@ -15,6 +16,7 @@ public class FactoryBuilder{
 	private ConfigFactory proxyActionFactory;
 	private boolean isProxy;
 	private boolean isSingle;
+	private boolean isAsync;
 	
 	public FactoryBuilder() {
 		factoryConfig = null;
@@ -90,7 +92,14 @@ public class FactoryBuilder{
 	}
 
 	
-	
+
+	public FactoryBuilder setAsync(boolean isAsync){
+		this.isAsync = isAsync;
+		return this;
+	}
+
+
+
 	/**
 	 * 得到符合条件的工厂类
 	 * @return
@@ -107,6 +116,9 @@ public class FactoryBuilder{
 				((ProxyFactory)f).setAction(new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有 配置类")));
 			}else {
 				((ProxyFactory)f).setAction(proxyActionFactory);
+			}
+			if (isAsync){
+				((ProxyFactory)f).setParent(new asyncProxyHandler());
 			}
 		}
 		return f;

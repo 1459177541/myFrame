@@ -58,7 +58,7 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 		}
 		if (!isExecute) {
 			return ((CheckAction)factory.get(method.getAnnotation(Check.class).UnCheckMethodClassName()))
-					.unCheckAction(unCheckMethodList.toArray(new Method[unCheckMethodList.size()]), target, args);
+					.unCheckAction(unCheckMethodList.toArray(new Method[0]), target, args);
 		}
 		if(method.isAnnotationPresent(Before.class)) {
 			new ArrayList<String>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))
@@ -66,7 +66,7 @@ public class ProxyHandlerByFactory<T> extends ProxyHandler<T> {
 		}
 		ret = null;
 		try {
-			ret = method.invoke(target, args);
+			ret = myInvoke(method, args);
 		}catch (Throwable ex) {
 			if(method.isAnnotationPresent(ThrowsException.class)) {
 				new ArrayList<String>(Arrays.asList(method.getAnnotation(ThrowsException.class).methodClassName()))

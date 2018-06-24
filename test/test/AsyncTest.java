@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import util.asynchronized.AsynAbstractExecutor;
 import util.asynchronized.AsynResult;
 import util.asynchronized.AsynResultExecutor;
-import util.asynchronized.StaticAsyncExecuter;
+import util.asynchronized.AsyncStaticExecuter;
 
 import java.util.Random;
 
@@ -60,7 +60,7 @@ public class AsyncTest {
 		});
 		e2.start();
 		
-		AsynResult<String> e3 = StaticAsyncExecuter.startResult("hello world", a->{
+		AsynResult<String> e3 = AsyncStaticExecuter.startResult("hello world", a->{
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
@@ -70,7 +70,7 @@ public class AsyncTest {
 			return a.toUpperCase();
 		});
 		
-		StaticAsyncExecuter.start(()->{
+		AsyncStaticExecuter.start(()->{
 			try {
 				Thread.sleep(500);
 			}catch (Exception ex) {
@@ -80,7 +80,7 @@ public class AsyncTest {
 		});
 		
 		for(int i = 1; i<=30; i++) {
-			StaticAsyncExecuter.start(i, e->{
+			AsyncStaticExecuter.start(i, e->{
 				try {
 					Thread.sleep(new Random().nextInt(500)+200);
 				} catch (InterruptedException e4) {
@@ -91,7 +91,7 @@ public class AsyncTest {
 		}
 		
 
-        StaticAsyncExecuter.start(()->{
+        AsyncStaticExecuter.start(()->{
             while (true) {
                 try {
                     Thread.sleep(20);
@@ -103,7 +103,7 @@ public class AsyncTest {
         });
 		System.err.println("e1 result: "+e1.getResult());
 		System.err.println("e2 result: "+e2.getResult());
-		System.err.println("e3 result: "+StaticAsyncExecuter.getResult(e3));
+		System.err.println("e3 result: "+AsyncStaticExecuter.getResult(e3));
 		
 	}
 

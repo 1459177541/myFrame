@@ -40,12 +40,12 @@ public class AsynResultExecutor<T> extends AsynAbstractExecutor{
 	}
 
 	public T getResult() throws Exception{
-		return StaticAsyncExecuter.getResult(event);
+		return AsyncStaticExecuter.getResult(event);
 	}
 
 	@Override
 	public ThreadState getState() {
-		return StaticAsyncExecuter.getState(event);
+		return AsyncStaticExecuter.getState(event);
 	}
 
 
