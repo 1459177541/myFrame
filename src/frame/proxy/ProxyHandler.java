@@ -3,6 +3,7 @@ package frame.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 public abstract class ProxyHandler<T> implements InvocationHandler{
 	protected T target;
@@ -17,6 +18,7 @@ public abstract class ProxyHandler<T> implements InvocationHandler{
 	}
 
 	protected Object myInvoke(Method method, Object[] args){
+		Objects.requireNonNull(target);
 		if (null==parent){
 			try {
 				return method.invoke(target, args);

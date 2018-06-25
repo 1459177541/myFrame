@@ -1,7 +1,7 @@
 package test;
 
 import factory.ConfigFactory;
-import factory.FactoryBuilder;
+import build.FactoryBuilder;
 import frame.config.FactoryConfig;
 
 import java.util.Arrays;

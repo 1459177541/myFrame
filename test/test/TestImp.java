@@ -1,10 +1,9 @@
 package test;
 
-import frame.proxy.ProxyImp;
 import frame.proxy.annotation.AfterReturn;
 import frame.proxy.annotation.Before;
 
-public interface TestImp extends ProxyImp {
+public interface TestImp {
 	@Before(methodClassName = { "aopTest" })
 	@AfterReturn(methodClassName = { "aopTest" })
 	public void print();

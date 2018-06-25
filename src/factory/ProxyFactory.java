@@ -1,9 +1,10 @@
 package factory;
 
 import java.lang.reflect.Proxy;
+import java.util.Objects;
 
+import build.ProxyHandlerBuild;
 import frame.proxy.ProxyHandler;
-import frame.proxy.ProxyHandlerByFactory;
 
 /**
  * 代理工厂类，产生代理对象
@@ -12,10 +13,9 @@ import frame.proxy.ProxyHandlerByFactory;
  */
 public class ProxyFactory extends ConfigFactory{
 	
-	private ConfigFactory handlerFactory;
 	private ConfigFactory factory;
-	private ProxyHandler parent = null;
-	
+	private ProxyHandlerBuild build;
+
 	public ProxyFactory(ConfigFactory factory) {
 		this(factory,factory);
 	}
@@ -23,25 +23,20 @@ public class ProxyFactory extends ConfigFactory{
 	public ProxyFactory(ConfigFactory factory, ConfigFactory handlerFactory) {
 		super(factory.getFactoryConfig());
 		this.factory = factory;
-		this.handlerFactory = handlerFactory;
+		build = new ProxyHandlerBuild().setConfigFactory(handlerFactory);
 	}
 
-	public void setParent(ProxyHandler parent){
-		this.parent = parent;
+	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
+		this.build = handlerBuild;
+		return this;
 	}
 
-	public void setAction(ConfigFactory factory) {
-		this.handlerFactory = factory;
-	}
-	
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> Object get(Class<T> clazz) {
 		T o = (T) factory.get(clazz);
-		ProxyHandlerByFactory<T> handler = new ProxyHandlerByFactory<>();
-		handler.setParent(parent);
+		ProxyHandler<T> handler = (ProxyHandler<T>) Objects.requireNonNull(build).get();
 		handler.setTarget(o);
-		handler.setFactory(handlerFactory);
 		return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), handler);
 	}
 

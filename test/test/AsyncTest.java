@@ -1,5 +1,6 @@
 package test;
 
+//import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Test;
 import util.asynchronized.AsynAbstractExecutor;
 import util.asynchronized.AsynResult;
@@ -100,11 +101,12 @@ public class AsyncTest {
                 }
                 System.err.println("++++++执行:" + AsynAbstractExecutor.getExecuteSize() + " 等待:" + AsynAbstractExecutor.getWaitSize() + " 完成:" + AsynAbstractExecutor.getCompleteSize() + "++++++");
             }
-        });
+		});
 		System.err.println("e1 result: "+e1.getResult());
 		System.err.println("e2 result: "+e2.getResult());
 		System.err.println("e3 result: "+AsyncStaticExecuter.getResult(e3));
-		
+		Thread.sleep(3000);
+
 	}
 
 }
