@@ -2,8 +2,8 @@ package dao.db.sql;
 
 import java.sql.Connection;
 import java.sql.Statement;
-import dao.util.Criteria;
-import dao.util.DBExecute;
+import dao.db.util.Criteria;
+import dao.db.util.DBExecute;
 
 public abstract class Result<T> {
 	

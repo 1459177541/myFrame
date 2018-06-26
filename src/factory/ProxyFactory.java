@@ -19,7 +19,11 @@ public class ProxyFactory extends ConfigFactory{
 	public ProxyFactory(ConfigFactory factory) {
 		this(factory,factory);
 	}
-	
+
+	/**
+	 * @param factory bean工厂
+	 * @param handlerFactory AOP工厂
+	 */
 	public ProxyFactory(ConfigFactory factory, ConfigFactory handlerFactory) {
 		super(factory.getFactoryConfig());
 		this.factory = factory;
@@ -29,6 +33,10 @@ public class ProxyFactory extends ConfigFactory{
 	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
 		this.build = handlerBuild;
 		return this;
+	}
+
+	public ProxyHandlerBuild getHandlerBuild() {
+		return build;
 	}
 
 	@Override

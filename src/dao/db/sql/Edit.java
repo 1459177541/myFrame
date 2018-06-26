@@ -1,7 +1,7 @@
 package dao.db.sql;
 
-import dao.util.DBExecute;
-import dao.util.DBUtil;
+import dao.db.util.DBExecute;
+import dao.db.util.DBUtil;
 
 public class Edit<T> extends Update<T> {
 

@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dao.db.annotation.DB_column;
-import dao.util.DBExecute;
-import dao.util.DBUtil;
+import dao.db.util.DBExecute;
+import dao.db.util.DBUtil;
 
 public class Select<T> extends Result<T> {
 

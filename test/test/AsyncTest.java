@@ -1,6 +1,5 @@
 package test;
 
-//import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Test;
 import util.asynchronized.AsynAbstractExecutor;
 import util.asynchronized.AsynResult;
@@ -8,8 +7,6 @@ import util.asynchronized.AsynResultExecutor;
 import util.asynchronized.AsyncStaticExecuter;
 
 import java.util.Random;
-
-// import org.junit.Test;
 
 /**
  * 测试线程池类

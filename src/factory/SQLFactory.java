@@ -4,8 +4,8 @@ import java.util.Objects;
 
 import dao.db.sql.Edit;
 import dao.db.sql.Result;
-import dao.util.Criteria;
-import dao.util.DBExecute;
+import dao.db.util.Criteria;
+import dao.db.util.DBExecute;
 
 public class SQLFactory<T> implements Factory<DBExecute, Result<T>> {
 

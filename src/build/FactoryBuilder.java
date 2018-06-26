@@ -73,7 +73,7 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 	
 	/**
 	 * 设置是否需要代理
-	 * @param isProxy 
+	 * @param isProxy 是否需要代理
 	 * @return 自身,以便链式操作
 	 */
 	public FactoryBuilder setProxy(boolean isProxy) {
@@ -81,11 +81,11 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 		return this;
 	}
 
-	
-	
+
+
 	/**
 	 * 设置是否是需要检查单例
-	 * @param isSingle
+	 * @param isSingle 是否检查单例
 	 * @return 自身,以便链式操作
 	 */
 	public FactoryBuilder setSingle(boolean isSingle) {
@@ -96,7 +96,7 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 
 	/**
 	 * 设置是否使用异步，默认开启
-	 * @param isAsync
+	 * @param isAsync 是否检查异步
 	 * @return 自身,以便链式操作
 	 */
 	public FactoryBuilder setAsync(boolean isAsync){
@@ -109,12 +109,11 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 
 	/**
 	 * 得到符合条件的工厂类
-	 * @return
+	 * @return 工厂类
 	 */
 	@Override
 	public ConfigFactory get() {
-		ConfigFactory f = null;
-		f = new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有配置类"));
+		ConfigFactory f = new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有配置类"));
 		if (isSingle) {
 			f = new SingleFactory(f);
 		}

@@ -2,7 +2,7 @@ package dao.db.sql;
 
 import java.sql.SQLException;
 
-import dao.util.GetConn;
+import dao.db.util.GetConn;
 
 
 public abstract class Update<T> extends Result<T>{

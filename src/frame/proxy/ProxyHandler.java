@@ -17,20 +17,13 @@ public abstract class ProxyHandler<T> implements InvocationHandler{
 		this.parent = parent;
 	}
 
-	protected Object myInvoke(Method method, Object[] args){
+	protected Object myInvoke(Method method, Object[] args) throws Throwable{
 		Objects.requireNonNull(target);
 		if (null==parent){
-			try {
-				return method.invoke(target, args);
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			}
+			return method.invoke(target, args);
 		}else{
 			return parent.myInvoke(method, args);
 		}
-		return null;
 	}
 
 }

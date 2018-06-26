@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import dao.db.annotation.DB_column;
-import dao.util.DBExecute;
-import dao.util.DBUtil;
+import dao.db.util.DBExecute;
+import dao.db.util.DBUtil;
 
 public class CreateTable<T> extends Update<T> {
 
