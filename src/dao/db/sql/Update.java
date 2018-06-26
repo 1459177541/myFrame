@@ -18,21 +18,8 @@ public abstract class Update<T> extends Result<T>{
 	
 	@Override
 	public boolean execute() {
-		if (null==connection||null==obj) {
+		if (!check()){
 			return false;
-		}
-		if (null==sql) {
-			if (null==(sql=getSql())) {
-				return false;
-			}
-		}
-		if (null==statement) {
-			try {
-				statement = connection.createStatement();
-			} catch (SQLException e) {
-				e.printStackTrace();
-				return false;
-			}
 		}
 		try {
 			statement.executeUpdate(sql);
