@@ -48,7 +48,12 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     @Override
     public BeanBuffer<?> get(Class<?> key) {
-        BeanBuffer beanBuffer = data.get(key);
+        BeanBuffer beanBuffer;
+        if (null!=parent){
+            beanBuffer = parent.get(key);
+        }else {
+            beanBuffer = data.get(key);
+        }
         if (!contains(key) || BeanBufferState.INIT == beanBuffer.getState()){
             load(key);
         }
@@ -63,8 +68,28 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
     }
 
     public boolean contains(Class clazz){
+        if (null!= parent && parent.contains(clazz)){
+            return true;
+        }
         return data.containsKey(clazz);
     }
 
+    public void save(Class<?> clazz){
+        if (!contains(clazz)){
+            return;
+        }
+        if (BeanBufferState.COMPLETE == data.get(clazz).getState()){
+            data.get(clazz).save();
+        }
+    }
+
+    public <T> void update(Class<T> clazz, ArrayList<T> newList){
+        if (!contains(clazz)){
+            BeanBuffer bf = new BeanBuffer(clazz);
+            bf.update(newList);
+            data.put(clazz, bf);
+        }
+        parent.update(clazz,newList);
+    }
 
 }

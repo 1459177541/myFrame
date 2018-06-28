@@ -7,6 +7,7 @@ import dao.systemFile.SFUtil;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class BeanBuffer<T> {
@@ -75,7 +76,7 @@ public class BeanBuffer<T> {
         if (BeanBufferState.INIT == state){
             load();
         }
-        if(BeanBufferState.LOADING == state){
+        if(BeanBufferState.LOADING == state || BeanBufferState.EDITTING == state){
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -117,6 +118,13 @@ public class BeanBuffer<T> {
 
     private void saveByDB() {
 
+    }
+
+    public synchronized void update(List<T> list){
+        state = BeanBufferState.EDITTING;
+        data = new ArrayList<>(list);
+        state = BeanBufferState.COMPLETE;
+        notifyAll();
     }
 
     public Stream<T> stream(){
