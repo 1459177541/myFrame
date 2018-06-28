@@ -17,7 +17,14 @@ public class AsyncProxyHandler<T> extends DefaultProxyHandler<T>{
         if (!method.isAnnotationPresent(Async.class)){
             return myInvoke(method,args);
         }
-        return AsyncStaticExecuter.startResult(()-> myInvoke(method, args));
+        return AsyncStaticExecuter.startResult(()-> {
+            try {
+                return myInvoke(method, args);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+            return null;
+        });
     }
 
 }

@@ -1,0 +1,70 @@
+package factory;
+
+import dao.util.BeanBuffer;
+import dao.util.BeanBufferState;
+import util.asynchronized.AsyncStaticExecuter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
+
+    private HashMap<Class<?>,BeanBuffer<?>> data;
+
+    public BeanBufferFactory parent;
+
+    public ArrayList<BeanBufferFactory> child;
+
+    public BeanBufferFactory() {
+        data = new HashMap<>();
+        child = new ArrayList<>();
+    }
+
+    public void setParent(BeanBufferFactory parent) {
+        this.parent = parent;
+    }
+
+    public void addChild(BeanBufferFactory child){
+        this.child.add(child);
+    }
+
+    public synchronized <T> void load(Class<T> clazz){
+        if (data.containsKey(clazz)){
+            return;
+        }
+        if (null!=parent && parent.contains(clazz)){
+            data.put(clazz,data.get(clazz));
+            return;
+        }
+        if (BeanBufferState.LOADING == data.get(clazz).getState()){
+            return;
+        }
+        BeanBuffer<T> beanBuffer= new BeanBuffer<>(clazz);
+        data.put(clazz,beanBuffer);
+        AsyncStaticExecuter.start(beanBuffer, bf->{
+            bf.load();
+        });
+    }
+
+    @Override
+    public BeanBuffer<?> get(Class<?> key) {
+        BeanBuffer beanBuffer = data.get(key);
+        if (!contains(key) || BeanBufferState.INIT == beanBuffer.getState()){
+            load(key);
+        }
+        if (BeanBufferState.LOADING == beanBuffer.getState()){
+            try {
+                beanBuffer.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return beanBuffer;
+    }
+
+    public boolean contains(Class clazz){
+        return data.containsKey(clazz);
+    }
+
+
+}
