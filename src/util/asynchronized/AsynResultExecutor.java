@@ -8,7 +8,7 @@ import java.util.Objects;
  *
  * @param <T> 返回值
  */
-public class AsynResultExecutor<T> extends AsynAbstractExecutor{
+public class AsynResultExecutor<T> extends AsyncAbstractExecutor{
 
 	private AsynResult<T> event;
 

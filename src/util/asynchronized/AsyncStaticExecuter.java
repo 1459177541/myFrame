@@ -10,7 +10,7 @@ import java.util.function.Supplier;
  * @author 杨星辰
  *
  */
-public class AsyncStaticExecuter extends AsynAbstractExecutor{
+public class AsyncStaticExecuter extends AsyncAbstractExecutor{
 
 	private AsyncStaticExecuter() {
 	}
