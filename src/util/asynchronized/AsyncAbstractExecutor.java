@@ -1,62 +1,20 @@
 package util.asynchronized;
 
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AsyncAbstractExecutor {
 	protected static ThreadPoolExecutor threadPool;
-	protected static AsyncQueue workQueue;
+	protected static PriorityBlockingQueue<Runnable> workQueue;
 
 	static {
-		workQueue = new AsyncQueue();
+		workQueue = new PriorityBlockingQueue<>();
 		threadPool = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors()*2
 				, Runtime.getRuntime().availableProcessors()*8
 				, 8
 				, TimeUnit.HOURS
 				, workQueue);
-	}
-
-	private static class AsyncQueue extends LinkedBlockingQueue<Runnable>{
-		@Override
-		public int size() {
-			return AsyncLevel.IMMEDIATELY.get().size()
-					+AsyncLevel.URGENT.get().size()
-					+AsyncLevel.NORMAL.get().size()
-					+AsyncLevel.WAITABLE.get().size();
-		}
-
-		@Override
-		public void put(Runnable runnable) throws InterruptedException {
-			AsyncLevel.NORMAL.get().put(runnable);
-		}
-
-		@Override
-		public Runnable peek() {
-			if (AsyncLevel.IMMEDIATELY.get().size()>0){
-				return AsyncLevel.IMMEDIATELY.get().peek();
-			}
-			if(AsyncLevel.URGENT.get().size()>0){
-				return AsyncLevel.URGENT.get().peek();
-			}
-			if(AsyncLevel.NORMAL.get().size()>0){
-				return AsyncLevel.NORMAL.get().peek();
-			}
-			if(AsyncLevel.WAITABLE.get().size()>0){
-				return AsyncLevel.WAITABLE.get().peek();
-			}
-			return null;
-		}
-
-		public void put(AsyncLevel level, Runnable runnable){
-			try {
-				level.get().put(runnable);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-
-
 	}
 
 	protected AsyncLevel level = AsyncLevel.NORMAL;
@@ -69,7 +27,7 @@ public abstract class AsyncAbstractExecutor {
 
 	public abstract ThreadState getState();
 
-	protected static void execute(AsyncLevel level, AsynAbstractEvent event){
+	protected static void execute(AsyncLevel level, AsyncAbstractEvent event){
 	    try {
             if (AsyncLevel.IMMEDIATELY.equals(level) && getWaitSize() > 0) {
                 new Thread(event).start();
@@ -81,14 +39,6 @@ public abstract class AsyncAbstractExecutor {
         }
 	}
 
-	/**
-	 * 得到正在执行的线程数目
-	 * @return
-	 */
-	public static int getExecuteSize() {
-		return threadPool.getPoolSize();
-	}
-	
 	/**
 	 * 得到等待执行的线程数目
 	 * @return

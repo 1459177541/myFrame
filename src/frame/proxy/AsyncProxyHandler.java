@@ -3,8 +3,7 @@ package frame.proxy;
 import java.lang.reflect.Method;
 
 import frame.proxy.annotation.Async;
-import util.asynchronized.AsynResult;
-import util.asynchronized.AsyncStaticExecuter;
+import util.asynchronized.AsyncStaticExecute;
 
 public class AsyncProxyHandler<T> extends DefaultProxyHandler<T>{
 
@@ -17,7 +16,7 @@ public class AsyncProxyHandler<T> extends DefaultProxyHandler<T>{
         if (!method.isAnnotationPresent(Async.class)){
             return myInvoke(method,args);
         }
-        return AsyncStaticExecuter.startResult(()-> {
+        return AsyncStaticExecute.startResult(()-> {
             try {
                 return myInvoke(method, args);
             } catch (Throwable throwable) {

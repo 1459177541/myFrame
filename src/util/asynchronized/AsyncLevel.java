@@ -5,18 +5,18 @@ import java.util.function.Supplier;
 
 public enum AsyncLevel {
 
-    IMMEDIATELY(LinkedBlockingQueue::new),
-    URGENT(LinkedBlockingQueue::new),
-    NORMAL(LinkedBlockingQueue::new),
-    WAITABLE(LinkedBlockingQueue::new);
+    IMMEDIATELY(3),
+    URGENT(2),
+    NORMAL(1),
+    WAITABLE(0);
 
-    private LinkedBlockingQueue<Runnable> queue;
-    private AsyncLevel(Supplier<LinkedBlockingQueue> queue){
-        this.queue = queue.get();
+    private int level;
+    private AsyncLevel(int level){
+        this.level = level;
     }
 
-    public LinkedBlockingQueue<Runnable> get(){
-        return queue;
+    public int getLevel(){
+        return level;
     }
 
 }

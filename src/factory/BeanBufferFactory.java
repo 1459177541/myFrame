@@ -2,7 +2,7 @@ package factory;
 
 import dao.util.BeanBuffer;
 import dao.util.BeanBufferState;
-import util.asynchronized.AsyncStaticExecuter;
+import util.asynchronized.AsyncStaticExecute;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
         }
         BeanBuffer<T> beanBuffer= new BeanBuffer<>(clazz);
         data.put(clazz,beanBuffer);
-        AsyncStaticExecuter.start(beanBuffer, bf-> bf.load());
+        AsyncStaticExecute.start(beanBuffer, bf-> bf.load());
     }
 
     @Override

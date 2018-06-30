@@ -10,10 +10,10 @@ import java.util.Objects;
  */
 public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 
-	private AsynResult<T> event;
+	private AsyncResult<T> event;
 
 
-	public AsyncResultExecutor(AsynResult<T> event) {
+	public AsyncResultExecutor(AsyncResult<T> event) {
 		this.event = event;
 	}
 
@@ -26,17 +26,17 @@ public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 		start(event);
 	}
 	
-	public void start(AsynResult<T> event) {
+	public void start(AsyncResult<T> event) {
 		execute(level,Objects.requireNonNull(event));
 	}
 
 	public T getResult() throws Exception{
-		return AsyncStaticExecuter.getResult(event);
+		return AsyncStaticExecute.getResult(event);
 	}
 
 	@Override
 	public ThreadState getState() {
-		return AsyncStaticExecuter.getState(event);
+		return AsyncStaticExecute.getState(event);
 	}
 
 
