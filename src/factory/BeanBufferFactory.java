@@ -6,14 +6,16 @@ import util.asynchronized.AsyncStaticExecuter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     private HashMap<Class<?>,BeanBuffer<?>> data;
 
-    public BeanBufferFactory parent;
+    private BeanBufferFactory parent;
 
-    public ArrayList<BeanBufferFactory> child;
+    private ArrayList<BeanBufferFactory> child;
 
     public BeanBufferFactory() {
         data = new HashMap<>();
@@ -41,9 +43,7 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
         }
         BeanBuffer<T> beanBuffer= new BeanBuffer<>(clazz);
         data.put(clazz,beanBuffer);
-        AsyncStaticExecuter.start(beanBuffer, bf->{
-            bf.load();
-        });
+        AsyncStaticExecuter.start(beanBuffer, bf-> bf.load());
     }
 
     @Override
@@ -85,11 +85,16 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     public <T> void update(Class<T> clazz, ArrayList<T> newList){
         if (!contains(clazz)){
-            BeanBuffer bf = new BeanBuffer(clazz);
+            BeanBuffer<T> bf = new BeanBuffer<>(clazz);
             bf.update(newList);
             data.put(clazz, bf);
         }
         parent.update(clazz,newList);
+    }
+
+    public void synchronization(Class<?> clazz){
+        List<BeanBuffer> beanBufferList = child.stream().map(e->e.get(clazz)).collect(Collectors.toList());
+        get(clazz).synchronization(beanBufferList);
     }
 
 }

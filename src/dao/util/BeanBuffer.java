@@ -4,10 +4,13 @@ import dao.db.annotation.DB_table;
 import dao.db.sql.Select;
 import dao.sf.annotation.SystemFile;
 import dao.systemFile.SFUtil;
+import util.asynchronized.AsyncStaticExecuter;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Stream;
 
 public class BeanBuffer<T> {
@@ -18,10 +21,13 @@ public class BeanBuffer<T> {
 
     private Class<T> clazz;
 
+    private ReadWriteLock lock;
+
     public static final int METHOD_DB = 0;
     public static final int METHOD_SF = 1;
 
     public BeanBuffer(Class<T> clazz){
+        lock = new ReentrantReadWriteLock();
         this.clazz = clazz;
     }
 
@@ -29,15 +35,29 @@ public class BeanBuffer<T> {
         return state;
     }
 
-    public synchronized void load(){
-        if(clazz.isAnnotationPresent(DB_table.class)){
-            load(METHOD_DB);
-        }else if (clazz.isAnnotationPresent(SystemFile.class)){
-            load(METHOD_SF);
+    public void load(){
+        lock.writeLock().lock();
+        try{
+            if(clazz.isAnnotationPresent(DB_table.class)){
+                doLoad(METHOD_DB);
+            }else if (clazz.isAnnotationPresent(SystemFile.class)){
+                doLoad(METHOD_SF);
+            }
+        }finally {
+            lock.writeLock().unlock();
         }
     }
 
-    public synchronized void load(int method){
+    public void load(int method){
+        lock.writeLock().lock();
+        try{
+            doLoad(method);
+        }finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    private void doLoad(int method){
         state = BeanBufferState.LOADING;
         if (METHOD_DB == method){
             loadByDB();
@@ -54,9 +74,7 @@ public class BeanBuffer<T> {
         }
         try {
             data = ((Select<T>)new Select<>().setObj(clazz.newInstance())).getResult();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }
@@ -76,25 +94,39 @@ public class BeanBuffer<T> {
         if (BeanBufferState.INIT == state){
             load();
         }
-        if(BeanBufferState.LOADING == state || BeanBufferState.EDITTING == state){
+        if(BeanBufferState.LOADING == state || BeanBufferState.EDITING == state){
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        return data;
+        return new ArrayList<>(data);
     }
 
-    public synchronized void save(){
-        if(clazz.isAnnotationPresent(DB_table.class)){
-            load(METHOD_DB);
-        }else if (clazz.isAnnotationPresent(SystemFile.class)){
-            load(METHOD_SF);
+    public void save(){
+        lock.readLock().lock();
+        try {
+            if(clazz.isAnnotationPresent(DB_table.class)){
+                doSave(METHOD_DB);
+            }else if (clazz.isAnnotationPresent(SystemFile.class)){
+                doSave(METHOD_SF);
+            }
+        }finally {
+            lock.readLock().unlock();
         }
     }
 
-    public synchronized void save(int method){
+    public void save(int method){
+        lock.readLock().lock();
+        try{
+            doSave(method);
+        }finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    private void doSave(int method){
         state = BeanBufferState.SAVE;
         if (METHOD_DB == method){
             saveByDB();
@@ -120,15 +152,20 @@ public class BeanBuffer<T> {
 
     }
 
-    public synchronized void update(List<T> list){
-        state = BeanBufferState.EDITTING;
-        data = new ArrayList<>(list);
-        state = BeanBufferState.COMPLETE;
-        notifyAll();
+    public void update(List<T> list){
+        lock.writeLock().lock();
+        try {
+            state = BeanBufferState.EDITING;
+            data = new ArrayList<>(list);
+            state = BeanBufferState.COMPLETE;
+            notifyAll();
+        }finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public Stream<T> stream(){
-        return data.stream();
+        return new ArrayList<>(data).stream();
     }
 
     /**
@@ -143,6 +180,20 @@ public class BeanBuffer<T> {
 
     public boolean isCompleted() {
         return BeanBufferState.COMPLETE == state;
+    }
+
+    public void synchronization(List<BeanBuffer> list){
+        state = BeanBufferState.SYNCHRONIZATION;
+        ArrayList<T> tArrayList = new ArrayList<>(data);
+        list.forEach(e -> AsyncStaticExecuter.start(() -> {
+            lock.readLock().lock();
+            try {
+                e.update(tArrayList);
+            }finally {
+                lock.readLock().unlock();
+            }
+        }));
+        state = BeanBufferState.COMPLETE;
     }
 
 }
