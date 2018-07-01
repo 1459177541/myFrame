@@ -8,12 +8,16 @@ import util.asynchronized.AsyncExecuteManage;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class BeanBuffer<T> {
+public class BeanBuffer<T> implements Collection<T> {
 
     private ArrayList<T> data;
 
@@ -90,6 +94,12 @@ public class BeanBuffer<T> {
         }
     }
 
+    /**
+     * 得到数据
+     * @Deprecated 存在安全隐患
+     * @return 包含数据的列表
+     */
+    @Deprecated
     public ArrayList<T> get(){
         if (BeanBufferState.INIT == state){
             load();
@@ -153,17 +163,89 @@ public class BeanBuffer<T> {
     }
 
     public void update(List<T> list){
-        lock.writeLock().lock();
-        try {
-            state = BeanBufferState.EDITING;
+        editSomething(list, l->{
             data = new ArrayList<>(list);
-            state = BeanBufferState.COMPLETE;
-            notifyAll();
-        }finally {
-            lock.writeLock().unlock();
-        }
+        });
     }
 
+    @Override
+    public int size() {
+        return data.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return data.isEmpty();
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return data.contains(o);
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return data.iterator();
+    }
+
+    @Override
+    public Object[] toArray() {
+        return data.toArray();
+    }
+
+    @Override
+    public <T1> T1[] toArray(T1[] a) {
+        return data.toArray(a);
+    }
+
+    @Override
+    public boolean add(T t) {
+        return editSomething(t, a->{
+            return data.add(a);
+        });
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return editSomething(o, a->{
+            return data.remove(a);
+        });
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+        return editSomething(c, a->{
+            return data.containsAll(a);
+        });
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends T> c) {
+        return editSomething(c, a->{
+            return data.addAll(a);
+        });
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+        return editSomething(c, a->{
+            return data.retainAll(a);
+        });
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return editSomething(c, a->{
+            return data.retainAll(a);
+        });
+    }
+
+    @Override
+    public void clear() {
+        editSomething(data, (Consumer<ArrayList<T>>) ArrayList::clear);
+    }
+
+    @Override
     public Stream<T> stream(){
         return new ArrayList<>(data).stream();
     }
@@ -194,6 +276,36 @@ public class BeanBuffer<T> {
             }
         }));
         state = BeanBufferState.COMPLETE;
+    }
+
+    private <T1, R> R editSomething(T1 arg, Function<T1, R> function){
+        if (BeanBufferState.INIT == state){
+            load();
+        }
+        state = BeanBufferState.EDITING;
+        R r;
+        lock.writeLock().lock();
+        try {
+            r = function.apply(arg);
+        }finally {
+            lock.writeLock().unlock();
+            state = BeanBufferState.COMPLETE;
+        }
+        return r;
+    }
+
+    private <T1> void editSomething(T1 arg, Consumer<T1> consumer){
+        if (BeanBufferState.INIT == state){
+            load();
+        }
+        state = BeanBufferState.EDITING;
+        lock.writeLock().lock();
+        try {
+            consumer.accept(arg);
+        }finally {
+            lock.writeLock().unlock();
+            state = BeanBufferState.COMPLETE;
+        }
     }
 
 }
