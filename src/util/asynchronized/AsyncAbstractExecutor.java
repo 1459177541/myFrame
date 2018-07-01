@@ -39,9 +39,13 @@ public abstract class AsyncAbstractExecutor {
         }
 	}
 
+	protected static void execute(AsyncAbstractEvent event){
+	    execute(event.getAsyncLevel(),event);
+    }
+
 	/**
 	 * 得到等待执行的线程数目
-	 * @return
+	 * @return 等待执行的线程数目
 	 */
 	public static int getWaitSize() {
 		return workQueue.size();
@@ -49,7 +53,7 @@ public abstract class AsyncAbstractExecutor {
 	
 	/**
 	 * 得到已执行完成的线程数目
-	 * @return
+	 * @return 已执行完成的线程数目
 	 */
 	public static long getCompleteSize() {
 		return threadPool.getCompletedTaskCount();

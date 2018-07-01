@@ -10,9 +10,9 @@ import java.util.function.Supplier;
  * @author 杨星辰
  *
  */
-public class AsyncStaticExecute extends AsyncAbstractExecutor{
+public class AsyncExecuteManage extends AsyncAbstractExecutor{
 
-	private AsyncStaticExecute() {
+	private AsyncExecuteManage() {
 	}
 
 	/**
@@ -34,18 +34,14 @@ public class AsyncStaticExecute extends AsyncAbstractExecutor{
 	 */
 	public static <E,R> AsyncResult<R> startResult(AsyncLevel level, E arg, Function<E,R> function){
 		Objects.requireNonNull(function);
-		AsyncResult<R> asyncEvent = new AsyncResult<R>() {
+		AsyncResult<R> asyncEvent = new AsyncResult<>() {
 			@Override
 			protected R execute() {
 				return function.apply(arg);
 			}
 		};
 		asyncEvent.setAsyncLevel(level);
-		try {
-			threadPool.execute(asyncEvent);
-		} catch (Exception e) {
-			asyncEvent.setException(e);
-		}
+        execute(level,asyncEvent);
 		return asyncEvent;
 	}
 
@@ -66,18 +62,14 @@ public class AsyncStaticExecute extends AsyncAbstractExecutor{
 	 */
 	public static <R> AsyncResult<R> startResult(AsyncLevel level, Supplier<R> supplier){
 		Objects.requireNonNull(supplier);
-		AsyncResult<R> asyncEvent = new AsyncResult<R>() {
+		AsyncResult<R> asyncEvent = new AsyncResult<>() {
 			@Override
 			protected R execute() {
 				return supplier.get();
 			}
 		};
 		asyncEvent.setAsyncLevel(level);
-		try {
-			threadPool.execute(asyncEvent);
-		} catch (Exception e) {
-			asyncEvent.setException(e);
-		}
+        execute(level,asyncEvent);
 		return asyncEvent;
 	}
 
@@ -107,11 +99,7 @@ public class AsyncStaticExecute extends AsyncAbstractExecutor{
 			}
 		};
 		event.setAsyncLevel(level);
-		try {
-			threadPool.execute(event);
-		} catch (Exception e) {
-			event.setException(e);
-		}
+        execute(level,event);
 		return event;
 	}
 	
@@ -139,11 +127,7 @@ public class AsyncStaticExecute extends AsyncAbstractExecutor{
 			}
 		};
 		event.setAsyncLevel(level);
-		try {
-			threadPool.execute(event);
-		} catch (Exception e) {
-			event.setException(e);
-		}
+        execute(level,event);
 		return event;
 		
 	}

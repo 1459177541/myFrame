@@ -1,10 +1,7 @@
 package test;
 
 import org.junit.jupiter.api.Test;
-import util.asynchronized.AsyncResult;
-import util.asynchronized.AsyncAbstractExecutor;
-import util.asynchronized.AsyncResultExecutor;
-import util.asynchronized.AsyncStaticExecute;
+import util.asynchronized.*;
 
 import java.util.Random;
 
@@ -58,7 +55,7 @@ public class AsyncTest {
 		});
 		e2.start();
 		
-		AsyncResult<String> e3 = AsyncStaticExecute.startResult("hello world", a->{
+		AsyncResult<String> e3 = AsyncExecuteManage.startResult("hello world", a->{
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
@@ -68,7 +65,7 @@ public class AsyncTest {
 			return a.toUpperCase();
 		});
 		
-		AsyncStaticExecute.start(()->{
+		AsyncExecuteManage.start(()->{
 			try {
 				Thread.sleep(500);
 			}catch (Exception ex) {
@@ -78,7 +75,7 @@ public class AsyncTest {
 		});
 		
 		for(int i = 1; i<=30; i++) {
-			AsyncStaticExecute.start(i, e->{
+			AsyncExecuteManage.start(i, e->{
 				try {
 					Thread.sleep(new Random().nextInt(500)+200);
 				} catch (InterruptedException e4) {
@@ -89,7 +86,7 @@ public class AsyncTest {
 		}
 		
 
-        AsyncStaticExecute.start(()->{
+        AsyncExecuteManage.start(()->{
             while (true) {
                 try {
                     Thread.sleep(200);
@@ -101,9 +98,44 @@ public class AsyncTest {
 		});
 		System.err.println("e1 result: "+e1.getResult());
 		System.err.println("e2 result: "+e2.getResult());
-		System.err.println("e3 result: "+AsyncStaticExecute.getResult(e3));
+		System.err.println("e3 result: "+AsyncExecuteManage.getResult(e3));
 		Thread.sleep(3000);
 
+	}
+
+	/**
+	 * 测试优先级
+	 */
+	@Test
+	public void test2(){
+		for (int i = 0; i<30; i++){
+			AsyncExecuteManage.start(AsyncLevel.WAITABLE, i+1, t->{
+				try{
+					Thread.sleep(8*1000);
+				}catch (Exception e){
+					e.printStackTrace();
+				}
+				System.out.println("低优先线程 "+t+" 执行完毕！");
+			});
+			AsyncExecuteManage.start(AsyncLevel.IMMEDIATELY, i, t-> System.out.println("优先线程"+(t+1)+"执行完毕"));
+			AsyncExecuteManage.start(i+1, t->{
+				try{
+					Thread.sleep(10*1000);
+				}catch (Exception e){
+					e.printStackTrace();
+				}
+				System.out.println("普通线程 "+t+" 执行完毕！");
+			});
+		}
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+		AsyncExecuteManage.start(AsyncLevel.IMMEDIATELY,()-> System.out.println("优先执行完毕"));
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+		try {
+			Thread.sleep(50*1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
 	}
 
 }

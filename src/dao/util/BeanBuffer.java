@@ -4,7 +4,7 @@ import dao.db.annotation.DB_table;
 import dao.db.sql.Select;
 import dao.sf.annotation.SystemFile;
 import dao.systemFile.SFUtil;
-import util.asynchronized.AsyncStaticExecute;
+import util.asynchronized.AsyncExecuteManage;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -185,7 +185,7 @@ public class BeanBuffer<T> {
     public void synchronization(List<BeanBuffer> list){
         state = BeanBufferState.SYNCHRONIZATION;
         ArrayList<T> tArrayList = new ArrayList<>(data);
-        list.forEach(e -> AsyncStaticExecute.start(() -> {
+        list.forEach(e -> AsyncExecuteManage.start(() -> {
             lock.readLock().lock();
             try {
                 e.update(tArrayList);
