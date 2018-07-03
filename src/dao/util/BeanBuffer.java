@@ -170,32 +170,32 @@ public class BeanBuffer<T> implements Collection<T> {
 
     @Override
     public int size() {
-        return data.size();
+        return readSomething(null, a-> data.size());
     }
 
     @Override
     public boolean isEmpty() {
-        return data.isEmpty();
+        return readSomething(null, a-> data.isEmpty());
     }
 
     @Override
     public boolean contains(Object o) {
-        return data.contains(o);
+        return readSomething(o, a-> data.contains(o));
     }
 
     @Override
     public Iterator<T> iterator() {
-        return data.iterator();
+        return readSomething(null, a-> data.iterator());
     }
 
     @Override
     public Object[] toArray() {
-        return data.toArray();
+        return readSomething(null, a-> data.toArray());
     }
 
     @Override
-    public <T1> T1[] toArray(T1[] a) {
-        return data.toArray(a);
+    public <A> A[] toArray(A[] a) {
+        return readSomething(a, t-> data.toArray(a));
     }
 
     @Override
@@ -247,7 +247,7 @@ public class BeanBuffer<T> implements Collection<T> {
 
     @Override
     public Stream<T> stream(){
-        return new ArrayList<>(data).stream();
+        return readSomething(null, a-> data.stream());
     }
 
     /**
@@ -278,7 +278,7 @@ public class BeanBuffer<T> implements Collection<T> {
         state = BeanBufferState.COMPLETE;
     }
 
-    private <T1, R> R editSomething(T1 arg, Function<T1, R> function){
+    private <A, R> R editSomething(A arg, Function<A, R> function){
         if (BeanBufferState.INIT == state){
             load();
         }
@@ -294,7 +294,7 @@ public class BeanBuffer<T> implements Collection<T> {
         return r;
     }
 
-    private <T1> void editSomething(T1 arg, Consumer<T1> consumer){
+    private <A> void editSomething(A arg, Consumer<A> consumer){
         if (BeanBufferState.INIT == state){
             load();
         }
@@ -306,6 +306,24 @@ public class BeanBuffer<T> implements Collection<T> {
             lock.writeLock().unlock();
             state = BeanBufferState.COMPLETE;
         }
+    }
+
+    private <A,R> R readSomething(A arg, Function<A, R> function){
+        while(isCompleted()){
+            try {
+                await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        R r;
+        lock.readLock().lock();
+        try {
+            r = function.apply(arg);
+        }finally {
+            lock.readLock().unlock();
+        }
+        return r;
     }
 
 }

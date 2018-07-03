@@ -111,7 +111,7 @@ public class AsyncTest {
 		for (int i = 0; i<30; i++){
 			AsyncExecuteManage.start(AsyncLevel.WAITABLE, i+1, t->{
 				try{
-					Thread.sleep(8*1000);
+					Thread.sleep(5*1000);
 				}catch (Exception e){
 					e.printStackTrace();
 				}
@@ -120,7 +120,7 @@ public class AsyncTest {
 			AsyncExecuteManage.start(AsyncLevel.IMMEDIATELY, i, t-> System.out.println("优先线程"+(t+1)+"执行完毕"));
 			AsyncExecuteManage.start(i+1, t->{
 				try{
-					Thread.sleep(10*1000);
+					Thread.sleep(5*1000);
 				}catch (Exception e){
 					e.printStackTrace();
 				}
