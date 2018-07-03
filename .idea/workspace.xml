@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/dao/util/BeanBuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/dao/util/BeanBuffer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/factory/BeanBufferFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/factory/BeanBufferFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/util/BeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/BeanBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/util/BeanBufferState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/BeanBufferState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test/AsyncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test/AsyncTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,10 +53,12 @@
       <file leaf-file-name="BeanBuffer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dao/util/BeanBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6603">
-              <caret line="305" column="38" lean-forward="true" selection-start-line="305" selection-start-column="38" selection-end-line="305" selection-end-column="38" />
+            <state relative-caret-position="487">
+              <caret line="256" column="15" lean-forward="true" selection-start-line="256" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2638#2639#0" expanded="true" />
+                <element signature="e#2706#2707#0" expanded="true" />
                 <element signature="e#4299#4300#0" expanded="true" />
                 <element signature="e#4358#4359#0" expanded="true" />
                 <element signature="e#4435#4436#0" expanded="true" />
@@ -119,6 +118,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>T1</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>A</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -460,7 +467,7 @@
       <workItem from="1530338536558" duration="2465000" />
       <workItem from="1530345343548" duration="1087000" />
       <workItem from="1530434591354" duration="20000" />
-      <workItem from="1530586030641" duration="1789000" />
+      <workItem from="1530586030641" duration="3674000" />
     </task>
     <task id="LOCAL-00001" summary="添加build结构">
       <created>1529927741632</created>
@@ -511,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530434455779</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="增强线程安全">
+      <created>1530587898975</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1530587898975</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -547,7 +561,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48435000" />
+    <option name="totallyTimeSpent" value="50320000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -638,35 +652,14 @@
     <MESSAGE value="使用读写锁优化性能" />
     <MESSAGE value="完成线程优先级" />
     <MESSAGE value="加强缓存功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="加强缓存功能" />
+    <MESSAGE value="增强线程安全" />
+    <option name="LAST_COMMIT_MESSAGE" value="增强线程安全" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/db/sql/Update.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame/proxy/AopProxyHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/db/annotation/DB_column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/sf/annotation/SystemFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1065,12 +1058,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="221" column="37" selection-start-line="221" selection-start-column="37" selection-end-line="221" selection-end-column="37" />
+          <folding>
+            <element signature="e#7795#7796#0" expanded="true" />
+            <element signature="e#7822#7823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/ReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="123" column="7" selection-start-line="123" selection-start-column="7" selection-end-line="123" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="168" column="17" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/ReentrantLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2558">
+          <caret line="107" column="13" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/util/BeanBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6603">
-          <caret line="305" column="38" lean-forward="true" selection-start-line="305" selection-start-column="38" selection-end-line="305" selection-end-column="38" />
+        <state relative-caret-position="487">
+          <caret line="256" column="15" lean-forward="true" selection-start-line="256" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2706#2707#0" expanded="true" />
             <element signature="e#4299#4300#0" expanded="true" />
             <element signature="e#4358#4359#0" expanded="true" />
             <element signature="e#4435#4436#0" expanded="true" />

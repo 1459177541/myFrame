@@ -96,44 +96,28 @@ public class BeanBuffer<T> implements Collection<T> {
 
     /**
      * 得到数据
-     * @Deprecated 存在安全隐患
      * @return 包含数据的列表
      */
-    @Deprecated
     public ArrayList<T> get(){
-        if (BeanBufferState.INIT == state){
-            load();
-        }
-        if(BeanBufferState.LOADING == state || BeanBufferState.EDITING == state){
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        return new ArrayList<>(data);
+        return readSomething(null, a->new ArrayList<>(data));
     }
 
     public void save(){
-        lock.readLock().lock();
-        try {
+        readSomething(null, a->{
             if(clazz.isAnnotationPresent(DB_table.class)){
                 doSave(METHOD_DB);
             }else if (clazz.isAnnotationPresent(SystemFile.class)){
                 doSave(METHOD_SF);
             }
-        }finally {
-            lock.readLock().unlock();
-        }
+            return null;
+        });
     }
 
     public void save(int method){
-        lock.readLock().lock();
-        try{
-            doSave(method);
-        }finally {
-            lock.readLock().unlock();
-        }
+        readSomething(method, saveMethod->{
+            doSave(saveMethod);
+            return null;
+        });
     }
 
     private void doSave(int method){
@@ -264,17 +248,16 @@ public class BeanBuffer<T> implements Collection<T> {
         return BeanBufferState.COMPLETE == state;
     }
 
+    /**
+     * 遍历列表，将每个元素新建线程执行更新方法
+     * @param list 待更新的缓存列表
+     */
     public void synchronization(List<BeanBuffer> list){
         state = BeanBufferState.SYNCHRONIZATION;
-        ArrayList<T> tArrayList = new ArrayList<>(data);
-        list.forEach(e -> AsyncExecuteManage.start(() -> {
-            lock.readLock().lock();
-            try {
-                e.update(tArrayList);
-            }finally {
-                lock.readLock().unlock();
-            }
-        }));
+        list.forEach(e -> AsyncExecuteManage.start(()-> readSomething(e, beanBuffer -> {
+            beanBuffer.update(data);
+            return null;
+        })));
         state = BeanBufferState.COMPLETE;
     }
 
@@ -309,6 +292,9 @@ public class BeanBuffer<T> implements Collection<T> {
     }
 
     private <A,R> R readSomething(A arg, Function<A, R> function){
+        if (BeanBufferState.INIT == state){
+            load();
+        }
         while(isCompleted()){
             try {
                 await();
