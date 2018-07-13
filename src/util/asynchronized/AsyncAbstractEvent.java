@@ -1,11 +1,13 @@
 package util.asynchronized;
 
+import util.Waitable;
+
 /**
  * 执行动作
  * @author 杨星辰
  *
  */
-public abstract class AsyncAbstractEvent implements Runnable, Comparable{
+public abstract class AsyncAbstractEvent implements Runnable, Comparable {
 
 	/**
 	 * 状态
@@ -15,12 +17,7 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable{
 	/**
 	 * 错误
 	 */
-	protected Exception ex;
-
-	/**
-	 * 同步锁
-	 */
-	protected Object lock;
+	protected Exception ex = null;
 
 	/**
 	 * 优先级
@@ -31,7 +28,6 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable{
 	 * 构造代码块，初始化同步锁
 	 */
 	{
-		lock = new Object();
 		asyncLevel = AsyncLevel.NORMAL;
 	}
 
@@ -56,6 +52,14 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable{
 		this.ex = ex;
 	}
 
+	public Exception getException(){
+		return ex;
+	}
+
+	public boolean isException(){
+		return ex!=null;
+	}
+
 	/**
 	 * 得到当前状态
 	 * @return 当前状态
@@ -70,18 +74,6 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable{
 	 */
 	public boolean isCompleted() {
 		return ThreadState.COMPLETE.equals(state);
-	}
-
-	/**
-	 * 等待
-	 * @throws InterruptedException
-	 */
-	public void await() throws InterruptedException {
-		synchronized (lock) {
-			while (!isCompleted()) {
-				lock.wait();
-			}
-		}
 	}
 
 }

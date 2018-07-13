@@ -1,5 +1,7 @@
 package util.asynchronized;
 
+import util.Waitable;
+
 import java.util.Optional;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Optional;
  *
  * @param <T> 返回值
  */
-public abstract class AsyncResult<T> extends AsyncAbstractEvent {
+public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waitable {
 	
 	private Optional<T> optional = Optional.empty();
 	
@@ -21,9 +23,7 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 		} catch (Exception e) {
 			state = ThreadState.EXCEPTION;
 		}
-		synchronized (lock) {
-			lock.notifyAll();
-		}
+		stopWait();
 	}
 	
 	protected abstract T execute();
@@ -38,13 +38,9 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 		}
 	}
 	
-	public T waitAndGetResult() {
+	public T waitAndGetResult() throws Exception {
 		if(!isCompleted()) {
-			try {
-				await();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+            await();
 		}
 		return optional.get();
 	}
@@ -53,4 +49,8 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 		return optional;
 	}
 
+    @Override
+    public boolean isWait() {
+        return !isCompleted();
+    }
 }
