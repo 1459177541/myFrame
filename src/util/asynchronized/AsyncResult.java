@@ -12,13 +12,16 @@ import java.util.Optional;
  */
 public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waitable {
 	
-	private Optional<T> optional = Optional.empty();
+	private Optional<T> result = Optional.empty();
 	
 	@Override
 	public void run() {
+		if (!ThreadState.INIT.equals(state)){
+			return;
+		}
 		state = ThreadState.RUNNING;
 		try {
-			optional = Optional.of(execute());
+			result = Optional.of(execute());
 			state = ThreadState.COMPLETE;
 		} catch (Exception e) {
 			state = ThreadState.EXCEPTION;
@@ -30,7 +33,7 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waita
 
 	public T getResult() throws Exception {
 		if (isCompleted()) {
-			return optional.get();
+			return result.get();
 		}else if (ThreadState.RUNNING.equals(state)) {
 	        throw new IllegalStateException("未完成");
 		}else {
@@ -38,15 +41,15 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waita
 		}
 	}
 	
-	public T waitAndGetResult() throws Exception {
+	public T waitAndGetResult() {
 		if(!isCompleted()) {
             await();
 		}
-		return optional.get();
+		return result.get();
 	}
 	
 	public Optional<T> getOptional(){
-		return optional;
+		return result;
 	}
 
     @Override

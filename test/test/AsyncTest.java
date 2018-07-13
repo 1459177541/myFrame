@@ -117,7 +117,7 @@ public class AsyncTest {
 				}
 				System.out.println("低优先线程 "+t+" 执行完毕！");
 			});
-			AsyncExecuteManage.start(AsyncLevel.IMMEDIATELY, i, t-> System.out.println("优先线程"+(t+1)+"执行完毕"));
+			AsyncExecuteManage.start(AsyncLevel.NOW, i, t-> System.out.println("优先线程"+(t+1)+"执行完毕"));
 			AsyncExecuteManage.start(i+1, t->{
 				try{
 					Thread.sleep(10*1000);
@@ -128,7 +128,8 @@ public class AsyncTest {
 			});
 		}
 		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
-		AsyncExecuteManage.start(AsyncLevel.IMMEDIATELY,()-> System.out.println("优先执行完毕"));
+		AsyncExecuteManage.start(AsyncLevel.WITHIN, ()-> System.out.println("WITHIN线程完成")).setWaitTime(3*1000);
+		AsyncExecuteManage.start(AsyncLevel.NOW,()-> System.out.println("优先执行完毕"));
 		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
 		try {
 			Thread.sleep(50*1000);

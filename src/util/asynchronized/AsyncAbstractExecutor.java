@@ -1,12 +1,16 @@
 package util.asynchronized;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public abstract class AsyncAbstractExecutor {
-	protected static ThreadPoolExecutor threadPool;
-	protected static PriorityBlockingQueue<Runnable> workQueue;
+	protected static final ThreadPoolExecutor threadPool;
+	protected static final PriorityBlockingQueue<Runnable> workQueue;
+	protected static List<AsyncAbstractEvent> withinList;
 
 	static {
 		workQueue = new PriorityBlockingQueue<>();
@@ -15,11 +19,38 @@ public abstract class AsyncAbstractExecutor {
 				, 8
 				, TimeUnit.HOURS
 				, workQueue);
+		withinList = new LinkedList<>();
+		new Thread(AsyncAbstractExecutor::checkWithinList).start();
 	}
 
 	protected AsyncLevel level = AsyncLevel.NORMAL;
 
-	public void setLevel(AsyncLevel level){
+    private static void checkWithinList() {
+        while (true) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            synchronized (threadPool) {
+                withinList = withinList.stream()
+                        .filter(e -> AsyncLevel.WITHIN == e.getAsyncLevel())
+                        .filter(e -> ThreadState.INIT == e.getState())
+                        .collect(Collectors.toList());
+                List<AsyncAbstractEvent> del = withinList.stream()
+                        .filter(e -> AsyncLevel.WITHIN == e.getAsyncLevel())
+                        .filter(AsyncAbstractEvent::isOvertime)
+                        .peek(e -> {
+                            new Thread(e).start();
+                            workQueue.remove(e);
+                        })
+                        .collect(Collectors.toList());
+                withinList.removeAll(del);
+            }
+        }
+    }
+
+    public void setLevel(AsyncLevel level){
 		this.level = level;
 	}
 	
@@ -29,9 +60,12 @@ public abstract class AsyncAbstractExecutor {
 
 	protected static void execute(AsyncLevel level, AsyncAbstractEvent event){
 	    try {
-            if (AsyncLevel.IMMEDIATELY.equals(level) && getWaitSize() > 0) {
+            if (AsyncLevel.NOW.equals(level) && getWaitSize() > 0) {
                 new Thread(event).start();
             } else {
+                if (AsyncLevel.WITHIN.equals(level) && getWaitSize()>0){
+                    withinList.add(event);
+                }
                 threadPool.execute(event);
             }
         }catch (Exception e){

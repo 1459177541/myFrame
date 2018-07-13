@@ -1,6 +1,6 @@
 package util.asynchronized;
 
-import util.Waitable;
+import java.util.Date;
 
 /**
  * 执行动作
@@ -12,7 +12,7 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable {
 	/**
 	 * 状态
 	 */
-	protected volatile ThreadState state = ThreadState.WAIT;
+	protected volatile ThreadState state = ThreadState.INIT;
 
 	/**
 	 * 错误
@@ -24,18 +24,38 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable {
 	 */
 	protected AsyncLevel asyncLevel;
 
+	protected Date startTime;
+
+	protected long waitTime;
+
 	/**
 	 * 构造代码块，初始化同步锁
 	 */
 	{
 		asyncLevel = AsyncLevel.NORMAL;
+		startTime = new Date();
 	}
 
-	protected void setAsyncLevel(AsyncLevel level){
+    /**
+     * 设置可等待时间，会改变线程优先级至少为WITHIN
+     * @param ms 等待时间
+     */
+	public void setWaitTime(long ms){
+	    this.asyncLevel = AsyncLevel.NOW == asyncLevel
+                ? AsyncLevel.NOW
+                : AsyncLevel.WITHIN;
+	    this.waitTime = ms;
+    }
+
+    public boolean isOvertime(){
+	    return 0 != waitTime && startTime.getTime() + waitTime > new Date().getTime();
+    }
+
+	public void setAsyncLevel(AsyncLevel level){
 		this.asyncLevel = level;
 	}
 
-	protected AsyncLevel getAsyncLevel(){
+	public AsyncLevel getAsyncLevel(){
 		return asyncLevel;
 	}
 
