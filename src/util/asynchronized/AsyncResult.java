@@ -1,5 +1,7 @@
 package util.asynchronized;
 
+import java.util.Optional;
+
 /**
  * 可返回结果的线程类
  * @author 杨星辰
@@ -8,13 +10,13 @@ package util.asynchronized;
  */
 public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 	
-	private T result;
+	private Optional<T> optional = Optional.empty();
 	
 	@Override
 	public void run() {
 		state = ThreadState.RUNNING;
 		try {
-			result = execute();
+			optional = Optional.of(execute());
 			state = ThreadState.COMPLETE;
 		} catch (Exception e) {
 			state = ThreadState.EXCEPTION;
@@ -28,7 +30,7 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 
 	public T getResult() throws Exception {
 		if (isCompleted()) {
-			return result;
+			return optional.get();
 		}else if (ThreadState.RUNNING.equals(state)) {
 	        throw new IllegalStateException("未完成");
 		}else {
@@ -44,9 +46,11 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent {
 				e.printStackTrace();
 			}
 		}
-		return result;
+		return optional.get();
 	}
 	
-
+	public Optional<T> getOptional(){
+		return optional;
+	}
 
 }
