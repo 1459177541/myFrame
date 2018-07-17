@@ -3,6 +3,7 @@ package FactoryAndAOP;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
+import frame.Bean;
 import frame.proxy.action.AfterReturnAction;
 import frame.proxy.action.BeforeAction;
 import frame.proxy.action.CheckAction;
@@ -13,6 +14,7 @@ import frame.proxy.action.CheckAction;
  * @author 杨星辰
  *
  */
+@Bean(name = "aopTest")
 public class AopTest implements AfterReturnAction, BeforeAction, CheckAction {
 
 	@Override

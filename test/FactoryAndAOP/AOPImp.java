@@ -1,6 +1,8 @@
 package FactoryAndAOP;
 
 
+import frame.Bean;
+
 import java.util.stream.Stream;
 
 /**
@@ -9,6 +11,7 @@ import java.util.stream.Stream;
  * @author 杨星辰
  *
  */
+@Bean(name = "AOPImp")
 public class AOPImp implements AOP01, AOP02 {
 
 	@Override
