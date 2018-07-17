@@ -29,12 +29,30 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable {
 	protected long waitTime;
 
 	/**
-	 * 构造代码块，初始化同步锁
+	 * 构造代码块
 	 */
 	{
 		asyncLevel = AsyncLevel.NORMAL;
 		startTime = new Date();
 	}
+
+    /**
+     * 停止当前线程
+     */
+	public void shutdown(){
+	    state = ThreadState.SHUTDOWN;
+	    Thread.currentThread().interrupt();
+    }
+
+    public boolean isShutdown(){
+	    return ThreadState.SHUTDOWN == state;
+    }
+
+    /**
+     * 钩子方法，执行停止操作
+     */
+    protected void doShutdown(){
+    }
 
     /**
      * 设置可等待时间，会改变线程优先级至少为WITHIN

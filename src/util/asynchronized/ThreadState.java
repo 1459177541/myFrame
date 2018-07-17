@@ -1,7 +1,7 @@
 package util.asynchronized;
 
 public enum ThreadState {
-	INIT("初始化"), RUNNING("运行中"), COMPLETE("完成"), EXCEPTION("出错");
+	INIT("初始化"), RUNNING("运行中"), COMPLETE("完成"), EXCEPTION("出错"), SHUTDOWN("停止");
 
 	private String desc;
 	
