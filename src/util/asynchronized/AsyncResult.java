@@ -25,8 +25,10 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waita
 			state = ThreadState.COMPLETE;
 		} catch (Exception e) {
 			state = ThreadState.EXCEPTION;
-		}
-		stopWait();
+		}finally {
+            doShutdown();
+            stopWait();
+        }
 	}
 	
 	protected abstract T execute();

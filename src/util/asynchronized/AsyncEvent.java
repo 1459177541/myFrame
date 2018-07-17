@@ -14,7 +14,9 @@ public abstract class AsyncEvent extends AsyncAbstractEvent {
 		} catch (Exception e) {
 			state = ThreadState.EXCEPTION;
 			ex = e;
-		}
+		}finally {
+		    doShutdown();
+        }
 	}
 	
 	protected abstract void execute();
