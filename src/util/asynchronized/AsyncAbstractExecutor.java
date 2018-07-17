@@ -20,7 +20,7 @@ public abstract class AsyncAbstractExecutor {
 				, TimeUnit.HOURS
 				, workQueue);
 		withinList = new LinkedList<>();
-		new Thread(AsyncAbstractExecutor::checkWithinList).start();
+		AsyncExecuteManage.start(AsyncLevel.NEW,AsyncAbstractExecutor::checkWithinList);
 	}
 
 	protected AsyncLevel level = AsyncLevel.NORMAL;
@@ -58,9 +58,17 @@ public abstract class AsyncAbstractExecutor {
 
 	public abstract ThreadState getState();
 
+    /**
+     * 调度执行
+     * @param level 线程执行等级
+     * @param event 线程执行事件
+     */
 	protected static void execute(AsyncLevel level, AsyncAbstractEvent event){
 	    try {
-            if (AsyncLevel.NOW.equals(level) && getWaitSize() > 0) {
+	        if (AsyncLevel.NOW.equals(level)){
+	            new Thread(event).start();
+            }
+            else if (AsyncLevel.NOW.equals(level) && getWaitSize() > 0) {
                 new Thread(event).start();
             } else {
                 if (AsyncLevel.WITHIN.equals(level) && getWaitSize()>0){
