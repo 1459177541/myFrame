@@ -29,9 +29,8 @@ public class FactoryTest {
         await();
         ((AOP01) t).print(5, 7);
         await();
-        ((AOP01) t).add(5,7);
-//		((AOP02) t).print(((AOP01) t).add(5, 7)+"");
-//		await();
+		((AOP02) t).print(((AOP01) t).add(5, 7)+"");
+		await();
     }
 
     public void await() {

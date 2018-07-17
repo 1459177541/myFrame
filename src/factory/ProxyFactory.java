@@ -44,7 +44,7 @@ public class ProxyFactory extends ConfigFactory{
 	public <T> Object get(Class<T> clazz) {
 		T o = (T) factory.get(clazz);
 		ProxyHandler<T> handler = (ProxyHandler<T>) Objects.requireNonNull(build).build();
-		handler.setTarget(o);
+		handler.setTarget(Objects.requireNonNull(o));
 		return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), handler);
 	}
 

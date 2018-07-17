@@ -14,11 +14,11 @@ public class AsyncProxyHandler<T> extends DefaultProxyHandler<T>{
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         if (!method.isAnnotationPresent(Async.class)){
-            return myInvoke(method,args);
+            return myInvoke(proxy, method,args);
         }
         return AsyncExecuteManage.startResult(()-> {
             try {
-                return myInvoke(method, args);
+                return myInvoke(proxy, method, args);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }

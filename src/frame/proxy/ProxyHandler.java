@@ -10,19 +10,22 @@ public abstract class ProxyHandler<T> implements InvocationHandler{
 	protected ProxyHandler<T> parent;
 
 	public void setTarget(final T target) {
-		this.target = target;
+		this.target = Objects.requireNonNull(target);
+        if (parent != null) {
+            parent.setTarget(target);
+        }
 	}
 
 	public void setParent(ProxyHandler<T> parent){
 		this.parent = parent;
 	}
 
-	protected Object myInvoke(Method method, Object[] args) throws Throwable{
+	protected Object myInvoke(Object proxy, Method method, Object[] args) throws Throwable{
 		Objects.requireNonNull(target);
 		if (null==parent){
 			return method.invoke(target, args);
 		}else{
-			return parent.myInvoke(method, args);
+			return parent.invoke(proxy, method, args);
 		}
 	}
 
