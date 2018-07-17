@@ -1,9 +1,9 @@
-package test;
+package FactoryAndAOP;
 
 import frame.proxy.annotation.AfterReturn;
 import frame.proxy.annotation.Before;
 
-public interface TestImp {
+public interface AOP01 {
 	@Before(methodClassName = { "aopTest" })
 	@AfterReturn(methodClassName = { "aopTest" })
 	public void print();

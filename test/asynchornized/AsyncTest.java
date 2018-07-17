@@ -1,4 +1,4 @@
-package test;
+package asynchornized;
 
 import org.junit.jupiter.api.Test;
 import util.asynchronized.*;

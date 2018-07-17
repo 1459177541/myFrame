@@ -21,7 +21,6 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 	private ProxyHandlerBuild proxyHandlerBuild;
 
 	public FactoryBuilder() {
-		proxyHandlerBuild = new ProxyHandlerBuild();
 		factoryConfig = null;
 		isProxy = true;
 		isSingle = true;
@@ -34,6 +33,8 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 	public FactoryBuilder(FactoryConfig factoryConfig) {
 		this();
 		this.factoryConfig = factoryConfig;
+		proxyHandlerBuild = new ProxyHandlerBuild();
+		setProxyActionFactoryConfig(factoryConfig);
 	}
 
 	
@@ -67,6 +68,9 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 	 */
 	public FactoryBuilder setFactoryConfig(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
+		if (null == proxyHandlerBuild){
+			setProxyActionFactoryConfig(factoryConfig);
+		}
 		return this;
 	}
 	
@@ -112,7 +116,7 @@ public class FactoryBuilder implements Build<ConfigFactory> {
 	 * @return 工厂类
 	 */
 	@Override
-	public ConfigFactory get() {
+	public ConfigFactory build() {
 		ConfigFactory f = new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有配置类"));
 		if (isSingle) {
 			f = new SingleFactory(f);

@@ -31,7 +31,7 @@ public class ProxyFactory extends ConfigFactory{
 	}
 
 	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
-		this.build = handlerBuild;
+		this.build = Objects.requireNonNull(handlerBuild);
 		return this;
 	}
 
@@ -43,7 +43,7 @@ public class ProxyFactory extends ConfigFactory{
 	@SuppressWarnings("unchecked")
 	public <T> Object get(Class<T> clazz) {
 		T o = (T) factory.get(clazz);
-		ProxyHandler<T> handler = (ProxyHandler<T>) Objects.requireNonNull(build).get();
+		ProxyHandler<T> handler = (ProxyHandler<T>) Objects.requireNonNull(build).build();
 		handler.setTarget(o);
 		return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), handler);
 	}

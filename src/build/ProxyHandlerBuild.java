@@ -6,6 +6,8 @@ import frame.proxy.AsyncProxyHandler;
 import frame.proxy.DefaultProxyHandler;
 import frame.proxy.ProxyHandler;
 
+import java.util.Objects;
+
 public class ProxyHandlerBuild<T> implements Build<ProxyHandler<T>> {
 
     private ConfigFactory configFactory;
@@ -24,19 +26,19 @@ public class ProxyHandlerBuild<T> implements Build<ProxyHandler<T>> {
 
     public ProxyHandlerBuild<T> setConfigFactory(ConfigFactory configFactory){
         isAop = true;
-        this.configFactory = configFactory;
+        this.configFactory = Objects.requireNonNull(configFactory);
         return this;
     }
 
     @Override
-    public ProxyHandler<T> get() {
+    public ProxyHandler<T> build() {
         ProxyHandler<T> proxyHandler = new DefaultProxyHandler<>();
         if (isAsync){
             proxyHandler = new AsyncProxyHandler<>(proxyHandler);
         }
         if (isAop){
             proxyHandler = new AopProxyHandler<>(proxyHandler);
-            ((AopProxyHandler<T>)proxyHandler).setFactory(configFactory);
+            ((AopProxyHandler<T>)proxyHandler).setFactory(Objects.requireNonNull(this.configFactory));
         }
         return proxyHandler;
     }

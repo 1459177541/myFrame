@@ -2,6 +2,8 @@ package factory;
 
 import frame.config.FactoryConfig;
 
+import java.util.Objects;
+
 public abstract class ConfigFactory implements Factory<String, Object>{
 	/**
 	 * 配置类
@@ -18,9 +20,6 @@ public abstract class ConfigFactory implements Factory<String, Object>{
 	public void setFactoryConfig(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
 	}
-	public void addFactoryConfig(String name,Class<?> clazz) {
-		this.factoryConfig.addConfig(name, clazz);
-	}
 	public void addFactoryConfig(FactoryConfig factoryConfig) {
 		this.factoryConfig.addConfig(factoryConfig);
 	}
@@ -30,16 +29,8 @@ public abstract class ConfigFactory implements Factory<String, Object>{
 	 */
 	@Override
 	public Object get(final String name) {
-		Class<?> c = factoryConfig.get(name);
-		if(null==c) {
-			try {
-				c = Class.forName(name);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-		return get(c);
-	};
+		return get(Objects.requireNonNull(factoryConfig).get(name).getBeanClass());
+	}
 	
 	public abstract <T> Object get(Class<T> clazz);
 }

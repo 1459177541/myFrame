@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.stream.Stream;
 
 import factory.ConfigDefaultFactory;
 import factory.ConfigFactory;
@@ -68,20 +69,20 @@ public class AopProxyHandler<T> extends DefaultProxyHandler<T> {
 					.unCheckAction(unCheckMethodList.toArray(new Method[0]), target, args);
 		}
 		if(method.isAnnotationPresent(Before.class)) {
-			new ArrayList<>(Arrays.asList(method.getAnnotation(Before.class).methodClassName()))
-				.forEach(e->((BeforeAction)factory.get(e)).beforeAction(target, args));
+			Stream.of(method.getAnnotation(Before.class).methodClassName())
+				.forEach(e-> ((BeforeAction)factory.get(e)).beforeAction(target, args));
 		}
 		ret = null;
 		try {
 			ret = myInvoke(method, args);
 		}catch (Throwable ex) {
 			if(method.isAnnotationPresent(ThrowsException.class)) {
-				new ArrayList<>(Arrays.asList(method.getAnnotation(ThrowsException.class).methodClassName()))
+				Stream.of(method.getAnnotation(ThrowsException.class).methodClassName())
 					.forEach(e->((ThrowsExceptionAction)factory.get(e)).throwExceptionAction(target, ex, args));
 			}			
 		}
 		if(method.isAnnotationPresent(AfterReturn.class)) {
-			new ArrayList<>(Arrays.asList(method.getAnnotation(AfterReturn.class).methodClassName()))
+			Stream.of(method.getAnnotation(AfterReturn.class).methodClassName())
 				.forEach(e->((AfterReturnAction)factory.get(e)).afterReturnAction(ret, target, args));
 		}
 		return ret;

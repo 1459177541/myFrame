@@ -27,7 +27,7 @@
     <Loggers>
         <!-- 记录器输出文件为info级别 -->
         <!-- <logger name="com.hdd" level="debug" additivity="false"> <AppenderRef 
-            ref="STDOUT"/> </logger> 记录器输出文件为info级别 <logger name="com.hdd.test.App2" 
+            ref="STDOUT"/> </logger> 记录器输出文件为info级别 <logger name="com.hdd.FactoryAndAOP.App2"
             level="info" additivity="false"> <AppenderRef ref="A1"/> </logger> -->
         <!-- 根 控制台输出级别 -->
         <Root level="debug">

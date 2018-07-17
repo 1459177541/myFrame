@@ -68,7 +68,7 @@ public class Select<T> extends Result<T> {
 				boolean isAdd = false;
 				for (Field field : fields) {
 					String fieldName = field.getName();
-					Method getMethod = clazz.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1));
+					Method getMethod = clazz.getMethod("build"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1));
 					if (null==getMethod.invoke(obj)) {
 						break;
 					}
