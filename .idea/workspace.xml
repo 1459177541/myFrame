@@ -325,7 +325,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AsyncTest.test2">
+  <component name="RunManager" selected="JUnit.FactoryTest.testRoot">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -365,29 +365,6 @@
       <option name="PACKAGE_NAME" value="FactoryAndAOP" />
       <option name="MAIN_CLASS_NAME" value="FactoryAndAOP.FactoryTest" />
       <option name="METHOD_NAME" value="t" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="FactoryTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myFrame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="asynchornized.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="FactoryAndAOP" />
-      <option name="MAIN_CLASS_NAME" value="FactoryAndAOP.FactoryTest" />
-      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -444,6 +421,29 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="FactoryTest.testRoot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myFrame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FactoryAndAOP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="FactoryAndAOP" />
+      <option name="MAIN_CLASS_NAME" value="FactoryAndAOP.FactoryTest" />
+      <option name="METHOD_NAME" value="testRoot" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -483,19 +483,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FactoryTest.test" />
       <item itemvalue="JUnit.FactoryTest.t" />
       <item itemvalue="JUnit.FactoryTest.test1" />
       <item itemvalue="JUnit.FactoryTest.test2" />
       <item itemvalue="JUnit.AsyncTest.test2" />
+      <item itemvalue="JUnit.FactoryTest.testRoot" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FactoryTest.testRoot" />
         <item itemvalue="JUnit.AsyncTest.test2" />
         <item itemvalue="JUnit.FactoryTest.test2" />
         <item itemvalue="JUnit.FactoryTest.test1" />
         <item itemvalue="JUnit.FactoryTest.t" />
-        <item itemvalue="JUnit.FactoryTest.test" />
       </list>
     </recent_temporary>
   </component>
