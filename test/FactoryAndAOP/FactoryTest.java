@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class FactoryTest {
 
     @Test
-    public void test1(){
+    public void test(){
         FactoryBuilder fb = new FactoryBuilder(new FactoryConfig() {
             @Override
             public void initConfig() {
@@ -21,7 +21,7 @@ public class FactoryTest {
         print(f);
     }
     @Test
-    public void test2(){
+    public void testAnnotation(){
         FactoryBuilder fb = new FactoryBuilder(new FactoryConfigByAnnotation() {
             @Override
             public void initConfig() {
@@ -31,6 +31,25 @@ public class FactoryTest {
         });
         ConfigFactory f = fb.build();
         print(f);
+    }
+
+    @Test
+    public void testRoot(){
+        new FactoryConfigByAnnotation() {
+            @Override
+            protected void initConfig() {
+                add(AOPImp.class);
+                add(AopTest.class);
+            }
+        }.setRoot();
+        ConfigFactory f = new FactoryBuilder(new FactoryConfigByAnnotation() {
+            @Override
+            protected void initConfig() {
+                add(AopTest2.class);    //覆盖AopTest
+            }
+        }).build();
+        print(f);
+
     }
 
     private void print(ConfigFactory f){

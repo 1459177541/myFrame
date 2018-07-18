@@ -2,6 +2,8 @@ package frame.config;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 
 public abstract class Config <K,V>{
 
@@ -27,15 +29,14 @@ public abstract class Config <K,V>{
 	 * @param key 键 
 	 * @return 值
 	 */
-	public V get(K key) {
-		if (null!=parent) {
-			V value = parent.get(key);
-			if (null!=value) {
-				return value;
-			}
-		}
-		check();
-		return config.get(key);
+	public V get(final K key) {
+	    check();
+	    return Objects.requireNonNull(
+	            Objects.requireNonNullElseGet(
+                    config.get(key)
+                    ,()->Optional.of(parent).map(p->p.get(key)).get())
+                ,"无相关配置"
+        );
 	}
 	
 	/**
