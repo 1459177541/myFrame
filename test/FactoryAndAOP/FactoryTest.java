@@ -69,7 +69,7 @@ public class FactoryTest {
         await();
     }
 
-    public void await() {
+    private void await() {
         System.out.println(
                 "----------------------------------------------------------------------------------------------------------------------------");
         try {

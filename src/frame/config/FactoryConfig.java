@@ -22,10 +22,10 @@ public abstract class FactoryConfig extends Config<String, BeanDefinition>{
 
     @Override
     public BeanDefinition get(final String key) {
+        check();
         if (root == this){
             return Objects.requireNonNull(config.get(key),"无相关配置");
         }else{
-            check();
             return Objects.requireNonNull(
                     Objects.requireNonNullElseGet(
                             config.get(key)                                         //如果当前有则从当前返回

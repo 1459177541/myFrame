@@ -49,7 +49,7 @@ public class AopTest2 implements AfterReturnAction, BeforeAction, CheckAction {
 
 	private void checkArgs(Object[] args) {
 		if (null != args) {
-			Stream.of(args).forEach(es -> Arrays.asList(es).forEach(e -> {
+			Stream.of(args).forEach(es -> Stream.of(es).forEach(e -> {
 				if (e instanceof Object[]) {
 					System.out.print(" " + Arrays.toString((Object[]) e));
 				} else {

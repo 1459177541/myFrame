@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public abstract class Config <K,V>{
 
-	protected Map<K, V> config = null;
+	protected Map<K, V> config;
 	
 	protected Config<K,V> parent = null;
 
-	/**
+	/*
 	 * 初始化
 	 */
 	{
