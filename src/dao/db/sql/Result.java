@@ -15,8 +15,9 @@ public abstract class Result<T> {
 	protected String sql;
 	
 	protected T obj;
+	protected Class<T> clazz;
 	protected Criteria<T> criteria;
-	
+
 	public T getObj() {
 		return obj;
 	}
@@ -31,7 +32,15 @@ public abstract class Result<T> {
 		return this;
 	}
 
-	protected abstract String getSql();
+    public void setClazz(Class<T> clazz) {
+        this.clazz = clazz;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
+    protected abstract String getSql();
 	public abstract DBExecute getState();
 	public abstract boolean execute();
 
@@ -40,10 +49,10 @@ public abstract class Result<T> {
 	 * @return 执行是否成功
 	 */
 	public boolean check(){
-		if (null==connection||null==obj) {
+		if (null==connection) {
 			return false;
 		}
-		sql = Objects.requireNonNullElseGet(sql,()->getSql());
+		sql = Objects.requireNonNullElseGet(sql, this::getSql);
 		if (null==sql) {
 			return false;
 		}

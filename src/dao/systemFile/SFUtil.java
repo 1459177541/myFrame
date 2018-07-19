@@ -10,23 +10,29 @@ public class SFUtil {
 
     private SFUtil(){}
 
-    public static <T> ArrayList<T> read(Class<T> clazz) throws FileNotFoundException {
+    public static <T> List<T> read(Class<T> clazz) throws FileNotFoundException {
         if (!clazz.isAnnotationPresent(SystemFile.class)){
-            throw new RuntimeException("无法从文件中读取");
+            throw new IllegalArgumentException("无法从文件中读取");
         }
+        return read(clazz.getAnnotation(SystemFile.class).fileName());
+    }
+
+    public static <T> List<T> read(String fileName) throws FileNotFoundException{
+        File f = new File(fileName);
         ArrayList<T> list = new ArrayList<>();
-        File f = new File(clazz.getAnnotation(SystemFile.class).fileName());
         try(
                 FileInputStream fs = new FileInputStream(f);
-                ObjectInputStream ois = new ObjectInputStream(fs);
+                ObjectInputStream ois = new ObjectInputStream(fs)
                 ){
             T t;
             while (null!=(t = (T)ois.readObject())){
                 list.add(t);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            throw e;
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return list;
@@ -38,20 +44,26 @@ public class SFUtil {
         }
         Class<T> clazz = (Class<T>) data.get(0).getClass();
         if (!clazz.isAnnotationPresent(SystemFile.class)){
-            throw new RuntimeException("无法从文件中读取");
+            throw new IllegalArgumentException("未发现文件目录");
         }
-        File f = new File(clazz.getAnnotation(SystemFile.class).fileName());
+        write(data, clazz.getAnnotation(SystemFile.class).fileName());
+    }
+
+    public static <T> void write(List<T> data, String fileName) throws FileNotFoundException{
+        File f = new File(fileName);
         try(
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-                ){
-            data.stream().forEach(e->{
+                FileOutputStream fos = new FileOutputStream(f);
+                ObjectOutputStream oos = new ObjectOutputStream(fos)
+        ){
+            data.forEach(e->{
                 try {
                     oos.writeObject(e);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             });
+        } catch (FileNotFoundException e){
+            throw e;
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,7 @@
 package dao.db.sql;
 
 import java.sql.SQLException;
+import java.util.Objects;
 
 import dao.db.util.GetConn;
 
@@ -8,7 +9,7 @@ import dao.db.util.GetConn;
 public abstract class Update<T> extends Result<T>{
 
 	public Update() {
-		connection = GetConn.getConnection();
+		connection = Objects.requireNonNullElseGet(connection, GetConn::getConnection);
 	}
 	
 	public Update(T obj) {

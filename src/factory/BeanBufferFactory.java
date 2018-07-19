@@ -1,100 +1,56 @@
 package factory;
 
-import dao.util.BeanBuffer;
-import dao.util.BeanBufferState;
-import util.asynchronized.AsyncExecuteManage;
+import dao.db.annotation.DB_table;
+import dao.frame.Dao;
+import dao.sf.annotation.SystemFile;
+import dao.util.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
-    private HashMap<Class<?>,BeanBuffer<?>> data;
+    private static BeanBufferFactory root;
 
-    private BeanBufferFactory parent;
+    private Map<Class<?>, BeanBuffer<?>> buffer = new HashMap<>();
 
-    private ArrayList<BeanBufferFactory> child;
+    Dao dao;
 
-    public BeanBufferFactory() {
-        data = new HashMap<>();
-        child = new ArrayList<>();
+    public BeanBufferFactory setDao(Dao dao) {
+        this.dao = dao;
+        return this;
     }
 
-    public void setParent(BeanBufferFactory parent) {
-        this.parent = parent;
-    }
-
-    public void addChild(BeanBufferFactory child){
-        this.child.add(child);
-    }
-
-    public synchronized <T> void load(Class<T> clazz){
-        if (data.containsKey(clazz)){
-            return;
-        }
-        if (null!=parent && parent.contains(clazz)){
-            data.put(clazz,data.get(clazz));
-            return;
-        }
-        if (BeanBufferState.LOADING == data.get(clazz).getState()){
-            return;
-        }
-        BeanBuffer<T> beanBuffer= new BeanBuffer<>(clazz);
-        data.put(clazz,beanBuffer);
-        AsyncExecuteManage.start(beanBuffer, BeanBuffer::load);
+    public BeanBufferFactory setRoot(){
+        root = this;
+        return this;
     }
 
     @Override
     public BeanBuffer<?> get(Class<?> key) {
-        BeanBuffer beanBuffer;
-        if (null!=parent){
-            beanBuffer = parent.get(key);
-        }else {
-            beanBuffer = data.get(key);
+        buffer.put(key
+                ,Objects.requireNonNullElseGet(
+                        buffer.get(key)
+                        ,()->Objects.requireNonNull(
+                                Objects.requireNonNullElseGet(this.dao,()->{
+                                    if (key.isAnnotationPresent(DB_table.class)){
+                                        return new DatabaseDao();
+                                    }else if (key.isAnnotationPresent(SystemFile.class)){
+                                        return new FileStoreDao();
+                                    }else {
+                                        return null;
+                                    }
+                                }).load(key)
+                        )
+                ));
+        if (this == root){
+            return Objects.requireNonNull(buffer.get(key),"加载失败");
         }
-        if (!contains(key) || BeanBufferState.INIT == beanBuffer.getState()){
-            load(key);
-        }
-        if (BeanBufferState.LOADING == beanBuffer.getState()){
-            try {
-                beanBuffer.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        return beanBuffer;
-    }
-
-    public boolean contains(Class clazz){
-        if (null!= parent && parent.contains(clazz)){
-            return true;
-        }
-        return data.containsKey(clazz);
-    }
-
-    public void save(Class<?> clazz){
-        if (!contains(clazz)){
-            return;
-        }
-        if (BeanBufferState.COMPLETE == data.get(clazz).getState()){
-            data.get(clazz).save();
-        }
-    }
-
-    public <T> void update(Class<T> clazz, ArrayList<T> newList){
-        if (!contains(clazz)){
-            BeanBuffer<T> bf = new BeanBuffer<>(clazz);
-            bf.update(newList);
-            data.put(clazz, bf);
-        }
-        parent.update(clazz,newList);
-    }
-
-    public void synchronization(Class<?> clazz){
-        List<BeanBuffer> beanBufferList = child.stream().map(e->e.get(clazz)).collect(Collectors.toList());
-        get(clazz).synchronization(beanBufferList);
+        return Objects.requireNonNull(
+                Objects.requireNonNullElseGet(
+                        buffer.get(key)
+                        ,()->Optional.of(root).map(p->p.get(key)).get())
+                ,"加载失败"
+        );
     }
 
 }

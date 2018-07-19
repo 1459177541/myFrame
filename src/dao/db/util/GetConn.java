@@ -1,34 +1,53 @@
 package dao.db.util;
 
 import java.sql.*;
+import java.util.Objects;
 
 public class GetConn {
 
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	static final String DB_URL = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+	private final String jdbcDriver;
+	private final String dbUrl;
+	private final String userName;
+	private final String userPassword;
 
-	private final static String USER_NAME = "";
-	private final static String USER_PASSWORD = "";
-	
-	private static Connection connection = null;
-	
-	static {
-		try {
-			Class.forName(JDBC_DRIVER);
-			connection = DriverManager.getConnection(DB_URL, USER_NAME, USER_PASSWORD);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-	}
+	private Connection connection = null;
 
-	public static Connection getConnection() {
+	private static GetConn defaultConnection;
+
+	public GetConn toDefault(){
+	    defaultConnection = this;
+	    return this;
+    }
+
+    public static GetConn getDefault(){
+	    return Objects.requireNonNull(defaultConnection);
+    }
+
+    public static Connection getConnection(){
+	    return defaultConnection.getConn();
+    }
+
+	public GetConn(String userName, String userPassword){
+	    this.userName = userName;
+	    this.userPassword = userPassword;
+	    jdbcDriver = "com.mysql.jdbc.Driver";
+	    dbUrl = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+	    restart();
+    }
+
+    public GetConn(String jdbcDriver, String dbUrl, String userName, String userPassword) {
+        this.jdbcDriver = jdbcDriver;
+        this.dbUrl = dbUrl;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        restart();
+    }
+
+    public Connection getConn() {
 		return connection;
 	}
-	/**
-	 * �ر����ݿ�����
-	 * @return �ر��Ƿ�ɹ�
-	 */
-	public static boolean exitConnection() {
+
+	public boolean exitConnection() {
 		if (null==connection) {
 			return false;
 		}
@@ -41,15 +60,15 @@ public class GetConn {
 		return true;
 	}
 	
-	public static boolean restart() {
+	public boolean restart() {
 		if (null!=connection) {
 			if (!exitConnection()) {
 				return false;
 			}
 		}
 		try {
-			Class.forName(JDBC_DRIVER);
-			connection = DriverManager.getConnection(DB_URL, USER_NAME, USER_PASSWORD);
+			Class.forName(jdbcDriver);
+			connection = DriverManager.getConnection(dbUrl, userName, userPassword);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			return false;
