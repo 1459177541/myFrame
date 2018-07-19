@@ -24,8 +24,8 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     public AbstractBeanBuffer(Class<T> clazz){
         lock = new ReentrantReadWriteLock();
         this.clazz = clazz;
+        actionStack = new Stack<>();
         undoStack = new Stack<>();
-        redoStack = new Stack<>();
         state = BeanBufferState.INIT;
     }
 
@@ -87,7 +87,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             if (isSuccess) {
                 BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
                 action.setBefore(a);
-                undoStack.push(action);
+                actionStack.push(action);
             }
             return isSuccess;
         });
@@ -101,7 +101,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                 BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
                 //noinspection unchecked
                 action.setBefore((T) a);
-                undoStack.push(action);
+                actionStack.push(action);
             }
             return isSuccess;
         });
@@ -120,7 +120,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                 BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
                 //noinspection unchecked
                 action.setBefore((Collection<T>) a);
-                undoStack.push(action);
+                actionStack.push(action);
             }
             return isSuccess;
         });
@@ -134,7 +134,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                 BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
                 //noinspection unchecked
                 action.setBefore((Collection<T>) a);
-                undoStack.push(action);
+                actionStack.push(action);
             }
             return isSuccess;
         });
@@ -147,7 +147,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             if (isSuccess) {
                 BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
                 action.setBefore(data.stream().filter(d->!a.contains(d)).collect(Collectors.toList()));
-                undoStack.push(action);
+                actionStack.push(action);
             }
             return isSuccess;
         });
@@ -159,7 +159,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             data.clear();
             BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
             action.setBefore(data);
-            undoStack.push(action);
+            actionStack.push(action);
         });
     }
 
@@ -170,7 +170,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_EDIT);
             action.setBefore(before);
             action.setAfter(after);
-            undoStack.push(action);
+            actionStack.push(action);
         });
     }
 
@@ -244,15 +244,15 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     }
 
 
-    protected Stack<BeanAction<T>> undoStack;
+    protected Stack<BeanAction<T>> actionStack;
 
-    protected Stack<BeanAction<T>> redoStack;
+    protected Stack<BeanAction<T>> undoStack;
 
     @Override
     @SuppressWarnings({"unchecked", "Duplicates"})
     public void undo() {
-        BeanAction<T> beanAction = undoStack.pop();
-        redoStack.push(beanAction);
+        BeanAction<T> beanAction = actionStack.pop();
+        undoStack.push(beanAction);
         if (beanAction.getAction() == BeanAction.ACTION_ADD){
             editSomething(beanAction.getBefore(), b-> {
                 return data.removeAll(b);
@@ -268,21 +268,21 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                 edit(after,before);
             });
         }else {
-            undoStack.push(beanAction);
-            redoStack.pop();
+            actionStack.push(beanAction);
+            undoStack.pop();
         }
     }
 
     @Override
     public boolean isUndo() {
-        return !undoStack.empty();
+        return !actionStack.empty();
     }
 
     @Override
     @SuppressWarnings({"Duplicates", "unchecked"})
     public void redo() {
-        BeanAction<T> beanAction = redoStack.pop();
-        undoStack.push(beanAction);
+        BeanAction<T> beanAction = undoStack.pop();
+        actionStack.push(beanAction);
         if (beanAction.getAction() == BeanAction.ACTION_ADD){
             editSomething(beanAction.getBefore(), b-> {
                 return data.addAll(b);
@@ -298,17 +298,17 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                 edit(before,after);
             });
         }else {
-            redoStack.push(beanAction);
-            undoStack.pop();
+            undoStack.push(beanAction);
+            actionStack.pop();
         }
     }
 
     @Override
     public boolean isRedo() {
-        return !redoStack.empty();
+        return !undoStack.empty();
     }
 
-    protected class BeanAction<t>{
+    public class BeanAction<t>{
 
         private Collection<t> before;
 

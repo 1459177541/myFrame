@@ -9,7 +9,7 @@ import java.util.*;
 
 public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
-    private static BeanBufferFactory root;
+    private static BeanBufferFactory defaultFactory;
 
     private Map<Class<?>, BeanBuffer<?>> buffer = new HashMap<>();
 
@@ -20,8 +20,8 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
         return this;
     }
 
-    public BeanBufferFactory setRoot(){
-        root = this;
+    public BeanBufferFactory toDefault(){
+        defaultFactory = this;
         return this;
     }
 
@@ -42,13 +42,13 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
                                 }).load(key)
                         )
                 ));
-        if (this == root){
+        if (this == defaultFactory){
             return Objects.requireNonNull(buffer.get(key),"加载失败");
         }
         return Objects.requireNonNull(
                 Objects.requireNonNullElseGet(
                         buffer.get(key)
-                        ,()->Optional.of(root).map(p->p.get(key)).get())
+                        ,()->Optional.of(defaultFactory).map(p->p.get(key)).get())
                 ,"加载失败"
         );
     }
