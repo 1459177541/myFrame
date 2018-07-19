@@ -13,4 +13,14 @@ public interface BeanBuffer<T> extends Collection<T> {
 
     void update(List<T> list);
 
+    void edit(T before, T after);
+
+    void undo();
+
+    boolean isUndo();
+
+    void redo();
+
+    boolean isRedo();
+
 }

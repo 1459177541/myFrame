@@ -3,14 +3,12 @@ package dao.util;
 import util.Waitable;
 import util.asynchronized.AsyncExecuteManage;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
@@ -26,6 +24,8 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     public AbstractBeanBuffer(Class<T> clazz){
         lock = new ReentrantReadWriteLock();
         this.clazz = clazz;
+        undoStack = new Stack<>();
+        redoStack = new Stack<>();
         state = BeanBufferState.INIT;
     }
 
@@ -74,6 +74,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         return readSomething(null, a-> data.toArray());
     }
 
+    @SuppressWarnings("SuspiciousToArrayCall")
     @Override
     public <A> A[] toArray(A[] a) {
         return readSomething(a, t-> data.toArray(t));
@@ -82,48 +83,95 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     @Override
     public boolean add(T t) {
         return editSomething(t, a->{
-            return data.add(a);
+            boolean isSuccess = data.add(a);
+            if (isSuccess) {
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                action.setBefore(a);
+                undoStack.push(action);
+            }
+            return isSuccess;
         });
     }
 
     @Override
     public boolean remove(Object o) {
         return editSomething(o, a->{
-            return data.remove(a);
+            boolean isSuccess = data.remove(a);
+            if (isSuccess) {
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                //noinspection unchecked
+                action.setBefore((T) a);
+                undoStack.push(action);
+            }
+            return isSuccess;
         });
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return editSomething(c, a->{
-            return data.containsAll(a);
-        });
+        return readSomething(c, a-> data.containsAll(a));
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
         return editSomething(c, a->{
-            return data.addAll(a);
+            boolean isSuccess = data.addAll(a);
+            if (isSuccess) {
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                //noinspection unchecked
+                action.setBefore((Collection<T>) a);
+                undoStack.push(action);
+            }
+            return isSuccess;
         });
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
         return editSomething(c, a->{
-            return data.retainAll(a);
+            boolean isSuccess = data.removeAll(a);
+            if (isSuccess) {
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                //noinspection unchecked
+                action.setBefore((Collection<T>) a);
+                undoStack.push(action);
+            }
+            return isSuccess;
         });
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
         return editSomething(c, a->{
-            return data.retainAll(a);
+            boolean isSuccess = data.retainAll(a);
+            if (isSuccess) {
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
+                action.setBefore(data.stream().filter(d->!a.contains(d)).collect(Collectors.toList()));
+                undoStack.push(action);
+            }
+            return isSuccess;
         });
     }
 
     @Override
     public void clear() {
-        editSomething(data, (Consumer<List<T>>) List::clear);
+        editSomething(data, a->{
+            data.clear();
+            BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
+            action.setBefore(data);
+            undoStack.push(action);
+        });
+    }
+
+    @Override
+    public void edit(T before, T after) {
+        editSomething(null, a->{
+            data.set(data.indexOf(before),after);
+            BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_EDIT);
+            action.setBefore(before);
+            action.setAfter(after);
+            undoStack.push(action);
+        });
     }
 
     @Override
@@ -193,6 +241,119 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             lock.readLock().unlock();
         }
         return r;
+    }
+
+
+    protected Stack<BeanAction<T>> undoStack;
+
+    protected Stack<BeanAction<T>> redoStack;
+
+    @Override
+    @SuppressWarnings({"unchecked", "Duplicates"})
+    public void undo() {
+        BeanAction<T> beanAction = undoStack.pop();
+        redoStack.push(beanAction);
+        if (beanAction.getAction() == BeanAction.ACTION_ADD){
+            editSomething(beanAction.getBefore(), b-> {
+                return data.removeAll(b);
+            });
+        }else if (beanAction.getAction() == BeanAction.ACTION_DEL){
+            editSomething(beanAction.getBefore(), b->{
+                return data.addAll(b);
+            });
+        }else if (beanAction.getAction() == BeanAction.ACTION_EDIT){
+            final T before = (T) beanAction.getBefore().toArray()[0];
+            final T after = (T) beanAction.getAfter().toArray()[0];
+            editSomething(null, a->{
+                edit(after,before);
+            });
+        }else {
+            undoStack.push(beanAction);
+            redoStack.pop();
+        }
+    }
+
+    @Override
+    public boolean isUndo() {
+        return !undoStack.empty();
+    }
+
+    @Override
+    @SuppressWarnings({"Duplicates", "unchecked"})
+    public void redo() {
+        BeanAction<T> beanAction = redoStack.pop();
+        undoStack.push(beanAction);
+        if (beanAction.getAction() == BeanAction.ACTION_ADD){
+            editSomething(beanAction.getBefore(), b-> {
+                return data.addAll(b);
+            });
+        }else if (beanAction.getAction() == BeanAction.ACTION_DEL){
+            editSomething(beanAction.getBefore(), b->{
+                return data.removeAll(b);
+            });
+        }else if (beanAction.getAction() == BeanAction.ACTION_EDIT){
+            final T before = (T) beanAction.getBefore().toArray()[0];
+            final T after = (T) beanAction.getAfter().toArray()[0];
+            editSomething(null, a->{
+                edit(before,after);
+            });
+        }else {
+            redoStack.push(beanAction);
+            undoStack.pop();
+        }
+    }
+
+    @Override
+    public boolean isRedo() {
+        return !redoStack.empty();
+    }
+
+    protected class BeanAction<t>{
+
+        private Collection<t> before;
+
+        private Collection<t> after;
+
+        private final int action;
+
+        static final int ACTION_ADD = 1;
+        static final int ACTION_DEL = 2;
+        static final int ACTION_EDIT = 3;
+
+        BeanAction(int action) {
+            this.action = action;
+        }
+
+        Collection<t> getBefore() {
+            return before;
+        }
+
+        void setBefore(Collection<t> before) {
+            this.before = before;
+        }
+
+        void setBefore(t before){
+            this.before = new ArrayList<>(1);
+            this.before.add(before);
+        }
+
+        Collection<t> getAfter() {
+            return after;
+        }
+
+        void setAfter(Collection<t> after) {
+            this.after = after;
+        }
+
+        void setAfter(t after){
+            this.after = new ArrayList<>(1);
+            this.after.add(after);
+        }
+
+        int getAction() {
+            return action;
+        }
+
     }
 
 }
