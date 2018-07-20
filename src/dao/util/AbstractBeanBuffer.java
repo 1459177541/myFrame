@@ -8,6 +8,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -193,6 +194,29 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         return data.toString();
     }
 
+    @Override
+    public boolean removeIf(Predicate<? super T> filter) {
+        return editSomething(filter, a->{
+            boolean isSuccess;
+            BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
+            action.setBefore(data.stream().filter(filter).collect(Collectors.toList()));
+            isSuccess = data.removeIf(filter);
+            if (isSuccess){
+                actionStack.push(action);
+            }
+            return isSuccess;
+        });
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
+        return readSomething(null,a->data.spliterator());
+    }
+
+    @Override
+    public Stream<T> parallelStream() {
+        return readSomething(null,a->data.parallelStream());
+    }
 
     @Override
     public boolean isWait() {

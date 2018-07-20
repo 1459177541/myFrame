@@ -27,21 +27,20 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     @Override
     public BeanBuffer<?> get(Class<?> key) {
-        buffer.put(key
-                ,Objects.requireNonNullElseGet(
-                        buffer.get(key)
-                        ,()->Objects.requireNonNull(
-                                Objects.requireNonNullElseGet(this.dao,()->{
-                                    if (key.isAnnotationPresent(DB_table.class)){
-                                        return new DatabaseDao();
-                                    }else if (key.isAnnotationPresent(SystemFile.class)){
-                                        return new FileStoreDao();
-                                    }else {
-                                        return null;
-                                    }
-                                }).load(key)
-                        )
-                ));
+        if (null == buffer.get(key)) {
+            BeanBuffer<?> beanBuffer = Objects.requireNonNullElseGet(this.dao, () -> {
+                if (key.isAnnotationPresent(DB_table.class)) {
+                    return new DatabaseDao();
+                } else if (key.isAnnotationPresent(SystemFile.class)) {
+                    return new FileStoreDao();
+                } else {
+                    return null;
+                }
+            }).load(key);
+            if (null != beanBuffer){
+                buffer.put(key,beanBuffer);
+            }
+        }
         if (this == defaultFactory){
             return Objects.requireNonNull(buffer.get(key),"加载失败");
         }
