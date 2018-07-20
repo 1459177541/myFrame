@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/systemFile/SFUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/systemFile/SFUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dao/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/dao/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/dao/TestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/dao/TestDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -51,12 +54,12 @@
       <file leaf-file-name="TestDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/dao/TestDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+            <state relative-caret-position="528">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1372#1373#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1260#1261#0" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,9 +68,10 @@
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/dao/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+            <state relative-caret-position="132">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#374#375#0" expanded="true" />
                 <element signature="e#406#407#0" expanded="true" />
               </folding>
@@ -87,12 +91,38 @@
       <file leaf-file-name="AbstractBeanBuffer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="159" column="49" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
+            <state relative-caret-position="170">
+              <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1396#1397#0" expanded="true" />
                 <element signature="e#5195#5196#0" expanded="true" />
                 <element signature="e#5233#5234#0" expanded="true" />
+                <element signature="e#5366#5367#0" expanded="true" />
+                <element signature="e#5422#5423#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Waitable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/Waitable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SFUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/systemFile/SFUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="946">
+              <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+              <folding>
+                <element signature="e#473#503#0" expanded="true" />
+                <element signature="e#1227#1257#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,8 +131,12 @@
       <file leaf-file-name="FileStoreDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+            <state relative-caret-position="-198">
+              <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+              <folding>
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,7 +144,7 @@
       <file leaf-file-name="DatabaseDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
+            <state relative-caret-position="311">
               <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -179,20 +213,20 @@
         <option value="$PROJECT_DIR$/src/dao/util/FilestoreDao.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Select.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Result.java" />
-        <option value="$PROJECT_DIR$/src/dao/systemFile/SFUtil.java" />
         <option value="$PROJECT_DIR$/src/dao/db/util/DBUtil.java" />
         <option value="$PROJECT_DIR$/src/dao/frame/Dao.java" />
         <option value="$PROJECT_DIR$/src/frame/Edit.java" />
         <option value="$PROJECT_DIR$/src/dao/util/BeanBuffer.java" />
         <option value="$PROJECT_DIR$/test/dao/model.java" />
-        <option value="$PROJECT_DIR$/test/dao/Model.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Del.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Add.java" />
         <option value="$PROJECT_DIR$/src/util/Waitable.java" />
         <option value="$PROJECT_DIR$/src/factory/BeanBufferFactory.java" />
         <option value="$PROJECT_DIR$/src/dao/util/DatabaseDao.java" />
-        <option value="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Edit.java" />
+        <option value="$PROJECT_DIR$/test/dao/Model.java" />
+        <option value="$PROJECT_DIR$/src/dao/systemFile/SFUtil.java" />
+        <option value="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" />
         <option value="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" />
         <option value="$PROJECT_DIR$/test/dao/TestDao.java" />
       </list>
@@ -350,18 +384,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestDao.testSave">
-    <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.C" />
-      <module name="myFrame" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestDao.testMethod">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -401,6 +424,29 @@
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
       <option name="METHOD_NAME" value="testFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestDao.testLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myFrame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
+      <option name="METHOD_NAME" value="testLoad" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -496,19 +542,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.C" />
       <item itemvalue="JUnit.AsyncTest.Test3" />
       <item itemvalue="JUnit.TestDao.testFactory" />
       <item itemvalue="JUnit.TestDao.testMethod" />
       <item itemvalue="JUnit.TestDao.testSave" />
+      <item itemvalue="JUnit.TestDao.testLoad" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDao.testSave" />
         <item itemvalue="JUnit.TestDao.testMethod" />
+        <item itemvalue="JUnit.TestDao.testLoad" />
+        <item itemvalue="JUnit.TestDao.testSave" />
         <item itemvalue="JUnit.TestDao.testFactory" />
         <item itemvalue="JUnit.AsyncTest.Test3" />
-        <item itemvalue="Application.C" />
       </list>
     </recent_temporary>
   </component>
@@ -550,7 +596,7 @@
       <workItem from="1531927821851" duration="250000" />
       <workItem from="1531999578725" duration="8738000" />
       <workItem from="1532073917325" duration="3946000" />
-      <workItem from="1532082444796" duration="2125000" />
+      <workItem from="1532082444796" duration="9011000" />
     </task>
     <task id="LOCAL-00001" summary="添加build结构">
       <created>1529927741632</created>
@@ -657,43 +703,50 @@
       <option name="project" value="LOCAL" />
       <updated>1532077835476</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="测试及修复BUG">
+      <created>1532084663390</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1532084663391</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 48m 24s.xml">
+    <history-entry file="TestDao_testMethod - 2018.07.20 at 20h 24m 31s.xml">
       <configuration name="TestDao.testMethod" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 49m 05s.xml">
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 07m 11s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 07m 48s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 09m 50s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 17m 08s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 19m 01s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 19m 07s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 19m 35s.xml">
+      <configuration name="TestDao.testLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDao_testMethod - 2018.07.20 at 21h 20m 10s.xml">
       <configuration name="TestDao.testMethod" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 49m 37s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 50m 38s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 51m 14s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 55m 25s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 56m 41s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 57m 55s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 59m 17s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 18h 59m 28s.xml">
+    <history-entry file="TestDao_testMethod - 2018.07.20 at 21h 21m 01s.xml">
       <configuration name="TestDao.testMethod" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101708000" />
+    <option name="totallyTimeSpent" value="108594000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -722,7 +775,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" weight="0.22921109" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.22921109" />
       <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
@@ -828,7 +881,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -836,20 +889,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/util/BeanBufferState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -981,24 +1020,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="431" column="22" selection-start-line="431" selection-start-column="19" selection-end-line="431" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/db/util/GetConn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/systemFile/SFUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,13 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="591" column="6" selection-start-line="591" selection-start-column="6" selection-end-line="591" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1087,13 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="366" column="12" selection-start-line="366" selection-start-column="12" selection-end-line="366" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/ref/Reference.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1105,17 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="630" selection-start-line="630" selection-end-line="630" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dao/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding>
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,37 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Waitable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="351" column="29" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/db/sql/Edit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1199,26 +1173,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="159" column="49" selection-start-line="159" selection-start-column="49" selection-end-line="159" selection-end-column="49" />
+        <state relative-caret-position="112">
+          <caret line="411" column="24" selection-start-line="411" selection-start-column="24" selection-end-line="411" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/Waitable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/systemFile/SFUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="e#473#503#0" expanded="true" />
+            <element signature="e#1227#1257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="351" column="29" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="366" column="12" selection-start-line="366" selection-start-column="12" selection-end-line="366" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/locks/ReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Iterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
             <element signature="e#5195#5196#0" expanded="true" />
             <element signature="e#5233#5234#0" expanded="true" />
+            <element signature="e#5366#5367#0" expanded="true" />
+            <element signature="e#5422#5423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/dao/TestDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        <state relative-caret-position="528">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
           </folding>
         </state>
       </provider>

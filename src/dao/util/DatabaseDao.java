@@ -5,6 +5,8 @@ import dao.db.util.GetConn;
 import dao.frame.Dao;
 import util.asynchronized.AsyncExecuteManage;
 
+import java.util.Objects;
+
 public class DatabaseDao implements Dao {
 
     private final GetConn conn;
@@ -47,7 +49,7 @@ public class DatabaseDao implements Dao {
             Select<T> select = new Select<>();
             select.setClazz(clazz);
             select.setConnection(conn.getConn());
-            data = select.getResult();
+            data = Objects.requireNonNull(select.getResult());
             state = BeanBufferState.COMPLETE;
             stopWait();
         }

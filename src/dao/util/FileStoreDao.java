@@ -39,9 +39,10 @@ public class FileStoreDao implements Dao {
             } catch (FileNotFoundException e) {
 //                throw new NoSuchElementException(e.getMessage());
                 data = new ArrayList<>();
+            }finally {
+                stopWait();
             }
             state = BeanBufferState.COMPLETE;
-            stopWait();
         }
 
         public void save(){

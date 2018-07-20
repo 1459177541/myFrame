@@ -17,6 +17,7 @@ public class SFUtil {
         return read(clazz.getAnnotation(SystemFile.class).fileName());
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> List<T> read(String fileName) throws FileNotFoundException{
         File f = new File(fileName);
         ArrayList<T> list = new ArrayList<>();
@@ -28,7 +29,9 @@ public class SFUtil {
             while (null!=(t = (T)ois.readObject())){
                 list.add(t);
             }
-        } catch (ClassNotFoundException e) {
+        }catch (EOFException e){
+            //忽略
+        }catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
             throw e;
@@ -38,6 +41,7 @@ public class SFUtil {
         return list;
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> void write(List<T> data) throws FileNotFoundException{
         if (0==data.size()){
             return;

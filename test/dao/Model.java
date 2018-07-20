@@ -2,8 +2,12 @@ package dao;
 
 import dao.sf.annotation.SystemFile;
 
+import java.io.Serializable;
+
 @SystemFile(fileName = "../test")
-public class Model {
+public class Model implements Serializable {
+
+    public static final long serialVersionUID = 1L;
 
     private String name;
 

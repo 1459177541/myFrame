@@ -15,7 +15,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
 
     protected List<T> data;
 
-    protected BeanBufferState state;
+    protected volatile BeanBufferState state;
 
     protected final Class<T> clazz;
 
@@ -177,8 +177,9 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     @SuppressWarnings("Convert2MethodRef")
     @Override
     public void forEach(Consumer<? super T> action) {
-        editSomething(data,da->{
-            da.forEach(d->action.accept(d));
+        readSomething(null,a->{
+            data.forEach(e->action.accept(e));
+            return null;
         });
     }
 
@@ -209,6 +210,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
      */
     @Override
     public void synchronization(List<BeanBuffer<T>> list){
+        await();
         state = BeanBufferState.SYNCHRONIZATION;
         list.forEach(e -> AsyncExecuteManage.start(()-> readSomething(e, beanBuffer -> {
             beanBuffer.update(data);
