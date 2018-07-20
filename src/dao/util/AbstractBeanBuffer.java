@@ -98,7 +98,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         return editSomething(o, a->{
             boolean isSuccess = data.remove(a);
             if (isSuccess) {
-                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
                 //noinspection unchecked
                 action.setBefore((T) a);
                 actionStack.push(action);
@@ -131,7 +131,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         return editSomething(c, a->{
             boolean isSuccess = data.removeAll(a);
             if (isSuccess) {
-                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_ADD);
+                BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
                 //noinspection unchecked
                 action.setBefore((Collection<T>) a);
                 actionStack.push(action);
@@ -156,10 +156,10 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     @Override
     public void clear() {
         editSomething(data, a->{
-            data.clear();
             BeanAction<T> action = new BeanAction<>(BeanAction.ACTION_DEL);
-            action.setBefore(data);
+            action.setBefore(new ArrayList<>(data));
             actionStack.push(action);
+            data.clear();
         });
     }
 
@@ -266,6 +266,9 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     @Override
     @SuppressWarnings({"unchecked", "Duplicates"})
     public void undo() {
+        if (!isUndo()){
+            return;
+        }
         BeanAction<T> beanAction = actionStack.pop();
         undoStack.push(beanAction);
         if (beanAction.getAction() == BeanAction.ACTION_ADD){
@@ -296,6 +299,9 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     @Override
     @SuppressWarnings({"Duplicates", "unchecked"})
     public void redo() {
+        if (!isRedo()) {
+            return;
+        }
         BeanAction<T> beanAction = undoStack.pop();
         actionStack.push(beanAction);
         if (beanAction.getAction() == BeanAction.ACTION_ADD){
