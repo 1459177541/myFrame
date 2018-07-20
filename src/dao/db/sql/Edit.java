@@ -25,12 +25,12 @@ public class Edit<T> extends Update<T> {
 		if (null==obj) {
 			return null;
 		}
-		StringBuffer sql = new StringBuffer("UPDATE "+DBUtil.getTableName(obj)+" SET "+DBUtil.get(obj, DBUtil.kv(obj), ","));
+		StringBuffer sql = new StringBuffer("UPDATE "+DBUtil.getTableName(obj)+" SET "+DBUtil.get(clazz, DBUtil.kv(obj), ","));
 		if (null==criteria) {
 			sql.append(" WHERE "+criteria.toString());
 		}
 		else {
-			sql.append("WHERE"+DBUtil.get(oldObj, DBUtil.kv(oldObj), "AND"));
+			sql.append("WHERE"+DBUtil.get(clazz, DBUtil.kv(oldObj), "AND"));
 		}
 		this.sql = sql.toString();
 		return this.sql;

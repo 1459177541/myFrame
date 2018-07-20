@@ -13,7 +13,7 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     private Map<Class<?>, BeanBuffer<?>> buffer = new HashMap<>();
 
-    Dao dao;
+    private Dao dao;
 
     public BeanBufferFactory setDao(Dao dao) {
         this.dao = dao;

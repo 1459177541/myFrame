@@ -19,9 +19,9 @@ public class Add<T> extends Update<T> {
 			return null;
 		}
 		if (null==sql) {
-			sql="INSERT INTO "+DBUtil.getTableName(obj)+DBUtil.get(obj, DBUtil.key(), ",")+" "
+			sql="INSERT INTO "+DBUtil.getTableName(obj)+DBUtil.get(clazz, DBUtil.key(), ",")+" "
 					+ "VALUES"
-					+ DBUtil.get(obj, DBUtil.value(obj), ",")+";";
+					+ DBUtil.get(clazz, DBUtil.value(obj), ",")+";";
 		}
 		return sql;
 	}

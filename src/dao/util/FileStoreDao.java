@@ -5,6 +5,7 @@ import dao.systemFile.SFUtil;
 import util.asynchronized.AsyncExecuteManage;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class FileStoreDao implements Dao {
@@ -23,8 +24,9 @@ public class FileStoreDao implements Dao {
     public <T> FileStoreBeanBuffer load(Class<T> clazz) {
         return new FileStoreBeanBuffer(clazz);
     }
-    private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T>{
 
+
+    private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T>{
 
         public FileStoreBeanBuffer(Class<T> clazz) {
             super(clazz);
@@ -32,13 +34,14 @@ public class FileStoreDao implements Dao {
         }
 
         private void load(){
-            editSomething(null,a->{
-                try {
-                    data = SFUtil.read(clazz);
-                } catch (FileNotFoundException e) {
-                    throw new NoSuchElementException(e.getMessage());
-                }
-            });
+            try {
+                data = SFUtil.read(clazz);
+            } catch (FileNotFoundException e) {
+//                throw new NoSuchElementException(e.getMessage());
+                data = new ArrayList<>();
+            }
+            state = BeanBufferState.COMPLETE;
+            stopWait();
         }
 
         public void save(){

@@ -44,12 +44,12 @@ public class DatabaseDao implements Dao {
         }
 
         private void load(){
-            editSomething(null,a->{
-                Select<T> select = new Select<>();
-                select.setClazz(clazz);
-                select.setConnection(conn.getConn());
-                data = select.getResult();
-            });
+            Select<T> select = new Select<>();
+            select.setClazz(clazz);
+            select.setConnection(conn.getConn());
+            data = select.getResult();
+            state = BeanBufferState.COMPLETE;
+            stopWait();
         }
 
         @SuppressWarnings("unchecked")

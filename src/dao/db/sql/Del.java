@@ -23,7 +23,7 @@ public class Del<T> extends Update<T>{
 			sql.append(" WHERE "+criteria.toString());
 		}
 		else {
-			sql.append("WHERE"+DBUtil.get(obj, DBUtil.kv(obj), "AND"));
+			sql.append("WHERE"+DBUtil.get(clazz, DBUtil.kv(obj), "AND"));
 		}
 		this.sql = sql.toString();
 		return this.sql;

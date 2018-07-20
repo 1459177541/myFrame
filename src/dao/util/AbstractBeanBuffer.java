@@ -174,16 +174,28 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         });
     }
 
+    @SuppressWarnings("Convert2MethodRef")
+    @Override
+    public void forEach(Consumer<? super T> action) {
+        editSomething(data,da->{
+            da.forEach(d->action.accept(d));
+        });
+    }
+
     @Override
     public Stream<T> stream(){
         return readSomething(null, a-> data.stream());
     }
 
+    @Override
+    public String toString(){
+        return data.toString();
+    }
 
 
     @Override
     public boolean isWait() {
-        return isCompleted();
+        return !isCompleted();
     }
 
     @Override
@@ -215,6 +227,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         }finally {
             lock.writeLock().unlock();
             state = BeanBufferState.COMPLETE;
+            stopWait();
         }
         return r;
     }
@@ -228,6 +241,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         }finally {
             lock.writeLock().unlock();
             state = BeanBufferState.COMPLETE;
+            stopWait();
         }
     }
 
@@ -239,6 +253,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             r = function.apply(arg);
         }finally {
             lock.readLock().unlock();
+            stopWait();
         }
         return r;
     }
