@@ -93,7 +93,7 @@ public class AsyncTest {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+                System.err.println(" 等待:" + AsyncAbstractExecutor.getDefault().getWaitSize() + " 完成:" + AsyncAbstractExecutor.getDefault().getCompleteSize() + "++++++");
             }
 		});
 		System.err.println("e1 result: "+e1.getResult());
@@ -127,16 +127,16 @@ public class AsyncTest {
 				System.out.println("普通线程 "+t+" 执行完毕！");
 			});
 		}
-		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getDefault().getWaitSize() + " 完成:" + AsyncAbstractExecutor.getDefault().getCompleteSize() + "++++++");
 		AsyncExecuteManage.start(AsyncLevel.WITHIN, ()-> System.out.println("WITHIN线程完成")).setWaitTime(3*1000);
 		AsyncExecuteManage.start(AsyncLevel.NOW,()-> System.out.println("优先执行完毕"));
-		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getDefault().getWaitSize() + " 完成:" + AsyncAbstractExecutor.getDefault().getCompleteSize() + "++++++");
 		try {
 			Thread.sleep(50*1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.err.println(" 等待:" + AsyncAbstractExecutor.getWaitSize() + " 完成:" + AsyncAbstractExecutor.getCompleteSize() + "++++++");
+		System.err.println(" 等待:" + AsyncAbstractExecutor.getDefault().getWaitSize() + " 完成:" + AsyncAbstractExecutor.getDefault().getCompleteSize() + "++++++");
 	}
 
 }

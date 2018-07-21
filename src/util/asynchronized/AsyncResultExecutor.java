@@ -14,11 +14,13 @@ public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 
 
 	public AsyncResultExecutor(AsyncResult<T> event) {
-		this.event = event;
+        super();
+        this.event = event;
 	}
 
 	public AsyncResultExecutor() {
-		this.event = null;
+        super();
+        this.event = null;
 	}	
 	
 	@Override

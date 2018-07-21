@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="">
+    <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="测试及修复保存与加载">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factory/BeanBufferFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/BeanBufferFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/build/target/" />
@@ -48,111 +51,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/TestDao.java">
+      <file leaf-file-name="AsyncAbstractExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="814">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1260#1261#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1053#1054#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#2368#2369#0" expanded="true" />
+                <element signature="e#2402#2403#0" expanded="true" />
+                <element signature="e#3234#3235#0" expanded="true" />
+                <element signature="e#3286#3287#0" expanded="true" />
+                <element signature="e#1849#1850#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#3530#3531#0" expanded="true" />
+                <element signature="e#3587#3588#0" expanded="true" />
+                <element signature="e#3961#3962#0" expanded="true" />
+                <element signature="e#4002#4003#0" expanded="true" />
+                <element signature="e#4067#4068#0" expanded="true" />
+                <element signature="e#4107#4108#0" expanded="true" />
+                <element signature="e#4280#4281#0" expanded="true" />
+                <element signature="e#4313#4314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dao/Model.java">
+      <file leaf-file-name="AsyncResultExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BeanBufferFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/factory/BeanBufferFactory.java">
+      <file leaf-file-name="AsyncExecuteManage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="264">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractBeanBuffer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
+      <file leaf-file-name="AsyncTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/asynchornized/AsyncTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4312">
-              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1334#1335#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#5195#5196#0" expanded="true" />
-                <element signature="e#5233#5234#0" expanded="true" />
-                <element signature="e#5870#5871#0" expanded="true" />
-                <element signature="e#5915#5916#0" expanded="true" />
-                <element signature="e#5970#5971#0" expanded="true" />
-                <element signature="e#5997#5998#0" expanded="true" />
-                <element signature="e#6042#6043#0" expanded="true" />
-                <element signature="e#6079#6080#0" expanded="true" />
-                <element signature="e#6129#6130#0" expanded="true" />
-                <element signature="e#6185#6186#0" expanded="true" />
-                <element signature="e#8780#8781#0" expanded="true" />
-                <element signature="e#8823#8824#0" expanded="true" />
-                <element signature="e#9857#9858#0" expanded="true" />
-                <element signature="e#9898#9899#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="792">
+              <caret line="138" column="130" selection-start-line="138" selection-start-column="130" selection-end-line="138" selection-end-column="130" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SFUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/systemFile/SFUtil.java">
+      <file leaf-file-name="AsyncLevel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-              <folding>
-                <element signature="e#473#503#0" expanded="true" />
-                <element signature="e#1227#1257#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="528">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileStoreDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
+      <file leaf-file-name="AsyncAbstractEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1826">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/frame/Dao.java">
+      <file leaf-file-name="ThreadState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/ThreadState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="66">
+              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseDao.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
+      <file leaf-file-name="AsyncEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="51" column="62" lean-forward="true" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+            <state>
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AsyncResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,9 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncEvent.java" />
-        <option value="$PROJECT_DIR$/src/util/asynchronized/ThreadState.java" />
-        <option value="$PROJECT_DIR$/test/test/AsyncTest.java" />
         <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractEvent.java" />
         <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncResult.java" />
         <option value="$PROJECT_DIR$/src/build/Build.java" />
@@ -212,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/frame/config/FactoryConfig.java" />
         <option value="$PROJECT_DIR$/src/frame/config/Config.java" />
         <option value="$PROJECT_DIR$/test/FactoryAndAOP/AopTest2.java" />
-        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" />
         <option value="$PROJECT_DIR$/test/FactoryAndAOP/FactoryTest.java" />
         <option value="$PROJECT_DIR$/src/dao/frame/dao.java" />
         <option value="$PROJECT_DIR$/src/dao/db/sql/Update.java" />
@@ -236,6 +229,10 @@
         <option value="$PROJECT_DIR$/src/factory/BeanBufferFactory.java" />
         <option value="$PROJECT_DIR$/src/dao/frame/Dao.java" />
         <option value="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" />
+        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" />
+        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" />
+        <option value="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" />
+        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" />
       </list>
     </option>
   </component>
@@ -271,6 +268,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="myFrame" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -288,19 +297,13 @@
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+              <item name="frame" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
@@ -312,13 +315,19 @@
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="systemFile" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="factory" type="462c0819:PsiDirectoryNode" />
+              <item name="proxy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="asynchronized" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
@@ -329,19 +338,13 @@
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="asynchornized" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="myFrame" type="616d4139:PackageViewModuleNode" />
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="FactoryAndAOP" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,23 +394,46 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestDao.testMethod">
+  <component name="RunManager" selected="JUnit.AsyncTest.test2">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="AsyncTest.Test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AsyncTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myFrame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="asynchornized.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.AsyncTest" />
-      <option name="METHOD_NAME" value="Test3" />
+      <option name="PACKAGE_NAME" value="asynchornized" />
+      <option name="MAIN_CLASS_NAME" value="asynchornized.AsyncTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="AsyncTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myFrame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="asynchornized.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="asynchornized" />
+      <option name="MAIN_CLASS_NAME" value="asynchornized.AsyncTest" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -418,19 +444,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestDao.testFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AsyncTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myFrame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.*" />
+          <option name="PATTERN" value="asynchornized.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
-      <option name="METHOD_NAME" value="testFactory" />
+      <option name="PACKAGE_NAME" value="asynchornized" />
+      <option name="MAIN_CLASS_NAME" value="asynchornized.AsyncTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -441,19 +467,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestDao.testLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactoryTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myFrame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.*" />
+          <option name="PATTERN" value="FactoryAndAOP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
-      <option name="METHOD_NAME" value="testLoad" />
+      <option name="PACKAGE_NAME" value="FactoryAndAOP" />
+      <option name="MAIN_CLASS_NAME" value="FactoryAndAOP.FactoryTest" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -464,42 +490,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestDao.testMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FactoryTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myFrame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dao.*" />
+          <option name="PATTERN" value="FactoryAndAOP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
-      <option name="METHOD_NAME" value="testMethod" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestDao.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myFrame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.TestDao" />
-      <option name="METHOD_NAME" value="testSave" />
+      <option name="PACKAGE_NAME" value="FactoryAndAOP" />
+      <option name="MAIN_CLASS_NAME" value="FactoryAndAOP.FactoryTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -549,19 +552,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.AsyncTest.Test3" />
-      <item itemvalue="JUnit.TestDao.testFactory" />
-      <item itemvalue="JUnit.TestDao.testMethod" />
-      <item itemvalue="JUnit.TestDao.testSave" />
-      <item itemvalue="JUnit.TestDao.testLoad" />
+      <item itemvalue="JUnit.FactoryTest.test1" />
+      <item itemvalue="JUnit.FactoryTest.test2" />
+      <item itemvalue="JUnit.AsyncTest.test2" />
+      <item itemvalue="JUnit.AsyncTest.test1" />
+      <item itemvalue="JUnit.AsyncTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDao.testMethod" />
-        <item itemvalue="JUnit.TestDao.testLoad" />
-        <item itemvalue="JUnit.TestDao.testSave" />
-        <item itemvalue="JUnit.TestDao.testFactory" />
-        <item itemvalue="JUnit.AsyncTest.Test3" />
+        <item itemvalue="JUnit.AsyncTest.test2" />
+        <item itemvalue="JUnit.AsyncTest.test1" />
+        <item itemvalue="JUnit.AsyncTest" />
+        <item itemvalue="JUnit.FactoryTest.test2" />
+        <item itemvalue="JUnit.FactoryTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -604,6 +607,7 @@
       <workItem from="1531999578725" duration="8738000" />
       <workItem from="1532073917325" duration="3946000" />
       <workItem from="1532082444796" duration="10766000" />
+      <workItem from="1532157995463" duration="3445000" />
     </task>
     <task id="LOCAL-00001" summary="添加build结构">
       <created>1529927741632</created>
@@ -728,15 +732,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDao_testMethod - 2018.07.20 at 20h 24m 31s.xml">
-      <configuration name="TestDao.testMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 07m 11s.xml">
-      <configuration name="TestDao.testLoad" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 07m 48s.xml">
-      <configuration name="TestDao.testLoad" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestDao_testLoad - 2018.07.20 at 21h 09m 50s.xml">
       <configuration name="TestDao.testLoad" configurationId="JUnit" />
     </history-entry>
@@ -758,9 +753,18 @@
     <history-entry file="TestDao_testMethod - 2018.07.20 at 21h 21m 01s.xml">
       <configuration name="TestDao.testMethod" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AsyncTest - 2018.07.21 at 16h 00m 13s.xml">
+      <configuration name="AsyncTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AsyncTest_test1 - 2018.07.21 at 16h 00m 22s.xml">
+      <configuration name="AsyncTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AsyncTest_test2 - 2018.07.21 at 16h 01m 21s.xml">
+      <configuration name="AsyncTest.test2" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110349000" />
+    <option name="totallyTimeSpent" value="113449000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -789,52 +793,73 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.22921109" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" weight="0.23187633" />
       <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32995737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
-    </layout>
-    <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="4" side_tool="true" weight="0.32995737" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290461" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840087" weight="0.3279743" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" weight="0.3279743" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="4" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.22921109" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840087" weight="0.3279743" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.3290461" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.2228145" />
+      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3290461" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
       <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290461" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.3279743" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49840087" weight="0.3279743" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info id="Capture Tool" order="1" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.3290461" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3290461" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.2228145" />
+      <window_info id="Favorites" order="4" side_tool="true" weight="0.32995737" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -896,7 +921,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -904,27 +929,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factory/ConfigDefaultFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/factory/ConfigFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/factory/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1120,19 +1124,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
-          <folding>
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1316,6 +1309,56 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/asynchornized/AsyncTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="138" column="130" selection-start-line="138" selection-start-column="130" selection-end-line="138" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#2368#2369#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+            <element signature="e#3234#3235#0" expanded="true" />
+            <element signature="e#3286#3287#0" expanded="true" />
+            <element signature="e#1849#1850#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#3530#3531#0" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3961#3962#0" expanded="true" />
+            <element signature="e#4002#4003#0" expanded="true" />
+            <element signature="e#4067#4068#0" expanded="true" />
+            <element signature="e#4107#4108#0" expanded="true" />
+            <element signature="e#4280#4281#0" expanded="true" />
+            <element signature="e#4313#4314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

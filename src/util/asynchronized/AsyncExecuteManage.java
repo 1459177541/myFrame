@@ -10,7 +10,13 @@ import java.util.function.Supplier;
  * @author 杨星辰
  *
  */
-public class AsyncExecuteManage extends AsyncAbstractExecutor{
+public class AsyncExecuteManage{
+
+    private static AsyncAbstractExecutor asyncAbstractExecutor;
+
+    static {
+        asyncAbstractExecutor = AsyncAbstractExecutor.getDefault();
+    }
 
 	private AsyncExecuteManage() {
 	}
@@ -41,7 +47,7 @@ public class AsyncExecuteManage extends AsyncAbstractExecutor{
 			}
 		};
 		asyncEvent.setAsyncLevel(level);
-        execute(level,asyncEvent);
+        asyncAbstractExecutor.execute(level,asyncEvent);
 		return asyncEvent;
 	}
 
@@ -69,7 +75,7 @@ public class AsyncExecuteManage extends AsyncAbstractExecutor{
 			}
 		};
 		asyncEvent.setAsyncLevel(level);
-        execute(level,asyncEvent);
+        asyncAbstractExecutor.execute(level,asyncEvent);
 		return asyncEvent;
 	}
 
@@ -99,7 +105,7 @@ public class AsyncExecuteManage extends AsyncAbstractExecutor{
 			}
 		};
 		event.setAsyncLevel(level);
-        execute(level,event);
+        asyncAbstractExecutor.execute(level,event);
 		return event;
 	}
 	
@@ -127,7 +133,7 @@ public class AsyncExecuteManage extends AsyncAbstractExecutor{
 			}
 		};
 		event.setAsyncLevel(level);
-        execute(level,event);
+        asyncAbstractExecutor.execute(level,event);
 		return event;
 		
 	}
@@ -154,14 +160,4 @@ public class AsyncExecuteManage extends AsyncAbstractExecutor{
 		return event.getResult();
 	}
 
-	@Override
-	@Deprecated
-	public void start() {
-	}
-
-	@Override
-	@Deprecated
-	public ThreadState getState() {
-		return null;
-	}
 }
