@@ -19,4 +19,13 @@ import java.lang.annotation.Target;
 public @interface Autowired {
 	int order() default 0;
 	String name() default "";
+
+	int defaultInt() default 0;
+	long defaultLong() default 0;
+	short defaultShort() default 0;
+	byte defaultByte() default 0;
+	double defaultDouble() default 0;
+	float defaultFloat() default 0;
+	String defaultString() default "";
+
 }
