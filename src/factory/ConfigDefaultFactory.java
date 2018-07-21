@@ -42,9 +42,9 @@ public class ConfigDefaultFactory extends ConfigFactory{
             }
         }
         try {
-            @SuppressWarnings("unchecked")
             Constructor<T>[] constructor = (Constructor<T>[]) clazz.getConstructors();
             if (constructor.length == 0){
+                System.out.println(clazz);
                 throw new IllegalArgumentException("私有的构造方法");
             }
             Constructor<T> m;
@@ -150,9 +150,21 @@ public class ConfigDefaultFactory extends ConfigFactory{
         return parameter;
     }
 
-    private Number setNumber(Class type){
-        if (Objects.requireNonNull(type).getSuperclass().equals(Number.class)){
+    private Object setNumber(Class type){
+        if (Objects.requireNonNull(type).equals(int.class)){
             return 0;
+        }else if (Objects.requireNonNull(type).equals(long.class)){
+            return 0;
+        }else if (Objects.requireNonNull(type).equals(short.class)){
+            return 0;
+        }else if (Objects.requireNonNull(type).equals(byte.class)){
+            return 0;
+        }else if (Objects.requireNonNull(type).equals(double.class)){
+            return 0;
+        }else if (Objects.requireNonNull(type).equals(float.class)){
+            return 0;
+        }else if (Objects.requireNonNull(type).equals(String.class)) {
+            return "";
         }else {
             return null;
         }

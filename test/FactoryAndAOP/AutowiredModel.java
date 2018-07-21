@@ -16,12 +16,12 @@ public class AutowiredModel {
     }
 
     @Autowired(order = 1)
-    public AutowiredModel(int id, String name) {
+    public AutowiredModel(@Autowired(defaultInt = 1) int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    @Autowired
+    @Autowired(order = 3)
     public AutowiredModel(@Autowired(name = "autoModel2") AutowiredModel2 autowiredModel2){
         System.out.println("auto");
         System.out.println(autowiredModel2);

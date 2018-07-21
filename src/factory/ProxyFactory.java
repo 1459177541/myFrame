@@ -42,9 +42,9 @@ public class ProxyFactory extends ConfigFactory{
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> Object get(Class<T> clazz) {
-		T o = (T) factory.get(clazz);
+		T o = (T) Objects.requireNonNull(factory.get(clazz));
 		ProxyHandler<T> handler = (ProxyHandler<T>) Objects.requireNonNull(build).build();
-		handler.setTarget(Objects.requireNonNull(o));
+		handler.setTarget(o);
 		return Proxy.newProxyInstance(o.getClass().getClassLoader(), o.getClass().getInterfaces(), handler);
 	}
 

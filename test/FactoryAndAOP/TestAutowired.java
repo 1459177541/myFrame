@@ -18,6 +18,7 @@ public class TestAutowired {
         });
         ConfigFactory factory = builder.build();
 
+
         System.out.println(factory.get("autoModel1"));
     }
 
