@@ -18,7 +18,7 @@ public class AsyncProxyHandler<T> extends DefaultProxyHandler<T>{
         if (!method.isAnnotationPresent(Async.class)){
             return myInvoke(proxy, method,args);
         }
-        return AsyncExecuteManage.startResult(AsyncLevel.SYSTEM, ()-> {
+        return AsyncExecuteManage.startResult(()-> {
             try {
                 return myInvoke(proxy, method, args);
             } catch (Throwable throwable) {
