@@ -1,14 +1,17 @@
 package util.asynchronized;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * 线程工具类，封装线程池
+ *
+ * @author 杨星辰
+ */
 public abstract class AsyncAbstractExecutor {
 
     private static Map<String, AsyncAbstractExecutor> map;
@@ -17,11 +20,13 @@ public abstract class AsyncAbstractExecutor {
         map = new HashMap<>();
         //noinspection StaticInitializerReferencesSubClass
         map.put("default",new AsyncResultExecutor<>());
+        //noinspection StaticInitializerReferencesSubClass
+        map.put("system",new AsyncResultExecutor<>());
     }
 
     public static synchronized AsyncAbstractExecutor createExecutor(String name){
         if (map.get(name)!= null){
-            throw  new IllegalArgumentException();
+            throw new IllegalArgumentException("该线程工具已存在");
         }else {
             AsyncAbstractExecutor asyncAbstractExecutor = new AsyncResultExecutor<>();
             map.put(name,asyncAbstractExecutor);
@@ -30,7 +35,7 @@ public abstract class AsyncAbstractExecutor {
     }
 
     public static AsyncAbstractExecutor getExecutor(String name){
-        return map.get(name);
+        return Objects.requireNonNull(map.get(name),"不存在该线程工具");
     }
 
     public static AsyncAbstractExecutor getDefault(){
@@ -60,7 +65,9 @@ public abstract class AsyncAbstractExecutor {
      */
     protected void execute(AsyncLevel level, AsyncAbstractEvent event){
         try {
-            if (AsyncLevel.NOW.equals(level)){
+            if (AsyncLevel.SYSTEM.equals(level)){
+                getExecutor("system").execute(AsyncLevel.NORMAL,event);
+            }else if (AsyncLevel.NOW.equals(level) || AsyncLevel.SYSTEM_NOW.equals(level)){
                 new Thread(event).start();
             }
             else if (AsyncLevel.NOW.equals(level) && getWaitSize() > 0) {
@@ -115,6 +122,7 @@ public abstract class AsyncAbstractExecutor {
         }
 
         private void checkWithinList() {
+            //noinspection InfiniteLoopStatement
             while (true) {
                 try {
                     Thread.sleep(500);
@@ -140,15 +148,15 @@ public abstract class AsyncAbstractExecutor {
             }
         }
 
-        public ThreadPoolExecutor getThreadPool() {
+        ThreadPoolExecutor getThreadPool() {
             return threadPool;
         }
 
-        public PriorityBlockingQueue<Runnable> getWorkQueue() {
+        PriorityBlockingQueue<Runnable> getWorkQueue() {
             return workQueue;
         }
 
-        public void addWithinList(AsyncAbstractEvent event){
+        void addWithinList(AsyncAbstractEvent event){
             withinList.add(event);
         }
     }

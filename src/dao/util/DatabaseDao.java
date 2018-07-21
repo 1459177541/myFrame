@@ -4,6 +4,7 @@ import dao.db.sql.*;
 import dao.db.util.GetConn;
 import dao.frame.Dao;
 import util.asynchronized.AsyncExecuteManage;
+import util.asynchronized.AsyncLevel;
 
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ public class DatabaseDao implements Dao {
     @Override
     public void save(BeanBuffer beanBuffer) {
         if (beanBuffer instanceof DBBeanBuffer) {
-            AsyncExecuteManage.start(()->((DBBeanBuffer) beanBuffer).save(conn));
+            AsyncExecuteManage.start(AsyncLevel.SYSTEM,()->((DBBeanBuffer) beanBuffer).save(conn));
         }else {
             throw new IllegalArgumentException();
         }
@@ -42,7 +43,7 @@ public class DatabaseDao implements Dao {
 
         DBBeanBuffer(Class<T> clazz) {
             super(clazz);
-            AsyncExecuteManage.start(this::load);
+            AsyncExecuteManage.start(AsyncLevel.SYSTEM,this::load);
         }
 
         private void load(){

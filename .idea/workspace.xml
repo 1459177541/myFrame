@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="测试及修复保存与加载">
+    <list default="true" id="7aab3d7b-a4ed-4d9e-bfdd-81e14cfba759" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/util/DatabaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/DatabaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/build/target/" />
@@ -51,26 +52,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AsyncAbstractExecutor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AsyncAbstractExecutor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="528">
+              <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
               <folding>
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
                 <element signature="e#1011#1012#0" expanded="true" />
                 <element signature="e#1036#1037#0" expanded="true" />
                 <element signature="e#541#542#0" expanded="true" />
                 <element signature="e#579#580#0" expanded="true" />
                 <element signature="e#2368#2369#0" expanded="true" />
                 <element signature="e#2402#2403#0" expanded="true" />
-                <element signature="e#3234#3235#0" expanded="true" />
-                <element signature="e#3286#3287#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1898#1899#0" expanded="true" />
-                <element signature="e#3530#3531#0" expanded="true" />
-                <element signature="e#3587#3588#0" expanded="true" />
+                <element signature="e#2273#2274#0" expanded="true" />
+                <element signature="e#2325#2326#0" expanded="true" />
+                <element signature="e#2417#2418#0" expanded="true" />
+                <element signature="e#2466#2467#0" expanded="true" />
+                <element signature="e#2565#2566#0" expanded="true" />
+                <element signature="e#2632#2633#0" expanded="true" />
                 <element signature="e#3961#3962#0" expanded="true" />
                 <element signature="e#4002#4003#0" expanded="true" />
                 <element signature="e#4067#4068#0" expanded="true" />
@@ -82,29 +81,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncResultExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java">
+      <file leaf-file-name="DatabaseDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="192">
+              <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncExecuteManage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
+      <file leaf-file-name="FileStoreDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="286">
+              <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+              <folding>
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/asynchornized/AsyncTest.java">
+      <file leaf-file-name="AsyncProxyHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="138" column="130" selection-start-line="138" selection-start-column="130" selection-end-line="138" selection-end-column="130" />
+            <state relative-caret-position="308">
+              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -112,46 +118,41 @@
       <file leaf-file-name="AsyncLevel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+            <state relative-caret-position="132">
+              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncAbstractEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractEvent.java">
+      <file leaf-file-name="AsyncExecuteManage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1826">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
+            <state relative-caret-position="418">
+              <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/ThreadState.java">
+      <file leaf-file-name="AsyncResultExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+            <state relative-caret-position="268">
+              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncEvent.java">
+      <file leaf-file-name="AbstractBeanBuffer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AsyncResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="4686">
+              <caret line="239" column="70" selection-start-line="239" selection-start-column="70" selection-end-line="239" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#5870#5871#0" expanded="true" />
+                <element signature="e#5934#5935#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,15 +195,12 @@
         <option value="$PROJECT_DIR$/test/test/Test.java" />
         <option value="$PROJECT_DIR$/test/test/FactoryTest.java" />
         <option value="$PROJECT_DIR$/test/test/AOPImp.java" />
-        <option value="$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java" />
         <option value="$PROJECT_DIR$/src/factory/ProxyFactory.java" />
         <option value="$PROJECT_DIR$/src/frame/proxy/AopProxyHandler.java" />
         <option value="$PROJECT_DIR$/src/frame/proxy/ProxyHandler.java" />
         <option value="$PROJECT_DIR$/src/frame/Bean.java" />
         <option value="$PROJECT_DIR$/test/FactoryAndAOP/AopTest.java" />
-        <option value="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" />
         <option value="$PROJECT_DIR$/src/frame/config/FactoryConfigByAnnotation.java" />
-        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java" />
         <option value="$PROJECT_DIR$/src/frame/config/FactoryConfig.java" />
         <option value="$PROJECT_DIR$/src/frame/config/Config.java" />
         <option value="$PROJECT_DIR$/test/FactoryAndAOP/AopTest2.java" />
@@ -223,15 +221,18 @@
         <option value="$PROJECT_DIR$/src/dao/db/sql/Edit.java" />
         <option value="$PROJECT_DIR$/test/dao/Model.java" />
         <option value="$PROJECT_DIR$/test/dao/TestDao.java" />
-        <option value="$PROJECT_DIR$/src/dao/util/DatabaseDao.java" />
         <option value="$PROJECT_DIR$/src/dao/systemFile/SFUtil.java" />
-        <option value="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" />
         <option value="$PROJECT_DIR$/src/factory/BeanBufferFactory.java" />
         <option value="$PROJECT_DIR$/src/dao/frame/Dao.java" />
-        <option value="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" />
         <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java" />
         <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java" />
         <option value="$PROJECT_DIR$/test/asynchornized/AsyncTest.java" />
+        <option value="$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java" />
+        <option value="$PROJECT_DIR$/src/dao/util/DatabaseDao.java" />
+        <option value="$PROJECT_DIR$/src/dao/util/FileStoreDao.java" />
+        <option value="$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java" />
+        <option value="$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java" />
+        <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java" />
         <option value="$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java" />
       </list>
     </option>
@@ -607,7 +608,7 @@
       <workItem from="1531999578725" duration="8738000" />
       <workItem from="1532073917325" duration="3946000" />
       <workItem from="1532082444796" duration="10766000" />
-      <workItem from="1532157995463" duration="3445000" />
+      <workItem from="1532157995463" duration="5324000" />
     </task>
     <task id="LOCAL-00001" summary="添加build结构">
       <created>1529927741632</created>
@@ -728,7 +729,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532093048061</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="重构线程结构，可创建新的线程池">
+      <created>1532161636081</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1532161636081</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -764,7 +772,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113449000" />
+    <option name="totallyTimeSpent" value="115328000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -917,7 +925,8 @@
     <MESSAGE value="添加撤销/重做功能" />
     <MESSAGE value="测试及修复BUG" />
     <MESSAGE value="测试及修复保存与加载" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试及修复保存与加载" />
+    <MESSAGE value="重构线程结构，可创建新的线程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构线程结构，可创建新的线程池" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,60 +938,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/factory/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame/config/FactoryConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="29" column="50" lean-forward="true" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/db/sql/CreateTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frame/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.util.function.Function">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.util.function.Function</OriginalElement>
-          <nodes>
-            <node x="" y="">java.lang.FunctionalInterface</node>
-            <node x="" y="">java.util.function.Function</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="79.0" y="55.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/db/sql/Update.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="11" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/NoSuchElementException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1188,13 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="220" selection-start-line="220" selection-end-line="220" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/dao/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1247,32 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4312">
-          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#5195#5196#0" expanded="true" />
-            <element signature="e#5233#5234#0" expanded="true" />
-            <element signature="e#5870#5871#0" expanded="true" />
-            <element signature="e#5915#5916#0" expanded="true" />
-            <element signature="e#5970#5971#0" expanded="true" />
-            <element signature="e#5997#5998#0" expanded="true" />
-            <element signature="e#6042#6043#0" expanded="true" />
-            <element signature="e#6079#6080#0" expanded="true" />
-            <element signature="e#6129#6130#0" expanded="true" />
-            <element signature="e#6185#6186#0" expanded="true" />
-            <element signature="e#8780#8781#0" expanded="true" />
-            <element signature="e#8823#8824#0" expanded="true" />
-            <element signature="e#9857#9858#0" expanded="true" />
-            <element signature="e#9898#9899#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/systemFile/SFUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -1284,17 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/frame/Dao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1302,10 +1213,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
+    <entry file="file://$PROJECT_DIR$/test/FactoryAndAOP/AOPImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="51" column="62" lean-forward="true" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+        <state relative-caret-position="616">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1826">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/ThreadState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1314,37 +1246,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/asynchornized/AsyncTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
+        <state relative-caret-position="2838">
           <caret line="138" column="130" selection-start-line="138" selection-start-column="130" selection-end-line="138" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/FileStoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+          <folding>
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frame/proxy/AsyncProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncResultExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="268">
+          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/AbstractBeanBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4686">
+          <caret line="239" column="70" selection-start-line="239" selection-start-column="70" selection-end-line="239" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#5870#5871#0" expanded="true" />
+            <element signature="e#5934#5935#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/util/DatabaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-696">
+          <caret line="218" column="24" selection-start-line="218" selection-start-column="24" selection-end-line="218" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncAbstractExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="528">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
           <folding>
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
             <element signature="e#1011#1012#0" expanded="true" />
             <element signature="e#1036#1037#0" expanded="true" />
             <element signature="e#541#542#0" expanded="true" />
             <element signature="e#579#580#0" expanded="true" />
             <element signature="e#2368#2369#0" expanded="true" />
             <element signature="e#2402#2403#0" expanded="true" />
-            <element signature="e#3234#3235#0" expanded="true" />
-            <element signature="e#3286#3287#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-            <element signature="e#1898#1899#0" expanded="true" />
-            <element signature="e#3530#3531#0" expanded="true" />
-            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#2273#2274#0" expanded="true" />
+            <element signature="e#2325#2326#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
             <element signature="e#3961#3962#0" expanded="true" />
             <element signature="e#4002#4003#0" expanded="true" />
             <element signature="e#4067#4068#0" expanded="true" />
@@ -1352,13 +1345,6 @@
             <element signature="e#4280#4281#0" expanded="true" />
             <element signature="e#4313#4314#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/asynchronized/AsyncExecuteManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>

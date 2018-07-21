@@ -2,6 +2,7 @@ package dao.util;
 
 import util.Waitable;
 import util.asynchronized.AsyncExecuteManage;
+import util.asynchronized.AsyncLevel;
 
 import java.util.*;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -236,7 +237,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     public void synchronization(List<BeanBuffer<T>> list){
         await();
         state = BeanBufferState.SYNCHRONIZATION;
-        list.forEach(e -> AsyncExecuteManage.start(()-> readSomething(e, beanBuffer -> {
+        list.forEach(e -> AsyncExecuteManage.start(AsyncLevel.SYSTEM, ()-> readSomething(e, beanBuffer -> {
             beanBuffer.update(data);
             return null;
         })));

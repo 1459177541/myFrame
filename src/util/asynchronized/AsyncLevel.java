@@ -6,6 +6,14 @@ import java.util.function.Supplier;
 public enum AsyncLevel {
 
     /**
+     * 框架内部使用，紧急任务
+     */
+    SYSTEM_NOW(-3),
+    /**
+     * 框架内部使用
+     */
+    SYSTEM(-2),
+    /**
      * 新建线程执行，适用长时间任务
      */
     NEW(-1),

@@ -3,6 +3,7 @@ package dao.util;
 import dao.frame.Dao;
 import dao.systemFile.SFUtil;
 import util.asynchronized.AsyncExecuteManage;
+import util.asynchronized.AsyncLevel;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class FileStoreDao implements Dao {
 
         public FileStoreBeanBuffer(Class<T> clazz) {
             super(clazz);
-            AsyncExecuteManage.start(this::load);
+            AsyncExecuteManage.start(AsyncLevel.SYSTEM, this::load);
         }
 
         private void load(){
