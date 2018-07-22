@@ -31,6 +31,17 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         state = BeanBufferState.INIT;
     }
 
+    protected abstract void load();
+
+    protected abstract void save();
+
+    @SuppressWarnings("deprecation")
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        save();
+    }
+
     @Override
     public BeanBufferState getState(){
         return state;

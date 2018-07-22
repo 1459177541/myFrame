@@ -34,7 +34,8 @@ public class FileStoreDao implements Dao {
             AsyncExecuteManage.start(AsyncLevel.SYSTEM, this::load);
         }
 
-        private void load(){
+        @Override
+        protected void load(){
             try {
                 data = SFUtil.read(clazz);
             } catch (FileNotFoundException e) {
@@ -46,6 +47,7 @@ public class FileStoreDao implements Dao {
             state = BeanBufferState.COMPLETE;
         }
 
+        @Override
         public void save(){
             readSomething(null, a->{
                 try {

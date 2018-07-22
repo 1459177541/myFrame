@@ -46,13 +46,19 @@ public class DatabaseDao implements Dao {
             AsyncExecuteManage.start(AsyncLevel.SYSTEM,this::load);
         }
 
-        private void load(){
+        @Override
+        protected void load(){
             Select<T> select = new Select<>();
             select.setClazz(clazz);
             select.setConnection(conn.getConn());
             data = Objects.requireNonNull(select.getResult());
             state = BeanBufferState.COMPLETE;
             stopWait();
+        }
+
+        @Override
+        protected void save() {
+            save(GetConn.getDefault());
         }
 
         @SuppressWarnings("unchecked")
