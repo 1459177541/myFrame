@@ -5,7 +5,7 @@ import factory.ConfigFactory;
 import frame.config.FactoryConfigByAnnotation;
 import org.junit.jupiter.api.Test;
 
-public class TestAutowired {
+public class AutowiredTest {
 
     @Test
     public void test(){

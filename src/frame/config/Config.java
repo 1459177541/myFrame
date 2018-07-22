@@ -67,7 +67,9 @@ public abstract class Config <K,V>{
 	 * @param value 值
 	 */
 	public void addConfig(K key, V value) {
-		check();
+		if (null == config){
+		    initConfig();
+        }
 		this.config.put(key, value);
 	}
 

@@ -37,16 +37,33 @@ public abstract class FactoryConfig extends Config<String, BeanDefinition>{
         }
     }
 
+    /**
+     * 添加信息
+     * @param name bean名
+     * @param clazz bean class
+     * @param <T> bean类型
+     */
     protected <T> void add(String name, Class<T> clazz){
         BeanDefinition<T> beanDefinition = new BeanDefinition<>();
         beanDefinition.setBeanClass(clazz);
         beanDefinition.setName(name);
-        boolean isSingle = false;
-        if (clazz.isAnnotationPresent(Single.class)) {
-            isSingle = true;
-        }
-        beanDefinition.setSingle(isSingle);
-        config.put(name, beanDefinition);
+        beanDefinition.setSingle(clazz.isAnnotationPresent(Single.class));
+        addConfig(name, beanDefinition);
+    }
+
+    /**
+     * 添加信息
+     * @param name bean名
+     * @param classPath bean所在项目目录
+     * @param className bean的全限定类名
+     * @throws ClassNotFoundException 找不到目标文件抛出
+     */
+    protected void add(String name, String classPath, String className) throws ClassNotFoundException {
+        BeanDefinition beanDefinition = new BeanDefinition<>();
+        beanDefinition.setBeanClass(classPath,className);
+        beanDefinition.setName(name);
+        beanDefinition.setSingle(beanDefinition.getBeanClass().isAnnotationPresent(Single.class));
+        addConfig(name, beanDefinition);
     }
 
 }
