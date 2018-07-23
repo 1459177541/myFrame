@@ -2,11 +2,11 @@ package proxy.build;
 
 
 import factory.ConfigFactory;
-import frame.Build;
-import proxy.AopProxyHandler;
-import proxy.AsyncProxyHandler;
-import proxy.DefaultProxyHandler;
-import proxy.ProxyHandler;
+import proxy.handler.AopProxyHandler;
+import proxy.handler.AsyncProxyHandler;
+import proxy.handler.DefaultProxyHandler;
+import proxy.handler.ProxyHandler;
+import util.Build;
 
 import java.util.Objects;
 

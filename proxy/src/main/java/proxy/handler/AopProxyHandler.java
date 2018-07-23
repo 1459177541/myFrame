@@ -1,4 +1,4 @@
-package proxy;
+package proxy.handler;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

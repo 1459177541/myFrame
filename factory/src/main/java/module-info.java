@@ -1,4 +1,5 @@
 module myFrame.factory {
+    exports factory.build;
 
     requires myFrame.frame;
     requires myFrame.proxy;

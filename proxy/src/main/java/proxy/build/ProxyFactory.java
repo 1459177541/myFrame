@@ -1,7 +1,7 @@
 package proxy.build;
 
 import factory.ConfigFactory;
-import proxy.ProxyHandler;
+import proxy.handler.ProxyHandler;
 
 import java.lang.reflect.Proxy;
 import java.util.Objects;

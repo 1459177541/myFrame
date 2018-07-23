@@ -1,4 +1,4 @@
-package asynchronous;
+package asynchronous.model;
 
 public abstract class AsyncEvent extends AsyncAbstractEvent {
 

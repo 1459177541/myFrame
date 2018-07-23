@@ -6,7 +6,7 @@ import factory.ConfigDefaultFactory;
 import factory.ConfigFactory;
 import proxy.build.ProxyFactory;
 import factory.SingleFactory;
-import frame.Build;
+import util.Build;
 import proxy.build.ProxyHandlerBuild;
 
 import java.util.Objects;

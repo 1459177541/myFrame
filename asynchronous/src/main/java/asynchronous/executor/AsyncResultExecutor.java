@@ -1,4 +1,7 @@
-package asynchronous;
+package asynchronous.executor;
+
+import asynchronous.model.AsyncResult;
+import asynchronous.model.ThreadState;
 
 import java.util.Objects;
 

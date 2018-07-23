@@ -1,6 +1,6 @@
 package dao.db.imp;
 
-import asynchronous.AsyncExecuteManage;
+import asynchronous.executor.AsyncExecuteManage;
 import dao.db.sql.*;
 import dao.db.util.GetConn;
 import dao.frame.Dao;
@@ -10,7 +10,7 @@ import dao.util.BeanBufferState;
 
 import java.util.Objects;
 
-import static asynchronous.AsyncLevel.SYSTEM;
+import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 
 public class DatabaseDao implements Dao {

@@ -1,4 +1,4 @@
-package frame;
+package factory;
 
 public interface Factory<K,V> {
 	/**

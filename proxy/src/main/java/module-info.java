@@ -1,5 +1,5 @@
 module myFrame.proxy {
-    exports proxy;
+    exports proxy.handler;
     exports proxy.action;
     exports proxy.annotation;
     exports proxy.build;

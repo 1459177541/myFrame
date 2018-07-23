@@ -1,4 +1,4 @@
-package asynchronous;
+package asynchronous.model;
 
 public enum ThreadState {
 	INIT("初始化"), RUNNING("运行中"), COMPLETE("完成"), EXCEPTION("出错"), SHUTDOWN("停止");

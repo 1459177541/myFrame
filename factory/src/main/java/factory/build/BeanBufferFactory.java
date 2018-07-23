@@ -7,7 +7,7 @@ import dao.fileStore.annotation.SystemFile;
 import dao.fileStore.imp.FileStoreDao;
 import dao.frame.Dao;
 import dao.util.BeanBuffer;
-import frame.Factory;
+import factory.Factory;
 
 import java.lang.ref.SoftReference;
 import java.util.*;

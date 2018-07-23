@@ -1,4 +1,7 @@
-package asynchronous;
+package asynchronous.executor;
+
+import asynchronous.model.AsyncAbstractEvent;
+import asynchronous.model.ThreadState;
 
 import java.util.*;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -6,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static asynchronous.AsyncLevel.SYSTEM;
+import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 /**
  *

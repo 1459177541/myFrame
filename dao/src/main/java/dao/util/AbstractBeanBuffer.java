@@ -1,6 +1,6 @@
 package dao.util;
 
-import asynchronous.AsyncExecuteManage;
+import asynchronous.executor.AsyncExecuteManage;
 import util.Waitable;
 
 import java.util.*;
@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static asynchronous.AsyncLevel.SYSTEM;
+import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
 

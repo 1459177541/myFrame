@@ -2,7 +2,7 @@ package dao.db.util;
 
 import dao.db.sql.Edit;
 import dao.db.sql.Result;
-import frame.Factory;
+import factory.Factory;
 
 import java.util.Objects;
 

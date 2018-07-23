@@ -1,4 +1,4 @@
-package asynchronous;
+package asynchronous.model;
 
 import util.Waitable;
 

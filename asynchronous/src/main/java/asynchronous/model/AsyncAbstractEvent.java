@@ -1,4 +1,6 @@
-package asynchronous;
+package asynchronous.model;
+
+import asynchronous.executor.AsyncLevel;
 
 import java.util.Date;
 

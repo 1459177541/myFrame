@@ -1,6 +1,5 @@
 package factory;
 
-import frame.Factory;
 import config.FactoryConfig;
 
 import java.util.Objects;

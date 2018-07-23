@@ -1,4 +1,4 @@
-package asynchronous;
+package asynchronous.executor;
 
 public enum AsyncLevel {
 
