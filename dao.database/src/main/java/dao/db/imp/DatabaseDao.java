@@ -1,6 +1,7 @@
 package dao.db.imp;
 
 import asynchronous.executor.AsyncExecuteManage;
+import dao.db.annotation.DB_table;
 import dao.db.sql.*;
 import dao.db.util.GetConn;
 import dao.service.Dao;
@@ -42,6 +43,11 @@ public class DatabaseDao implements Dao {
     @SuppressWarnings({"unchecked", "ClassEscapesDefinedScope"})
     public <T> DBBeanBuffer<T> load(Class<T> clazz) {
         return new DBBeanBuffer<>(clazz);
+    }
+
+    @Override
+    public <T> boolean isCanLoad(Class<T> clazz) {
+        return clazz.isAnnotationPresent(DB_table.class);
     }
 
     private class DBBeanBuffer<T> extends AbstractBeanBuffer<T> {

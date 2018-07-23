@@ -9,20 +9,23 @@ import java.util.Objects;
  * 封装线程池工具类,可得返回值
  * @author 杨星辰
  *
+ * @Deprecated 性能浪费
  * @param <T> 返回值
  */
+@Deprecated
 public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 
 	private AsyncResult<T> event;
 
+	private AsyncAbstractExecutor executor;
 
-	public AsyncResultExecutor(AsyncResult<T> event) {
-        super();
+	public AsyncResultExecutor(String name, AsyncResult<T> event) {
+        super(name);
         this.event = event;
 	}
 
-	public AsyncResultExecutor() {
-        super();
+	public AsyncResultExecutor(String name) {
+        super(name);
         this.event = null;
 	}	
 	

@@ -23,17 +23,15 @@ public abstract class AsyncAbstractExecutor {
 
     static{
         map = new HashMap<>();
-        //noinspection StaticInitializerReferencesSubClass
-        map.put("default",new AsyncResultExecutor<>());
-        //noinspection StaticInitializerReferencesSubClass
-        map.put("system",new AsyncResultExecutor<>());
+        createExecutor("default");
+        createExecutor("system");
     }
 
     public static synchronized AsyncAbstractExecutor createExecutor(String name){
         if (map.get(name)!= null){
             throw new IllegalArgumentException("该线程工具已存在");
         }else {
-            AsyncAbstractExecutor asyncAbstractExecutor = new AsyncResultExecutor<>();
+            AsyncAbstractExecutor asyncAbstractExecutor = new AsyncExecutorImp(name);
             map.put(name,asyncAbstractExecutor);
             return asyncAbstractExecutor;
         }
@@ -49,8 +47,8 @@ public abstract class AsyncAbstractExecutor {
 
     private ThreadPool pool;
 
-    protected AsyncAbstractExecutor(){
-        pool = new ThreadPool();
+    protected AsyncAbstractExecutor(String name){
+        pool = new ThreadPool(name);
     }
 
     protected AsyncLevel level = AsyncLevel.NORMAL;
@@ -113,7 +111,7 @@ public abstract class AsyncAbstractExecutor {
         private final PriorityBlockingQueue<Runnable> workQueue;
         private List<AsyncAbstractEvent> withinList;
 
-        ThreadPool(){
+        ThreadPool(String name){
             workQueue = new PriorityBlockingQueue<>();
             threadPool = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors()*2
                     , Runtime.getRuntime().availableProcessors()*8
@@ -122,6 +120,7 @@ public abstract class AsyncAbstractExecutor {
                     , workQueue);
             withinList = new LinkedList<>();
             Thread t = new Thread(this::checkWithinList);
+            t.setName("ThreadPool-"+name+"-checkWithinList");
             t.setDaemon(true);
             t.start();
         }
@@ -163,6 +162,23 @@ public abstract class AsyncAbstractExecutor {
 
         void addWithinList(AsyncAbstractEvent event){
             withinList.add(event);
+        }
+    }
+
+    private static class AsyncExecutorImp extends AsyncAbstractExecutor{
+
+        protected AsyncExecutorImp(String name) {
+            super(name);
+        }
+
+        @Override
+        public void start() {
+
+        }
+
+        @Override
+        public ThreadState getState() {
+            return null;
         }
     }
 

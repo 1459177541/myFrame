@@ -8,4 +8,6 @@ public interface Dao {
 
     <T> BeanBuffer<T> load(Class<T> clazz);
 
+    <T> boolean isCanLoad(Class<T> clazz);
+
 }

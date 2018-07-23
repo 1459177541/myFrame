@@ -3,8 +3,6 @@ module myFrame.factory {
 
     requires myFrame.frame;
     requires myFrame.proxy;
-    requires myFrame.dao.fileStore;
-    requires myFrame.dao.database;
     requires myFrame.dao;
 
     uses dao.service.Dao;

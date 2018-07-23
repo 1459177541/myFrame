@@ -1,6 +1,7 @@
 package dao.fileStore.imp;
 
 import asynchronous.executor.AsyncExecuteManage;
+import dao.fileStore.annotation.SystemFile;
 import dao.fileStore.systemFile.SFUtil;
 import dao.service.Dao;
 import dao.beanBuffer.AbstractBeanBuffer;
@@ -30,6 +31,11 @@ public class FileStoreDao implements Dao {
         return new FileStoreBeanBuffer(clazz);
     }
 
+    @Override
+    public <T> boolean isCanLoad(Class<T> clazz) {
+        return clazz.isAnnotationPresent(SystemFile.class);
+    }
+
 
     private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T> {
 
@@ -46,9 +52,9 @@ public class FileStoreDao implements Dao {
 //                throw new NoSuchElementException(e.getMessage());
                 data = new ArrayList<>();
             }finally {
+                state = BeanBufferState.COMPLETE;
                 stopWait();
             }
-            state = BeanBufferState.COMPLETE;
         }
 
         @Override

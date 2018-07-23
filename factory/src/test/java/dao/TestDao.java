@@ -29,6 +29,8 @@ public class TestDao {
 
         beanBuffer.add(m);
 
+        print("add");
+
         beanBuffer.undo();
         beanBuffer.undo();
 

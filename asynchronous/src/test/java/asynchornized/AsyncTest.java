@@ -16,9 +16,10 @@ import java.util.Random;
  *
  */
 public class AsyncTest {
-	@Test
+	@SuppressWarnings({"deprecation", "InfiniteLoopStatement"})
+    @Test
 	public void test1() throws Exception{
-		AsyncResultExecutor<Integer> e1 = new AsyncResultExecutor<>(new AsyncResult<>() {
+		AsyncResultExecutor<Integer> e1 = new AsyncResultExecutor<>("Test1",new AsyncResult<>() {
 			@Override
 			protected Integer execute() {
 				int cont = 0;
@@ -39,7 +40,7 @@ public class AsyncTest {
 		});
 		e1.start();
 
-		AsyncResultExecutor<Double> e2 = new AsyncResultExecutor<>(new AsyncResult<>() {
+		AsyncResultExecutor<Double> e2 = new AsyncResultExecutor<>("Test2",new AsyncResult<>() {
 			@Override
 			protected Double execute() {
 				double cont = 1;
