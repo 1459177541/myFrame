@@ -1,8 +1,5 @@
 package asynchronous;
 
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.function.Supplier;
-
 public enum AsyncLevel {
 
     /**

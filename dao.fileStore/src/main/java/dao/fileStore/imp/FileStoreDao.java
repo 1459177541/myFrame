@@ -1,7 +1,7 @@
 package dao.fileStore.imp;
 
 import asynchronous.AsyncExecuteManage;
-import asynchronous.AsyncLevel;
+import static asynchronous.AsyncLevel.SYSTEM;
 import dao.fileStore.systemFile.SFUtil;
 import dao.frame.Dao;
 import dao.util.AbstractBeanBuffer;
@@ -32,9 +32,9 @@ public class FileStoreDao implements Dao {
 
     private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T> {
 
-        public FileStoreBeanBuffer(Class<T> clazz) {
+        FileStoreBeanBuffer(Class<T> clazz) {
             super(clazz);
-            AsyncExecuteManage.start(AsyncLevel.SYSTEM, this::load);
+            AsyncExecuteManage.start(SYSTEM, this::load);
         }
 
         @Override

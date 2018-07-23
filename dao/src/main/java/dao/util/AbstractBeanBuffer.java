@@ -1,7 +1,6 @@
 package dao.util;
 
 import asynchronous.AsyncExecuteManage;
-import asynchronous.AsyncLevel;
 import util.Waitable;
 
 import java.util.*;
@@ -12,6 +11,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static asynchronous.AsyncLevel.SYSTEM;
 
 public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
 
@@ -248,7 +249,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
     public void synchronization(List<BeanBuffer<T>> list){
         await();
         state = BeanBufferState.SYNCHRONIZATION;
-        list.forEach(e -> AsyncExecuteManage.start(AsyncLevel.SYSTEM, ()-> readSomething(e, beanBuffer -> {
+        list.forEach(e -> AsyncExecuteManage.start(SYSTEM, ()-> readSomething(e, beanBuffer -> {
             beanBuffer.update(data);
             return null;
         })));

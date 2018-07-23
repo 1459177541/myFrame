@@ -36,13 +36,15 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
     @Override
     public BeanBuffer<?> get(Class<?> key) {
-        if (this == defaultFactory){
-            return Objects.requireNonNullElseGet(buffer.get(key).get(),()->load(key));
+        if (this == defaultFactory || null == defaultFactory){
+            return Objects.requireNonNullElseGet(
+                    Optional.ofNullable(buffer.get(key)).map(SoftReference::get).orElse(null)
+                    ,()->load(key));
         }
         return Objects.requireNonNull(
                 Objects.requireNonNullElseGet(
-                        buffer.get(key).get()
-                        ,()->Optional.of(defaultFactory).map(p->p.get(key)).get())
+                        Optional.ofNullable(buffer.get(key)).map(SoftReference::get).orElse(null)
+                        ,()->Optional.ofNullable(defaultFactory).map(p->p.get(key)).orElse(null))
                 ,"加载失败"
         );
     }

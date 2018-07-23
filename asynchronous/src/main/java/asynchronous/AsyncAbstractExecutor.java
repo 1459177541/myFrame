@@ -6,6 +6,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static asynchronous.AsyncLevel.SYSTEM;
+
 /**
  *
  * 线程工具类，封装线程池
@@ -65,7 +67,7 @@ public abstract class AsyncAbstractExecutor {
      */
     protected void execute(AsyncLevel level, AsyncAbstractEvent event){
         try {
-            if (AsyncLevel.SYSTEM.equals(level)){
+            if (SYSTEM.equals(level)){
                 getExecutor("system").execute(AsyncLevel.NORMAL,event);
             }else if (AsyncLevel.NOW.equals(level) || AsyncLevel.SYSTEM_NOW.equals(level)){
                 new Thread(event).start();
