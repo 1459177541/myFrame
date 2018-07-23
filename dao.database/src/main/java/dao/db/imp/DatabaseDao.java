@@ -3,10 +3,10 @@ package dao.db.imp;
 import asynchronous.executor.AsyncExecuteManage;
 import dao.db.sql.*;
 import dao.db.util.GetConn;
-import dao.frame.Dao;
-import dao.util.AbstractBeanBuffer;
-import dao.util.BeanBuffer;
-import dao.util.BeanBufferState;
+import dao.service.Dao;
+import dao.beanBuffer.AbstractBeanBuffer;
+import dao.beanBuffer.BeanBuffer;
+import dao.beanBuffer.BeanBufferState;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package dao.util;
+package dao.beanBuffer;
 
 import asynchronous.executor.AsyncExecuteManage;
 import util.Waitable;

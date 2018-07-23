@@ -1,6 +1,6 @@
-package dao.frame;
+package dao.service;
 
-import dao.util.BeanBuffer;
+import dao.beanBuffer.BeanBuffer;
 
 public interface Dao {
 

@@ -48,7 +48,8 @@ public abstract class Result<T> {
 	 * 执行
 	 * @return 执行是否成功
 	 */
-	public boolean check(){
+	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    public boolean check(){
 		if (null==connection) {
 			return false;
 		}

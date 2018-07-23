@@ -1,4 +1,4 @@
-package dao.util;
+package dao.beanBuffer;
 
 import java.util.Collection;
 import java.util.List;

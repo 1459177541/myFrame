@@ -1,6 +1,5 @@
 package config;
 
-import frame.BeanDefinition;
 import frame.Single;
 
 import java.util.Objects;

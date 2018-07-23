@@ -3,7 +3,14 @@ module myFrame.factory {
 
     requires myFrame.frame;
     requires myFrame.proxy;
+    requires myFrame.dao.fileStore;
+    requires myFrame.dao.database;
     requires myFrame.dao;
-    requires myFrame.fileStore;
-    requires myFrame.daodb;
+
+    uses dao.service.Dao;
+    uses factory.Factory;
+    uses util.Build;
+
+    provides util.Build with factory.build.FactoryBuilder;
+    provides factory.Factory with factory.build.BeanBufferFactory;
 }

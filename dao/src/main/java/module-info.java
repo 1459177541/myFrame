@@ -1,7 +1,8 @@
 module myFrame.dao {
-    exports dao.frame;
-    exports dao.util;
+    exports dao.service;
+    exports dao.beanBuffer;
 
     requires myFrame.frame;
     requires myFrame.asynchronous;
+
 }

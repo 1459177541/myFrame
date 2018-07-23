@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="asynchronous" />
         <module name="dao" />
-        <module name="daodb" />
+        <module name="daodatabase" />
         <module name="daofileStore" />
         <module name="factory" />
         <module name="proxy" />

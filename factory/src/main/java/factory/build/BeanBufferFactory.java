@@ -1,16 +1,15 @@
 package factory.build;
 
 
-import dao.db.annotation.DB_table;
-import dao.db.imp.DatabaseDao;
-import dao.fileStore.annotation.SystemFile;
-import dao.fileStore.imp.FileStoreDao;
-import dao.frame.Dao;
-import dao.util.BeanBuffer;
+import dao.beanBuffer.BeanBuffer;
+import dao.service.Dao;
 import factory.Factory;
 
 import java.lang.ref.SoftReference;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 
 public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
 
@@ -52,15 +51,7 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
     @SuppressWarnings({"unchecked", "UnusedAssignment"})
     private synchronized <T> BeanBuffer<T> load(Class<T> key){
         if (null == buffer.get(key) || null == buffer.get(key).get()) {
-            BeanBuffer<T> beanBuffer = Objects.requireNonNullElseGet(this.dao, () -> {
-                if (key.isAnnotationPresent(DB_table.class)) {
-                    return new DatabaseDao();
-                } else if (key.isAnnotationPresent(SystemFile.class)) {
-                    return new FileStoreDao();
-                } else {
-                    return null;
-                }
-            }).load(key);
+            BeanBuffer<T> beanBuffer = Objects.requireNonNullElseGet(this.dao, () -> DaoBuild.getDao(key)).load(key);
             if (null != beanBuffer){
                 SoftReference<BeanBuffer<?>> bufferSoftReference = new SoftReference<>(beanBuffer);
                 buffer.put(key,bufferSoftReference);

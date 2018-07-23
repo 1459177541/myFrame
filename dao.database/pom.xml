@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dao.db</artifactId>
+    <artifactId>dao.database</artifactId>
     <dependencies>
         <dependency>
             <groupId>myFrame</groupId>
