@@ -1,9 +1,9 @@
 package dao;
 
 
-import dao.fileStore.imp.FileStoreDao;
 import dao.beanBuffer.BeanBuffer;
 import factory.build.BeanBufferFactory;
+import factory.build.DaoBuild;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,11 +11,12 @@ public class TestDao {
 
     private BeanBuffer<Model> beanBuffer;
 
+    //TODO 加载不到服务
     @SuppressWarnings("unchecked")
     @Test
     @BeforeEach
     public void testFactory(){
-        BeanBufferFactory factory = new BeanBufferFactory().setDao(new FileStoreDao());
+        BeanBufferFactory factory = new BeanBufferFactory();
         beanBuffer = (BeanBuffer<Model>) factory.get(Model.class);
     }
 
@@ -61,7 +62,7 @@ public class TestDao {
     @Test
     public void testSave(){
         add();
-        new FileStoreDao().save(beanBuffer);
+        DaoBuild.getDao(Model.class).save(beanBuffer);
         System.out.println("完成");
     }
 

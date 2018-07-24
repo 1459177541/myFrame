@@ -1,4 +1,4 @@
-package dao.db.imp;
+package dao.db.impl;
 
 import asynchronous.executor.AsyncExecuteManage;
 import dao.db.annotation.DB_table;

@@ -1,4 +1,4 @@
-package dao.fileStore.imp;
+package dao.fileStore.impl;
 
 import asynchronous.executor.AsyncExecuteManage;
 import dao.fileStore.annotation.SystemFile;
@@ -15,6 +15,9 @@ import java.util.NoSuchElementException;
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 public class FileStoreDao implements Dao {
+
+    public FileStoreDao() {
+    }
 
     @Override
     public void save(BeanBuffer beanBuffer) {
