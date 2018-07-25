@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>factory</artifactId>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>myFrame</groupId>
@@ -25,19 +26,13 @@
         </dependency>
         <dependency>
             <groupId>myFrame</groupId>
-            <artifactId>dao</artifactId>
+            <artifactId>daoDatabase</artifactId>
             <version>2.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>myFrame</groupId>
-            <artifactId>dao.fileStore</artifactId>
-            <version>2.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>myFrame</groupId>
-            <artifactId>dao.database</artifactId>
+            <artifactId>daoFileStore</artifactId>
             <version>2.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
@@ -50,4 +45,7 @@
     </dependencies>
 
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>

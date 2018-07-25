@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <version>2.0-SNAPSHOT</version>
     <modules>
+        <module>asynchronous</module>
         <module>frame</module>
-        <module>dao.database</module>
-        <module>dao.fileStore</module>
+        <module>daoDatabase</module>
+        <module>daoFileStore</module>
         <module>dao</module>
         <module>proxy</module>
         <module>factory</module>
@@ -26,12 +27,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.7.0</version>
                 <configuration>
                     <source>10</source>
                     <target>10</target>
                     <fork>true</fork>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>6.1.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

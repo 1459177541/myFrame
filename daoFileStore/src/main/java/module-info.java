@@ -1,4 +1,4 @@
-module myFrame.dao.fileStore {
+module myFrame.daoFileStore {
     exports dao.fileStore.annotation;
     exports dao.fileStore.impl;
 

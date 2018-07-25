@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="asynchronous" />
         <module name="dao" />
-        <module name="daodatabase" />
-        <module name="daofileStore" />
+        <module name="daoDatabase" />
+        <module name="daoFileStore" />
         <module name="factory" />
+        <module name="frame" />
         <module name="proxy" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dao.database" target="10" />
+    </bytecodeTargetLevel>
   </component>
 </project>

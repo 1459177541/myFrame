@@ -1,4 +1,4 @@
-module myFrame.dao.database {
+module myFrame.daoDatabase {
     exports dao.db.annotation;
     exports dao.db.impl;
 

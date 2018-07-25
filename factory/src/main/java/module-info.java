@@ -3,7 +3,7 @@ module myFrame.factory {
 
     requires myFrame.frame;
     requires myFrame.proxy;
-    requires transitive myFrame.dao;
+    requires myFrame.dao;
 
     uses dao.service.Dao;
 }
