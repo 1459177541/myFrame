@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 import config.FactoryConfig;
+import factory.BeanFactory;
 import factory.ConfigDefaultFactory;
 import factory.ConfigFactory;
 import proxy.action.AfterReturnAction;
@@ -30,9 +31,9 @@ public class AopProxyHandler<T> extends DefaultProxyHandler<T> {
         super(parent);
     }
 
-    private ConfigFactory factory;
+    private BeanFactory factory;
 
-    public void setFactory(ConfigFactory factory) {
+    public void setFactory(BeanFactory factory) {
         this.factory = factory;
     }
 

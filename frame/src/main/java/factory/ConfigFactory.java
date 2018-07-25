@@ -4,12 +4,13 @@ import config.FactoryConfig;
 
 import java.util.Objects;
 
-public abstract class ConfigFactory implements Factory<String, Object> {
+public abstract class ConfigFactory implements BeanFactory {
 	/**
 	 * 配置类
 	 */
 	protected FactoryConfig factoryConfig;
-	
+
+	public ConfigFactory(){}
 	public ConfigFactory(FactoryConfig factoryConfig) {
 		this.factoryConfig = factoryConfig;
 	}
@@ -33,5 +34,4 @@ public abstract class ConfigFactory implements Factory<String, Object> {
 		return get(Objects.requireNonNull(factoryConfig).get(name).getBeanClass());
 	}
 	
-	public abstract <T> Object get(Class<T> clazz);
 }

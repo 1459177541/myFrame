@@ -25,6 +25,11 @@ public class ConfigDefaultFactory extends ConfigFactory{
         super(factoryConfig);
     }
 
+    @Override
+    public BeanFactory setParentFactory(BeanFactory factory) {
+        throw new IllegalArgumentException("这是默认的工厂，无父工厂");
+    }
+
     /**
      * 通过类对象得到对应对象
      */

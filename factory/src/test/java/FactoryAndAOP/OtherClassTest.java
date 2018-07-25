@@ -1,6 +1,7 @@
 package FactoryAndAOP;
 
 import config.FactoryConfig;
+import factory.BeanFactory;
 import factory.ConfigFactory;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ public class OtherClassTest {
 
     @Test
     public void test(){
-        ConfigFactory factory = new FactoryBuilder(new FactoryConfig() {
+        BeanFactory factory = new FactoryBuilder(new FactoryConfig() {
             @Override
             protected void initConfig() {
                 try {

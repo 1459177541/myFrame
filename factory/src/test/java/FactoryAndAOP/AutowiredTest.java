@@ -2,6 +2,7 @@ package FactoryAndAOP;
 
 
 import config.FactoryConfigByAnnotation;
+import factory.BeanFactory;
 import factory.ConfigFactory;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ public class AutowiredTest {
                 add(AutowiredModel2.class);
             }
         });
-        ConfigFactory factory = builder.build();
+        BeanFactory factory = builder.build();
 
 
         System.out.println(factory.get("autoModel1"));
@@ -25,7 +26,7 @@ public class AutowiredTest {
 
     @Test
     public void test2(){
-        ConfigFactory factory = new FactoryBuilder(new FactoryConfigByAnnotation() {
+        BeanFactory factory = new FactoryBuilder(new FactoryConfigByAnnotation() {
             @Override
             protected void initConfig() {
                 add(AutowiredModel3.class);

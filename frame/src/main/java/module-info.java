@@ -4,4 +4,5 @@ module myFrame.frame {
     exports config;
     exports util;
 
+    provides factory.BeanFactory with factory.SingleFactory;
 }

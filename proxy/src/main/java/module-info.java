@@ -5,4 +5,6 @@ module myFrame.proxy {
 
     requires myFrame.frame;
     requires myFrame.asynchronous;
+
+    provides factory.BeanFactory with proxy.build.ProxyFactory;
 }

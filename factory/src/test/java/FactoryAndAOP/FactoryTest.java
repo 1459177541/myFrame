@@ -3,6 +3,7 @@ package FactoryAndAOP;
 
 import config.FactoryConfig;
 import config.FactoryConfigByAnnotation;
+import factory.BeanFactory;
 import factory.ConfigFactory;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ public class FactoryTest {
                 add("aopTest", AopTest.class);
             }
         });
-        ConfigFactory f = fb.build();
+        BeanFactory f = fb.build();
         print(f);
     }
     @Test
@@ -30,7 +31,7 @@ public class FactoryTest {
                 add(AopTest.class);
             }
         });
-        ConfigFactory f = fb.build();
+        BeanFactory f = fb.build();
         print(f);
     }
 
@@ -43,7 +44,7 @@ public class FactoryTest {
                 add(AopTest.class);
             }
         }.setRoot();
-        ConfigFactory f = new FactoryBuilder(new FactoryConfigByAnnotation() {
+        BeanFactory f = new FactoryBuilder(new FactoryConfigByAnnotation() {
             @Override
             protected void initConfig() {
                 add(AopTest2.class);    //覆盖AopTest
@@ -53,7 +54,7 @@ public class FactoryTest {
 
     }
 
-    private void print(ConfigFactory f){
+    private void print(BeanFactory f){
         Object t = f.get("AOPImp");
         await();
         ((AOP01) t).print();
