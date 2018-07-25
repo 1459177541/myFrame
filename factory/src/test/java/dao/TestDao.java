@@ -11,7 +11,7 @@ public class TestDao {
 
     private BeanBuffer<Model> beanBuffer;
 
-    //TODO 加载不到服务
+    //TODO 加载不到服务，在DaoBuild类可以加载到服务
     @SuppressWarnings("unchecked")
     @Test
     @BeforeEach

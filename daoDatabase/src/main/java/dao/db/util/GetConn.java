@@ -20,7 +20,7 @@ public class GetConn {
     }
 
     public static GetConn getDefault(){
-	    return Objects.requireNonNull(defaultConnection);
+	    return Objects.requireNonNull(defaultConnection,"没有默认数据库链接");
     }
 
     public static Connection getConnection(){
