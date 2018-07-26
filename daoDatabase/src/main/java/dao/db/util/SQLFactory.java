@@ -1,13 +1,16 @@
 package dao.db.util;
 
+
 import dao.db.sql.Edit;
 import dao.db.sql.Result;
+import dao.db.sql.Select;
 import factory.Factory;
 
+import java.util.ArrayList;
 import java.util.Objects;
+import java.util.concurrent.FutureTask;
 
-
-public class SQLFactory<T> implements Factory<DBExecute, Result<T>> {
+public class SQLFactory<T> implements Factory<DBExecute, FutureTask<ArrayList<T>>> {
 
 	private T obj;
 	private T oldObj;
@@ -23,7 +26,7 @@ public class SQLFactory<T> implements Factory<DBExecute, Result<T>> {
 	}
 
 	public SQLFactory<T> setObj(T obj) {
-		this.obj = obj;
+		this.obj = Objects.requireNonNull(obj);
 		return this;
 	}
 	
@@ -32,9 +35,9 @@ public class SQLFactory<T> implements Factory<DBExecute, Result<T>> {
 		return this;
 	}
 	
-	@Override
-	public Result<T> get(DBExecute execute) {
-		@SuppressWarnings("unchecked")
+	@SuppressWarnings({"Convert2MethodRef", "unchecked"})
+    @Override
+	public FutureTask<ArrayList<T>> get(DBExecute execute) {
 		Result<T> result = (Result<T>) execute.create();
 		result.setObj(Objects.requireNonNull(obj));
 		if(DBExecute.EDIT.equals(execute)) {
@@ -43,7 +46,10 @@ public class SQLFactory<T> implements Factory<DBExecute, Result<T>> {
 		if (null!=criteria) {
 			result.setCriteria(criteria);
 		}
-		return result;
+		if (DBExecute.SELECT.equals(execute)){
+		    return new FutureTask<>(()->((Select)result).getResult());
+        }
+        return new FutureTask<>(()->result.execute(),new ArrayList<>());
 	}
 	
 }

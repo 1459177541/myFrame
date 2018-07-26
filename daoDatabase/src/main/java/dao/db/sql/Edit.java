@@ -1,7 +1,6 @@
 package dao.db.sql;
 
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
 
 public class Edit<T> extends Update<T> {
 
@@ -25,12 +24,12 @@ public class Edit<T> extends Update<T> {
 		if (null==obj) {
 			return null;
 		}
-		StringBuffer sql = new StringBuffer("UPDATE "+DBUtil.getTableName(obj)+" SET "+DBUtil.get(clazz, DBUtil.kv(obj), ","));
+        StringBuilder sql = new StringBuilder("UPDATE " + DBUtil.getTableName(obj) + " SET " + DBUtil.get(clazz, DBUtil.kv(obj), ","));
 		if (null==criteria) {
 			sql.append(" WHERE ").append(criteria.toString());
 		}
 		else {
-			sql.append("WHERE").append(DBUtil.get(clazz, DBUtil.kv(oldObj), "AND"));
+            sql.append("WHERE").append(DBUtil.get(clazz, DBUtil.kv(oldObj), "AND"));
 		}
 		this.sql = sql.toString();
 		return this.sql;

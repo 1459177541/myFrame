@@ -1,7 +1,6 @@
 package dao.db.sql;
 
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
 
 public class Add<T> extends Update<T> {
 

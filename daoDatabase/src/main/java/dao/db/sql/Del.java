@@ -1,7 +1,6 @@
 package dao.db.sql;
 
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
 
 public class Del<T> extends Update<T>{
 	
@@ -19,7 +18,7 @@ public class Del<T> extends Update<T>{
 		if (null==obj) {
 			return null;
 		}
-		StringBuffer sql = new StringBuffer("DELETE FROM "+DBUtil.getTableName(obj));
+        StringBuilder sql = new StringBuilder("DELETE FROM " + DBUtil.getTableName(obj));
 		if (null==criteria) {
 			sql.append(" WHERE ").append(criteria.toString());
 		}

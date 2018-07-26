@@ -9,7 +9,6 @@ import java.util.Objects;
 
 import dao.db.annotation.DB_column;
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
 import dao.db.util.GetConn;
 
 public class Select<T> extends Result<T> {

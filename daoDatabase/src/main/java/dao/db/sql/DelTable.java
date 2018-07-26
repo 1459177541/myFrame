@@ -1,7 +1,9 @@
 package dao.db.sql;
 
+import dao.db.annotation.DB_table;
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
+
+import java.util.Objects;
 
 public class DelTable<T> extends Update<T> {
 
@@ -11,7 +13,11 @@ public class DelTable<T> extends Update<T> {
 			return null;
 		}
 		if (null==sql) {
-			sql="DROP TABLE "+DBUtil.getTableName(obj)+";";
+            sql = "DROP TABLE "
+                    + Objects.requireNonNullElseGet(
+                    clazz.getAnnotation(DB_table.class).tableName()
+                    , () -> DBUtil.getTableName(obj)
+            ) + ";";
 		}
 		return sql;
 	}
