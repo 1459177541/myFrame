@@ -9,6 +9,7 @@ import dao.beanBuffer.AbstractBeanBuffer;
 import dao.beanBuffer.BeanBuffer;
 import dao.beanBuffer.BeanBufferState;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
@@ -22,8 +23,8 @@ public class DatabaseDao implements Dao {
         conn = GetConn.getDefault();
     }
 
-    public DatabaseDao(String name, String password) {
-        conn = new GetConn(name, password);
+    public DatabaseDao(String name, String password, String databaseName) {
+        conn = new GetConn(name, password, databaseName);
     }
 
     public DatabaseDao(String name, String password, String driver, String url){
@@ -59,23 +60,33 @@ public class DatabaseDao implements Dao {
 
         @Override
         protected void load(){
-            Select<T> select = new Select<>();
-            select.setClazz(clazz);
-            select.setConnection(conn.getConn());
-            data = Objects.requireNonNull(select.getResult());
-            state = BeanBufferState.COMPLETE;
-            stopWait();
+            try {
+                Select<T> select = new Select<>();
+                select.setClazz(clazz);
+                select.setConnection(conn.getConn());
+                data = Objects.requireNonNull(select.getResult());
+            }finally {
+                Objects.requireNonNullElseGet(data,ArrayList::new);
+                state = BeanBufferState.COMPLETE;
+                stopWait();
+            }
         }
 
         @Override
         protected void save() {
-            save(GetConn.getDefault());
+            save(Objects.requireNonNullElseGet(conn,GetConn::getDefault));
         }
 
         @SuppressWarnings("unchecked")
         void save(GetConn conn){
             if (!isUndo()){
                 return;
+            }
+            if (!conn.hasTable(clazz.getAnnotation(DB_table.class).tableName())){
+                CreateTable createTable = new CreateTable();
+                createTable.setClazz(clazz);
+                createTable.setConnection(conn.getConn());
+                createTable.execute();
             }
             actionStack.forEach(e->{
                 Result<T> database;
@@ -96,6 +107,7 @@ public class DatabaseDao implements Dao {
                 database.setConnection(conn.getConn());
                 database.execute();
             });
+            actionStack.removeAllElements();
         }
 
     }

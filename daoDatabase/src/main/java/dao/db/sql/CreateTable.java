@@ -2,25 +2,23 @@ package dao.db.sql;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import dao.db.annotation.DB_column;
+import dao.db.annotation.DB_table;
 import dao.db.util.DBExecute;
-import dao.db.util.DBUtil;
 
 public class CreateTable<T> extends Update<T> {
 
 	private boolean isAdd;
 	@Override
 	protected String getSql() {
-		if (null==obj) {
-			return null;
-		}
 		if (null==this.sql) {
 			StringBuffer sql = new StringBuffer("CREATE TABLE ");
-			sql.append(DBUtil.getTableName(obj)).append("(");
-			Class<?> clazz = obj.getClass();
+            Class<?> clazz = Objects.requireNonNullElseGet(this.clazz,obj::getClass);
+            sql.append(clazz.getAnnotation(DB_table.class).tableName()).append("(");
 			isAdd = false;
 			Stream<Field> stream = Stream.of(clazz.getDeclaredFields());
 			stream.filter(f->f.isAnnotationPresent(DB_column.class))

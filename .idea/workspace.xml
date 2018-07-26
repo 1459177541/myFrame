@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="重构BeanFactory，便于扩展">
-      <change afterPath="$PROJECT_DIR$/frame/src/main/java/factory/BeanFactory.java" afterDir="false" />
+    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="更新dao层，处理潜在的问题">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/factory/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/FactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/FactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/OtherClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/OtherClassTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frame/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/annotation/Proxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyHandlerBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyHandlerBuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/CreateTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/CreateTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,65 +56,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BeanFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SingleFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java">
+      <file leaf-file-name="AbstractBeanBuffer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+              <caret line="369" column="33" selection-start-line="369" selection-start-column="33" selection-end-line="369" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactory.java">
+      <file leaf-file-name="FileStoreDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="176">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProxyFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyFactory.java">
+      <file leaf-file-name="GetConn.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="49" column="31" lean-forward="true" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FactoryBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="1936">
+              <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#490#491#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigDefaultFactory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1169">
-              <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#714#715#0" expanded="true" />
+                <element signature="e#1795#1857#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,9 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/AsyncAbstractExecutor.java" />
-        <option value="$PROJECT_DIR$/dao.db/src/main/java/dao/db/imp/DatabaseDao.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/util/AbstractBeanBuffer.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/AsyncExecuteManage.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/model/ThreadState.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/module-info.java" />
@@ -165,7 +121,6 @@
         <option value="$PROJECT_DIR$/dao.fileStore/src/main/java/dao/fileStore/imp/FileStoreDao.java" />
         <option value="$PROJECT_DIR$/dao.fileStore/src/main/java/module-info.java" />
         <option value="$PROJECT_DIR$/dao.database/src/main/java/module-info.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" />
         <option value="$PROJECT_DIR$/daoFileStore/src/main/java/module-info.java" />
         <option value="$PROJECT_DIR$/factory/src/test/java/dao/Model.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -173,13 +128,10 @@
         <option value="$PROJECT_DIR$/frame/pom.xml" />
         <option value="$PROJECT_DIR$/asynchronous/pom.xml" />
         <option value="$PROJECT_DIR$/dao/pom.xml" />
-        <option value="$PROJECT_DIR$/daoDatabase/pom.xml" />
         <option value="$PROJECT_DIR$/daoFileStore/pom.xml" />
         <option value="$PROJECT_DIR$/factory/pom.xml" />
         <option value="$PROJECT_DIR$/proxy/pom.xml" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/BeanBufferFactory.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/DaoBuild.java" />
         <option value="$PROJECT_DIR$/factory/src/test/java/dao/TestDao.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactory.java" />
@@ -196,6 +148,13 @@
         <option value="$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactory.java" />
+        <option value="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" />
+        <option value="$PROJECT_DIR$/daoDatabase/pom.xml" />
+        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" />
+        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/CreateTable.java" />
+        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" />
+        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java" />
       </list>
     </option>
   </component>
@@ -340,6 +299,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+              <item name="asynchornized" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dao" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="factory" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="frame" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="proxy" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -444,6 +436,24 @@
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beanBuffer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="daoDatabase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -475,6 +485,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="daoDatabase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="daoDatabase" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
@@ -726,39 +754,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-              <item name="asynchornized" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="dao" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="factory" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="frame" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="proxy" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -945,7 +940,8 @@
       <workItem from="1532408746696" duration="3930000" />
       <workItem from="1532434577574" duration="12136000" />
       <workItem from="1532496401188" duration="8427000" />
-      <workItem from="1532520349117" duration="4894000" />
+      <workItem from="1532520349117" duration="5826000" />
+      <workItem from="1532586165464" duration="3209000" />
     </task>
     <task id="LOCAL-00001" summary="重构为JDK9特性模块化">
       <created>1532331236996</created>
@@ -1010,7 +1006,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532504981973</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="重构BeanFactory，使得扩展后可以通过FactoryBuilder发现构建">
+      <created>1532525324938</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1532525324938</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1046,7 +1049,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61280000" />
+    <option name="totallyTimeSpent" value="65421000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1075,7 +1078,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.21321961" />
+      <window_info anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.2153518" />
       <window_info anchor="right" id="Database" order="5" weight="0.32995737" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
@@ -1137,7 +1140,10 @@
     <MESSAGE value="配置maven" />
     <MESSAGE value="发现BUG原因(未解决)、添加功能" />
     <MESSAGE value="重构BeanFactory，便于扩展" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构BeanFactory，便于扩展" />
+    <MESSAGE value="重构BeanFactory，便于扩展后可以通过FactoryBuilder发现构建" />
+    <MESSAGE value="重构BeanFactory，使得扩展后可以通过FactoryBuilder发现构建" />
+    <MESSAGE value="更新dao层，处理潜在的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新dao层，处理潜在的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1145,168 +1151,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/service/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/annotation/SystemFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.m2/settings.xml" />
-    <entry file="uml://JIGSAW/myFrame.factory">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JIGSAW</ID>
-          <OriginalElement>myFrame.factory</OriginalElement>
-          <nodes>
-            <node x="" y="">myFrame.frame</node>
-            <node x="" y="">myFrame.proxy</node>
-            <node x="" y="">myFrame.asynchronous</node>
-            <node x="" y="">myFrame.factory</node>
-            <node x="" y="">myFrame.dao</node>
-            <node x="" y="">myFrame.daoFileStore</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="175.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JIGSAW/myFrame.daoDatabase">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JIGSAW</ID>
-          <OriginalElement>myFrame.daoDatabase</OriginalElement>
-          <nodes>
-            <node x="" y="">myFrame.frame</node>
-            <node x="" y="">myFrame.asynchronous</node>
-            <node x="" y="">java.xml</node>
-            <node x="" y="">myFrame.dao</node>
-            <node x="" y="">myFrame.daoDatabase</node>
-            <node x="" y="">java.logging</node>
-            <node x="" y="">java.sql</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="202.0" y="135.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.2/junit-jupiter-api-5.0.2.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/myFrame:asynchronous:2.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>myFrame:asynchronous:2.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">myFrame:asynchronous:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:frame:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.opentest4j:opentest4j:jar:1.0.0</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.junit.platform:junit-platform-commons:jar:1.0.2</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="155.0" y="95.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/test/java/dao/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/myFrame:factory:2.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>myFrame:factory:2.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">myFrame:factory:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:frame:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:proxy:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:proxy:jar:2.0-SNAPSHOT/myFrame:asynchronous:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT/myFrame:dao:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">myFrame:daoFileStore:jar:2.0-SNAPSHOT</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.opentest4j:opentest4j:jar:1.0.0</node>
-            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.junit.platform:junit-platform-commons:jar:1.0.2</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="297.0" y="175.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/config/FactoryConfigByAnnotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1338,20 +1186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1363,9 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1380,16 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="1647" lean-forward="true" selection-start-line="1647" selection-end-line="1647" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#522#523#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1421,10 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1432,26 +1249,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/annotation/Proxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/annotation/Proxy.java" />
     <entry file="file://$PROJECT_DIR$/frame/src/main/java/module-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1459,28 +1260,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="756" column="32" selection-start-line="756" selection-start-column="32" selection-end-line="756" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/BinaryOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="62" column="81" lean-forward="true" selection-start-line="62" selection-start-column="81" selection-end-line="62" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/stream/Collectors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="213" column="8" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
-          <folding>
-            <element signature="e#27033#27034#0" expanded="true" />
-            <element signature="e#27098#27099#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1509,22 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#272#677#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1541,7 +1308,7 @@
     <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1568,14 +1335,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/build/ProxyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="49" column="31" lean-forward="true" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+        <state relative-caret-position="836">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="88">
           <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
         </state>
       </provider>
@@ -1589,13 +1356,194 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1169">
-          <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+        <state relative-caret-position="1078">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="218" column="24" selection-start-line="218" selection-start-column="24" selection-end-line="218" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/BinaryOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="45" column="47" lean-forward="true" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/BiFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="756" column="32" lean-forward="true" selection-start-line="756" selection-start-column="32" selection-end-line="756" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/config/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/myFrame:factory:2.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>myFrame:factory:2.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">myFrame:factory:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:frame:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:proxy:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:proxy:jar:2.0-SNAPSHOT/myFrame:asynchronous:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT/myFrame:dao:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT/mysql:mysql-connector-java:jar:8.0.11</node>
+            <node x="" y="">myFrame:daoDatabase:jar:2.0-SNAPSHOT/mysql:mysql-connector-java:jar:8.0.11/com.google.protobuf:protobuf-java:jar:2.6.0</node>
+            <node x="" y="">myFrame:daoFileStore:jar:2.0-SNAPSHOT</node>
+            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2</node>
+            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.opentest4j:opentest4j:jar:1.0.0</node>
+            <node x="" y="">org.junit.jupiter:junit-jupiter-api:jar:5.0.2/org.junit.platform:junit-platform-commons:jar:1.0.2</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="332.0" y="175.0" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Update.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#2078#2079#0" expanded="true" />
+            <element signature="e#2163#2164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/systemFile/SFUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/DBExecute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/CreateTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1936">
+          <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+          <folding>
+            <element signature="e#1795#1857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="369" column="33" selection-start-line="369" selection-start-column="33" selection-end-line="369" selection-end-column="33" />
         </state>
       </provider>
     </entry>

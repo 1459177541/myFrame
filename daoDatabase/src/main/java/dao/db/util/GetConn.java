@@ -27,11 +27,11 @@ public class GetConn {
 	    return defaultConnection.getConn();
     }
 
-	public GetConn(String userName, String userPassword){
+	public GetConn(String userName, String userPassword, String databaseName){
 	    this.userName = userName;
 	    this.userPassword = userPassword;
 	    jdbcDriver = "com.mysql.jdbc.Driver";
-	    dbUrl = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+	    dbUrl = "jdbc:mysql://localhost:3306/"+databaseName+"?useUnicode=true&characterEncoding=utf-8&useSSL=false";
 	    restart();
     }
 
@@ -75,6 +75,27 @@ public class GetConn {
 		}
 		return true;
 	}
+
+	@SuppressWarnings({"SqlNoDataSourceInspection", "SqlResolve"})
+    public boolean hasTable(String name){
+	    if (connection==null){
+	        restart();
+        }
+        String sql = "SHOW TABLES;";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()){
+                String tableName = rs.getString(0);
+                if (tableName.equals(name)){
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            return false;
+        }
+        return false;
+    }
 
 }
 
