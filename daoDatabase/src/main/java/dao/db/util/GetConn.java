@@ -1,7 +1,10 @@
 package dao.db.util;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.Objects;
+import java.util.Properties;
 
 public class GetConn {
 
@@ -14,9 +17,9 @@ public class GetConn {
 
 	private static GetConn defaultConnection;
 
-	public GetConn toDefault(){
-	    defaultConnection = this;
-	    return this;
+    public GetConn toDefault(){
+        defaultConnection = this;
+        return this;
     }
 
     public static GetConn getDefault(){
@@ -25,6 +28,14 @@ public class GetConn {
 
     public static Connection getConnection(){
 	    return defaultConnection.getConn();
+    }
+
+    public GetConn(Properties properties) {
+        jdbcDriver = properties.getProperty("jdbcDriver");
+        dbUrl = properties.getProperty("dbUrl");
+        userName = properties.getProperty("userName");
+        userPassword = properties.getProperty("userPassword");
+        restart();
     }
 
 	public GetConn(String userName, String userPassword, String databaseName){
@@ -41,6 +52,15 @@ public class GetConn {
         this.userName = userName;
         this.userPassword = userPassword;
         restart();
+    }
+
+    public void saveProperties(String fileName) throws IOException {
+        Properties properties = new Properties(4);
+        properties.setProperty("jdbcDriver",jdbcDriver);
+        properties.setProperty("dbUrl",dbUrl);
+        properties.setProperty("userName",userName);
+        properties.setProperty("userPassword",userPassword);
+        properties.store(new FileOutputStream(fileName),"jdbc config");
     }
 
     public Connection getConn() {

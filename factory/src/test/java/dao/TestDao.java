@@ -2,7 +2,7 @@ package dao;
 
 
 import dao.beanBuffer.BeanBuffer;
-import factory.build.BeanBufferFactory;
+import factory.factory.BeanBufferFactory;
 import factory.build.DaoBuild;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

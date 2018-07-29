@@ -77,7 +77,7 @@ public class ConfigDefaultFactory extends ConfigFactory{
      * @param obj 注入的对象
      */
     private <T> void autowiredMethod(T obj) {
-        Arrays.stream(obj.getClass().getMethods())
+        Stream.of(obj.getClass().getMethods())
                 .filter(c->c.isAnnotationPresent(Autowired.class))
                 .sorted(Comparator.comparingInt(c -> c.getAnnotation(Autowired.class).order()))
                 .forEach(e->{

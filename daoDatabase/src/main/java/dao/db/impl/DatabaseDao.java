@@ -9,15 +9,17 @@ import dao.beanBuffer.AbstractBeanBuffer;
 import dao.beanBuffer.BeanBuffer;
 import dao.beanBuffer.BeanBufferState;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Properties;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 
 public class DatabaseDao implements Dao {
 
-    private final GetConn conn;
+    private GetConn conn;
 
     public DatabaseDao(){
         conn = GetConn.getDefault();
@@ -50,6 +52,17 @@ public class DatabaseDao implements Dao {
     public <T> boolean isCanLoad(Class<T> clazz) {
         return clazz.isAnnotationPresent(DB_table.class);
     }
+
+    @Override
+    public void setProperties(Properties properties) {
+        conn = new GetConn(properties);
+    }
+
+    @Override
+    public void saveProperties(String propertiesFileName) throws IOException {
+        conn.saveProperties(propertiesFileName);
+    }
+
 
     private class DBBeanBuffer<T> extends AbstractBeanBuffer<T> {
 

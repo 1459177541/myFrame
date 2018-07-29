@@ -2,8 +2,13 @@ package config;
 
 import frame.Single;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Properties;
+import java.util.stream.Collectors;
 
 /**
  * 工厂配置类，完成工厂的配置设置
@@ -64,4 +69,21 @@ public abstract class FactoryConfig extends Config<String, BeanDefinition> {
         addConfig(name, beanDefinition);
     }
 
+    @Override
+    protected void initConfig(Properties properties) {
+        properties.forEach((name,clazz)-> {
+            try {
+                add((String) name,Class.forName((String) clazz));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void saveConfig(String name) throws IOException {
+        Properties properties = new Properties(config.size());
+        properties.putAll(config.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> entry.getValue().getClassName())));
+        properties.store(new FileOutputStream(Objects.requireNonNull(name)),"工厂文件注释信息");
+    }
 }

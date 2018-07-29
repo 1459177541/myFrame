@@ -1,15 +1,16 @@
 package config;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.*;
 
 public abstract class Config <K,V>{
 
 	protected Map<K, V> config;
 	
 	protected Config<K,V> parent = null;
+
+	protected String propertiesFileName;
 
 	/*
 	 * 初始化
@@ -23,6 +24,25 @@ public abstract class Config <K,V>{
 	 * 子类应覆盖方法，将配置初始化
 	 */
 	protected abstract void initConfig();
+
+	protected abstract void initConfig(Properties properties);
+
+    public abstract void saveConfig(String name) throws IOException;
+
+	public void saveConfig() throws IOException{
+	    saveConfig(Objects.requireNonNull(propertiesFileName,"未设置配置文件目录"));
+    }
+
+	public void initConfig(String propertiesFileName) throws IOException {
+	    this.propertiesFileName = propertiesFileName;
+	    Properties properties = new Properties();
+	    properties.load(new FileInputStream(propertiesFileName));
+	    initConfig(properties);
+    }
+
+    public void setPropertiesFileName(String name){
+	    this.propertiesFileName = name;
+    }
 
 	/**
 	 * 得到对应配置

@@ -9,12 +9,17 @@ import dao.beanBuffer.BeanBuffer;
 import dao.beanBuffer.BeanBufferState;
 
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
 public class FileStoreDao implements Dao {
+
+    private Properties properties;
 
     public FileStoreDao() {
     }
@@ -39,6 +44,16 @@ public class FileStoreDao implements Dao {
         return clazz.isAnnotationPresent(SystemFile.class);
     }
 
+    @Override
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
+    @Override
+    public void saveProperties(String propertiesFileName) throws IOException {
+        properties.store(new FileOutputStream(propertiesFileName),"fileStore config");
+    }
+
 
     private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T> {
 
@@ -50,7 +65,11 @@ public class FileStoreDao implements Dao {
         @Override
         protected void load(){
             try {
-                data = SFUtil.read(clazz);
+                if (null != properties) {
+                    data = SFUtil.read(properties.getProperty(clazz.getName()));
+                }else {
+                    data = SFUtil.read(clazz);
+                }
             } catch (FileNotFoundException e) {
 //                throw new NoSuchElementException(e.getMessage());
                 data = new ArrayList<>();
@@ -64,7 +83,11 @@ public class FileStoreDao implements Dao {
         public void save(){
             readSomething(null, a->{
                 try {
-                    SFUtil.write(data);
+                    if (null != properties) {
+                        SFUtil.write(data, properties.getProperty(clazz.getName()));
+                    } else {
+                        SFUtil.write(data);
+                    }
                 } catch (FileNotFoundException e) {
                     throw new NoSuchElementException(e.getMessage());
                 }
