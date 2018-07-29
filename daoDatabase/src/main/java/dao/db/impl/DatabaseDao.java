@@ -108,6 +108,7 @@ public class DatabaseDao implements Dao {
                 database.execute();
             });
             actionStack.removeAllElements();
+            undoStack.removeAllElements();
         }
 
     }

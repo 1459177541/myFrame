@@ -155,13 +155,9 @@ public class AsyncExecuteManage{
 	 * 得到线程执行结果
 	 * @param event 执行状态对象
 	 * @return 结果
-	 * @throws Exception 执行过程发生的错误
 	 */
-	public static <E> E getResult(AsyncResult<E> event) throws Exception{
-		if (!event.isCompleted()) {
-			event.await();
-		}
-		return event.getResult();
+	public static <E> E getResult(AsyncResult<E> event){
+		return event.waitAndGetResult();
 	}
 
 }

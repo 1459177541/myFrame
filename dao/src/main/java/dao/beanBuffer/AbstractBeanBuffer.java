@@ -373,7 +373,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         public static final int ACTION_DEL = 2;
         public static final int ACTION_EDIT = 3;
 
-        public BeanAction(int action) {
+        BeanAction(int action) {
             this.action = action;
         }
 
@@ -381,11 +381,11 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             return before;
         }
 
-        public void setBefore(Collection<t> before) {
+        void setBefore(Collection<t> before) {
             this.before = before;
         }
 
-        public void setBefore(t before){
+        void setBefore(t before){
             this.before = new ArrayList<>(1);
             this.before.add(before);
         }
@@ -398,7 +398,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             this.after = after;
         }
 
-        public void setAfter(t after){
+        void setAfter(t after){
             this.after = new ArrayList<>(1);
             this.after.add(after);
         }

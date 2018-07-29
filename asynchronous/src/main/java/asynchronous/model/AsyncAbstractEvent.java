@@ -61,6 +61,9 @@ public abstract class AsyncAbstractEvent implements Runnable, Comparable {
      * @param ms 等待时间
      */
 	public void setWaitTime(long ms){
+	    if (ms<=0){
+	        throw new IllegalArgumentException("时长为负数或零");
+        }
 	    this.asyncLevel = AsyncLevel.NOW == asyncLevel
                 ? AsyncLevel.NOW
                 : AsyncLevel.WITHIN;

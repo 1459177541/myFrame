@@ -69,6 +69,7 @@ public class FileStoreDao implements Dao {
                     throw new NoSuchElementException(e.getMessage());
                 }
                 actionStack.removeAllElements();
+                undoStack.removeAllElements();
                 return null;
             });
         }

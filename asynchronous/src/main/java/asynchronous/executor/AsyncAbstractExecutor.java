@@ -46,9 +46,16 @@ public abstract class AsyncAbstractExecutor {
     }
 
     private ThreadPool pool;
+    private String name;
+
+    protected AsyncAbstractExecutor(){
+        name = "default";
+        pool = map.get(name).pool;
+    }
 
     protected AsyncAbstractExecutor(String name){
-        pool = new ThreadPool(name);
+        this.name = name;
+        pool = Objects.requireNonNullElseGet(map.get(name).pool, ()->new ThreadPool(name));
     }
 
     protected AsyncLevel level = AsyncLevel.NORMAL;

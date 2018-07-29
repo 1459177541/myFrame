@@ -12,12 +12,9 @@ import java.util.Objects;
  * @Deprecated 性能浪费
  * @param <T> 返回值
  */
-@Deprecated
 public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 
 	private AsyncResult<T> event;
-
-	private AsyncAbstractExecutor executor;
 
 	public AsyncResultExecutor(String name, AsyncResult<T> event) {
         super(name);
@@ -27,11 +24,16 @@ public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 	public AsyncResultExecutor(String name) {
         super(name);
         this.event = null;
-	}	
+    }
+
+    public AsyncResultExecutor(){
+	    super();
+	    this.event = null;
+    }
 	
 	@Override
 	public void start() {
-		start(event);
+		start(Objects.requireNonNull(event));
 	}
 	
 	public void start(AsyncResult<T> event) {
@@ -39,13 +41,12 @@ public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 	}
 
 	public T getResult() throws Exception{
-		return AsyncExecuteManage.getResult(event);
+		return event.getResult();
 	}
 
 	@Override
 	public ThreadState getState() {
-		return AsyncExecuteManage.getState(event);
+		return event.getState();
 	}
-
 
 }

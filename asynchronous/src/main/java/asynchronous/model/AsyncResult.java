@@ -45,9 +45,12 @@ public abstract class AsyncResult<T> extends AsyncAbstractEvent implements Waita
 	}
 	
 	public T waitAndGetResult() {
-		if(!isCompleted()) {
+		if(!isCompleted() || ex != null) {
             await();
 		}
+		if (ex != null){
+		    throw new RuntimeException("运行出现错误:"+ex.getClass().getName());
+        }
 		return result.get();
 	}
 	
