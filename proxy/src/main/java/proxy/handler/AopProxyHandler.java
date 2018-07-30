@@ -1,12 +1,7 @@
 package proxy.handler;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.stream.Stream;
 
-import config.FactoryConfig;
 import factory.BeanFactory;
-import factory.ConfigFactoryImpl;
 import proxy.action.AfterReturnAction;
 import proxy.action.BeforeAction;
 import proxy.action.CheckAction;
@@ -15,6 +10,10 @@ import proxy.annotation.AfterReturn;
 import proxy.annotation.Before;
 import proxy.annotation.Check;
 import proxy.annotation.ThrowsException;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /**
  *
@@ -34,10 +33,6 @@ public class AopProxyHandler<T> extends DefaultProxyHandler<T> {
 
     public void setFactory(BeanFactory factory) {
         this.factory = factory;
-    }
-
-    public void setConfig(FactoryConfig config) {
-        factory = new ConfigFactoryImpl(config);
     }
 
     private boolean isExecute = true;

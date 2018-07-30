@@ -1,12 +1,7 @@
-package proxy.build;
+package proxy.handler;
 
 
 import factory.BeanFactory;
-import factory.BeanFactoryHandler;
-import proxy.handler.AopProxyHandler;
-import proxy.handler.AsyncProxyHandler;
-import proxy.handler.DefaultProxyHandler;
-import proxy.handler.ProxyHandler;
 import util.Build;
 
 import java.util.Objects;
@@ -33,7 +28,6 @@ public class ProxyHandlerBuild<T> implements Build<ProxyHandler<T>> {
         return this;
     }
 
-    @SuppressWarnings("ClassEscapesDefinedScope")
     @Override
     public ProxyHandler<T> build() {
         ProxyHandler<T> proxyHandler = new DefaultProxyHandler<>();

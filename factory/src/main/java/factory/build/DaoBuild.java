@@ -13,6 +13,7 @@ public class DaoBuild implements Build<Dao> {
     private static int size = 0;
 
     static{
+        daoList = new HashMap<>();
         ServiceLoader.load(Dao.class, DaoBuild.class.getClassLoader())
                 .forEach(dao -> daoList.put(dao,++size));
     }

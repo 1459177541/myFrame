@@ -1,13 +1,10 @@
-import factory.BeanFactoryHandler;
-import proxy.build.ProxyFactory;
-
 module myFrame.proxy {
     exports proxy.action;
     exports proxy.annotation;
-    exports proxy.build;
+    exports proxy.factory.impl;
 
     requires myFrame.frame;
     requires myFrame.asynchronous;
 
-    provides BeanFactoryHandler with ProxyFactory;
+    provides factory.BeanFactoryHandler with proxy.factory.impl.ProxyFactory;
 }

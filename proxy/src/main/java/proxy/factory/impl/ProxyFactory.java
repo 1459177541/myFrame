@@ -1,9 +1,10 @@
-package proxy.build;
+package proxy.factory.impl;
 
 import factory.BeanFactory;
 import factory.BeanFactoryHandler;
 import proxy.annotation.*;
 import proxy.handler.ProxyHandler;
+import proxy.handler.ProxyHandlerBuild;
 
 import java.lang.reflect.Proxy;
 import java.util.Objects;

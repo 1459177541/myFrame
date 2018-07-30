@@ -1,5 +1,3 @@
-import factory.BeanFactoryHandler;
-
 module myFrame.factory {
     exports factory.build;
     exports factory.factory;
@@ -8,5 +6,5 @@ module myFrame.factory {
     requires transitive myFrame.dao;
 
     uses dao.service.Dao;
-    uses BeanFactoryHandler;
+    uses factory.BeanFactoryHandler;
 }
