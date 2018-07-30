@@ -4,7 +4,7 @@ package FactoryAndAOP;
 import config.FactoryConfig;
 import config.FactoryConfigByAnnotation;
 import factory.BeanFactory;
-import factory.ConfigFactory;
+import factory.BeanFactoryHandler;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
 

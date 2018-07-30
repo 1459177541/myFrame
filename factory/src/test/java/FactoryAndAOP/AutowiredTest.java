@@ -3,7 +3,7 @@ package FactoryAndAOP;
 
 import config.FactoryConfigByAnnotation;
 import factory.BeanFactory;
-import factory.ConfigFactory;
+import factory.BeanFactoryHandler;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
 
@@ -43,5 +43,6 @@ public class AutowiredTest {
         	e.printStackTrace();
         }
     }
+
 
 }

@@ -6,8 +6,7 @@ import java.util.stream.Stream;
 
 import config.FactoryConfig;
 import factory.BeanFactory;
-import factory.ConfigDefaultFactory;
-import factory.ConfigFactory;
+import factory.ConfigFactoryImpl;
 import proxy.action.AfterReturnAction;
 import proxy.action.BeforeAction;
 import proxy.action.CheckAction;
@@ -38,7 +37,7 @@ public class AopProxyHandler<T> extends DefaultProxyHandler<T> {
     }
 
     public void setConfig(FactoryConfig config) {
-        factory = new ConfigDefaultFactory(config);
+        factory = new ConfigFactoryImpl(config);
     }
 
     private boolean isExecute = true;

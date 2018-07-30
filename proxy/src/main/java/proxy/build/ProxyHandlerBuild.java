@@ -2,6 +2,7 @@ package proxy.build;
 
 
 import factory.BeanFactory;
+import factory.BeanFactoryHandler;
 import proxy.handler.AopProxyHandler;
 import proxy.handler.AsyncProxyHandler;
 import proxy.handler.DefaultProxyHandler;

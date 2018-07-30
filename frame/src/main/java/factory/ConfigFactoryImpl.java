@@ -4,10 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Stream;
 
 import frame.Autowired;
@@ -18,32 +15,30 @@ import config.FactoryConfig;
  * @author 杨星辰
  *
  */
-public class ConfigDefaultFactory extends ConfigFactory{
+public class ConfigFactoryImpl extends ConfigFactory {
+
+    private List<BeanFactoryHandler> beanFactoryHandlers;
 
 
-    public ConfigDefaultFactory(FactoryConfig factoryConfig) {
+    public ConfigFactoryImpl(FactoryConfig factoryConfig) {
         super(factoryConfig);
-    }
-
-    @Override
-    public BeanFactory setParentFactory(BeanFactory factory) {
-        throw new IllegalArgumentException("这是默认的工厂，无父工厂");
+        beanFactoryHandlers = new ArrayList<>();
     }
 
     /**
      * 通过类对象得到对应对象
      */
-    @SuppressWarnings("unchecked")
     @Override
-    public <T> T get(final Class<T> clazz) {
-        T o = (T) setNumber(clazz);
+    @SuppressWarnings("unchecked")
+    public <T> Object get(final Class<T> clazz) {
+        Object o = setNumber(clazz);
         if (null!=o){
             return o;
         }else if (String.class.equals(clazz)){
             if (clazz.isAnnotationPresent(Autowired.class)){
-                return (T)clazz.getAnnotation(Autowired.class).defaultString();
+                return clazz.getAnnotation(Autowired.class).defaultString();
             }else {
-                return (T)"";
+                return "";
             }
         }
         try {
@@ -69,7 +64,15 @@ public class ConfigDefaultFactory extends ConfigFactory{
         }catch (Exception e) {
             e.printStackTrace();
         }
+        for (BeanFactoryHandler handler : beanFactoryHandlers) {
+            o = handler.get(clazz, o);
+        }
         return o;
+    }
+
+    @Override
+    public void addBeanFactoryHandler(BeanFactoryHandler beanFactoryHandler) {
+        this.beanFactoryHandlers.add(beanFactoryHandler);
     }
 
     /**

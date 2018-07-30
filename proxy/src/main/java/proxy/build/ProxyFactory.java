@@ -1,7 +1,7 @@
 package proxy.build;
 
 import factory.BeanFactory;
-import factory.ConfigFactory;
+import factory.BeanFactoryHandler;
 import proxy.annotation.*;
 import proxy.handler.ProxyHandler;
 
@@ -15,26 +15,13 @@ import java.util.stream.Stream;
  * @author 杨星辰
  *
  */
-public class ProxyFactory extends ConfigFactory {
+public class ProxyFactory implements BeanFactoryHandler {
 
-	private BeanFactory factory;
+//	private BeanFactory factory;
 	private ProxyHandlerBuild build;
 
 	public ProxyFactory(){}
 
-	public ProxyFactory(ConfigFactory factory) {
-		this(factory,factory);
-	}
-
-	/**
-	 * @param factory bean工厂
-	 * @param handlerFactory AOP工厂
-	 */
-	public ProxyFactory(ConfigFactory factory, ConfigFactory handlerFactory) {
-		super(factory.getFactoryConfig());
-		this.factory = factory;
-		build = new ProxyHandlerBuild().setBeanFactory(handlerFactory);
-	}
 
 	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
 		this.build = Objects.requireNonNull(handlerBuild);
@@ -46,16 +33,16 @@ public class ProxyFactory extends ConfigFactory {
 	}
 
     @Override
-    public BeanFactory setParentFactory(BeanFactory factory) {
-        this.factory = factory;
+    public BeanFactoryHandler setBeanFactory(BeanFactory factory) {
+//        this.factory = factory;
         build = new ProxyHandlerBuild().setBeanFactory(factory);
         return this;
     }
 
     @Override
 	@SuppressWarnings("unchecked")
-	public <T> Object get(Class<T> clazz) {
-		T o = (T) Objects.requireNonNull(Objects.requireNonNull(factory).get(clazz));
+	public <T> Object get(Class<T> clazz, Object obj) {
+		T o = (T) Objects.requireNonNull(obj);
 		if (!isProxy(clazz)) {
             return o;
         }

@@ -33,5 +33,6 @@ public abstract class ConfigFactory implements BeanFactory {
 	public Object get(final String name) {
 		return get(Objects.requireNonNull(factoryConfig).get(name).getBeanClass());
 	}
+
 	
 }

@@ -1,10 +1,12 @@
+import factory.BeanFactoryHandler;
+
 module myFrame.factory {
     exports factory.build;
     exports factory.factory;
 
-    requires myFrame.frame;
-    requires myFrame.dao;
+    requires transitive myFrame.frame;
+    requires transitive myFrame.dao;
 
     uses dao.service.Dao;
-    uses factory.BeanFactory;
+    uses BeanFactoryHandler;
 }

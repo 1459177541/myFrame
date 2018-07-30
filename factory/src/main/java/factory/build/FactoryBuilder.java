@@ -3,7 +3,8 @@ package factory.build;
 
 import config.FactoryConfig;
 import factory.BeanFactory;
-import factory.ConfigDefaultFactory;
+import factory.BeanFactoryHandler;
+import factory.ConfigFactoryImpl;
 import util.Build;
 
 import java.util.Objects;
@@ -47,13 +48,16 @@ public class FactoryBuilder implements Build<BeanFactory> {
 	 */
 	@Override
 	public BeanFactory build() {
-	    BeanFactory factory = null;
-	    if (factoryConfig!=null) {
-            factory = new ConfigDefaultFactory(Objects.requireNonNull(factoryConfig, "没有配置类"));
-        }
-        return ServiceLoader.load(BeanFactory.class).stream()
+	    BeanFactory factory;
+        factory = new ConfigFactoryImpl(Objects.requireNonNull(factoryConfig, "没有配置类"));
+        ServiceLoader.load(BeanFactoryHandler.class).stream()
                 .map(ServiceLoader.Provider::get)
-                .reduce(Objects.requireNonNull(factory),((beanFactory, e) -> e.setParentFactory(beanFactory)));
+                .forEach(beanFactoryHandler -> {
+                    factory.addBeanFactoryHandler(beanFactoryHandler);
+                    beanFactoryHandler.setBeanFactory(factory);
+                    System.out.println(beanFactoryHandler.getClass().getName());
+                });
+	    return factory;
 	}
 
 }

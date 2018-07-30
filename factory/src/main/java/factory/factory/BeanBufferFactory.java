@@ -45,7 +45,7 @@ public class BeanBufferFactory implements Factory<Class<?>, BeanBuffer<?>> {
         return this;
     }
 
-    public BeanBufferFactory setBeanFactory(BeanFactory beanFactory){
+    public BeanBufferFactory setBeanFactoryHandler(BeanFactory beanFactory){
         this.beanFactory = beanFactory;
         return this;
     }
