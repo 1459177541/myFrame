@@ -1,12 +1,13 @@
 package dao.db.sql;
 
+
+import dao.db.criteria.Criteria;
+import dao.db.util.DBExecute;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
-
-import dao.db.util.Criteria;
-import dao.db.util.DBExecute;
 
 public abstract class Result<T> {
 	

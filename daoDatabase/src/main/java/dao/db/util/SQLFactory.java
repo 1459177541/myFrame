@@ -1,6 +1,6 @@
 package dao.db.util;
 
-
+import dao.db.criteria.Criteria;
 import dao.db.sql.Edit;
 import dao.db.sql.Result;
 import dao.db.sql.Select;
