@@ -1,4 +1,4 @@
-package proxy.handler;
+package proxyhandler;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -15,7 +15,11 @@ public abstract class ProxyHandler<T> implements InvocationHandler{
         }
 	}
 
-	public void setParent(ProxyHandler<T> parent){
+    public T getTarget() {
+        return target;
+    }
+
+    public void setParent(ProxyHandler<T> parent){
 		this.parent = parent;
 	}
 

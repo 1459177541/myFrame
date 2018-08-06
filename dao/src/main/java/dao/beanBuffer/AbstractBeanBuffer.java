@@ -1,8 +1,12 @@
 package dao.beanBuffer;
 
 import asynchronous.executor.AsyncExecuteManage;
+import factory.BeanFactory;
+import factory.BeanFactoryHandler;
+import proxyhandler.ProxyHandler;
 import util.Waitable;
 
+import java.lang.reflect.Proxy;
 import java.util.*;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -290,6 +294,16 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
         return r;
     }
 
+    protected List<Object> getRawData(){
+        return data.stream().map(d->{
+            try {
+                return ((ProxyHandler)Proxy.getInvocationHandler(d)).getTarget();
+            }catch (IllegalArgumentException e){
+                return d;
+            }
+        }).collect(Collectors.toList());
+    }
+
 
     protected Stack<BeanAction<T>> actionStack;
 
@@ -407,6 +421,47 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
             return action;
         }
 
+    }
+
+    protected enum  LoadBeanFactory implements BeanFactory{
+        INSTANCE;
+
+        LoadBeanFactory(){
+            ServiceLoader.load(BeanFactoryHandler.class).stream()
+                    .map(ServiceLoader.Provider::get)
+                    .forEach(beanFactoryHandler -> {
+                        addBeanFactoryHandler(beanFactoryHandler);
+                        beanFactoryHandler.setBeanFactory(this);
+                        System.out.println(beanFactoryHandler.getClass().getName());
+                    });
+        }
+
+        private List<BeanFactoryHandler> beanFactoryHandlers;
+
+        @Override
+        public <T> Object get(Class<T> clazz) {
+            throw new IllegalArgumentException("禁止调用的方法");
+        }
+
+        @Override
+        public void addBeanFactoryHandler(BeanFactoryHandler beanFactoryHandler) {
+            this.beanFactoryHandlers.add(beanFactoryHandler);
+        }
+
+        @Override
+        public Object get(String key) {
+            throw new IllegalArgumentException("禁止调用的方法");
+        }
+
+        public <T> Object handled(T target){
+            @SuppressWarnings("unchecked")
+            Class<T> clazz = (Class<T>) target.getClass();
+            Object o = target;
+            for (BeanFactoryHandler handler : beanFactoryHandlers) {
+                o = handler.get(clazz, o);
+            }
+            return target;
+        }
     }
 
 }

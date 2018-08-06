@@ -2,6 +2,7 @@ package proxy.handler;
 
 
 import factory.BeanFactory;
+import proxyhandler.ProxyHandler;
 import util.Build;
 
 import java.util.Objects;

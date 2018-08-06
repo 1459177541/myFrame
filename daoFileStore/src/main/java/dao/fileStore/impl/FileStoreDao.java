@@ -12,8 +12,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
@@ -57,6 +59,8 @@ public class FileStoreDao implements Dao {
 
     private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T> {
 
+        private LoadBeanFactory beanFactory = LoadBeanFactory.INSTANCE;
+
         FileStoreBeanBuffer(Class<T> clazz) {
             super(clazz);
             AsyncExecuteManage.start(SYSTEM, this::load);
@@ -65,11 +69,14 @@ public class FileStoreDao implements Dao {
         @Override
         protected void load(){
             try {
+                List data;
                 if (null != properties) {
                     data = SFUtil.read(properties.getProperty(clazz.getName()));
                 }else {
                     data = SFUtil.read(clazz);
                 }
+                //noinspection unchecked
+                this.data = (List<T>) data.stream().map(d->beanFactory.handled(d)).collect(Collectors.toList());
             } catch (FileNotFoundException e) {
 //                throw new NoSuchElementException(e.getMessage());
                 data = new ArrayList<>();
@@ -84,9 +91,9 @@ public class FileStoreDao implements Dao {
             readSomething(null, a->{
                 try {
                     if (null != properties) {
-                        SFUtil.write(data, properties.getProperty(clazz.getName()));
+                        SFUtil.write(getRawData(), properties.getProperty(clazz.getName()));
                     } else {
-                        SFUtil.write(data);
+                        SFUtil.write(getRawData());
                     }
                 } catch (FileNotFoundException e) {
                     throw new NoSuchElementException(e.getMessage());

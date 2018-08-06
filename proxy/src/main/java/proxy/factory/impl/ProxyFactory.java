@@ -3,7 +3,7 @@ package proxy.factory.impl;
 import factory.BeanFactory;
 import factory.BeanFactoryHandler;
 import proxy.annotation.*;
-import proxy.handler.ProxyHandler;
+import proxyhandler.ProxyHandler;
 import proxy.handler.ProxyHandlerBuild;
 
 import java.lang.reflect.Proxy;
@@ -24,14 +24,14 @@ public class ProxyFactory implements BeanFactoryHandler {
 	public ProxyFactory(){}
 
 
-	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
-		this.build = Objects.requireNonNull(handlerBuild);
-		return this;
-	}
-
-	public ProxyHandlerBuild getHandlerBuild() {
-		return build;
-	}
+//	public ProxyFactory setHandlerBuild(ProxyHandlerBuild handlerBuild){
+//		this.build = Objects.requireNonNull(handlerBuild);
+//		return this;
+//	}
+//
+//	public ProxyHandlerBuild getHandlerBuild() {
+//		return build;
+//	}
 
     @Override
     public BeanFactoryHandler setBeanFactory(BeanFactory factory) {

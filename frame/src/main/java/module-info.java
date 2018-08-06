@@ -6,6 +6,7 @@ module myFrame.frame {
     exports factory;
     exports config;
     exports util;
+    exports proxyhandler to myFrame.proxy, myFrame.dao;
 
     provides BeanFactoryHandler with SingleFactory;
 }

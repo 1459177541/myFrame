@@ -10,6 +10,7 @@ import proxy.annotation.AfterReturn;
 import proxy.annotation.Before;
 import proxy.annotation.Check;
 import proxy.annotation.ThrowsException;
+import proxyhandler.ProxyHandler;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

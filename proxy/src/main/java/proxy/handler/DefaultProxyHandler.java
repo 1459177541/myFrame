@@ -1,5 +1,7 @@
 package proxy.handler;
 
+import proxyhandler.ProxyHandler;
+
 import java.lang.reflect.Method;
 
 public class DefaultProxyHandler<T> extends ProxyHandler<T> {

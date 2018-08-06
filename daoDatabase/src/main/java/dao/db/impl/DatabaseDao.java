@@ -11,8 +11,10 @@ import dao.beanBuffer.BeanBufferState;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
@@ -66,6 +68,8 @@ public class DatabaseDao implements Dao {
 
     private class DBBeanBuffer<T> extends AbstractBeanBuffer<T> {
 
+        private LoadBeanFactory beanFactory = LoadBeanFactory.INSTANCE;
+
         DBBeanBuffer(Class<T> clazz) {
             super(clazz);
             AsyncExecuteManage.start(SYSTEM,this::load);
@@ -77,7 +81,9 @@ public class DatabaseDao implements Dao {
                 Select<T> select = new Select<>();
                 select.setClazz(clazz);
                 select.setConnection(conn.getConn());
-                data = Objects.requireNonNull(select.getResult());
+                List data = Objects.requireNonNull(select.getResult());
+                //noinspection unchecked
+                this.data = (List<T>) data.stream().map(d->beanFactory.handled(d)).collect(Collectors.toList());
             }finally {
                 Objects.requireNonNullElseGet(data,ArrayList::new);
                 state = BeanBufferState.COMPLETE;

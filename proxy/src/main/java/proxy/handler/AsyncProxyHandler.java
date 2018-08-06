@@ -2,6 +2,7 @@ package proxy.handler;
 
 import asynchronous.executor.AsyncExecuteManage;
 import proxy.annotation.Async;
+import proxyhandler.ProxyHandler;
 
 import java.lang.reflect.Method;
 

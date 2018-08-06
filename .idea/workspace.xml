@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/Criteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicOperator.java" afterDir="false" />
+    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="更新——beanBuffer读取储存时使用原对象(可能报错)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/Criteria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/CriteriaState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/Operator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionOperator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frame/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AsyncProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AsyncProxyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/DefaultProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/DefaultProxyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/frame/src/main/java/proxyhandler/ProxyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandlerBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandlerBuild.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,121 +59,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Criteria.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/Criteria.java">
+      <file leaf-file-name="FileStoreDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="663">
+              <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConditionCriteria.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionCriteria.java">
+      <file leaf-file-name="DatabaseDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="1015">
+              <caret line="111" column="60" lean-forward="true" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractBeanBuffer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1669">
+              <caret line="299" column="81" lean-forward="true" selection-start-line="299" selection-start-column="81" selection-end-line="299" selection-end-column="81" />
               <folding>
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#733#734#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#12258#12259#0" expanded="true" />
+                <element signature="e#12317#12318#0" expanded="true" />
+                <element signature="e#12875#12876#0" expanded="true" />
+                <element signature="e#12934#12935#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConditionOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionOperator.java">
+      <file leaf-file-name="ProxyFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="352">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQLFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java">
+      <file leaf-file-name="ProxyHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frame/src/main/java/proxyhandler/ProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="352">
+              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetConn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="62" column="62" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogicOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="module-info.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChildSelectCriteria.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectCriteria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#757#758#0" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogicCriteria.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicCriteria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,20 +133,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Del.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/DelTable.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" />
-        <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncResultExecutor.java" />
-        <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/model/AsyncAbstractEvent.java" />
-        <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncAbstractExecutor.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncExecuteManage.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/model/AsyncResult.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/config/FactoryConfig.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/config/Config.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/BeanBufferFactory.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" />
         <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/GetConn.java" />
-        <option value="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/dao/service/Dao.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/factory/ConfigDefaultFactoryHandler.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactoryHandler.java" />
@@ -232,7 +157,6 @@
         <option value="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandlerBuild.java" />
         <option value="$PROJECT_DIR$/proxy/src/main/java/module-info.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/module-info.java" />
-        <option value="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/DaoBuild.java" />
         <option value="$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java" />
         <option value="$PROJECT_DIR$/factory/src/test/java/module-info.java" />
@@ -251,6 +175,15 @@
         <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/Criteria.java" />
         <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java" />
         <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java" />
+        <option value="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java" />
+        <option value="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandler.java" />
+        <option value="$PROJECT_DIR$/frame/src/main/java/proxyhandler/ProxyHandler.java" />
+        <option value="$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/module-info.java" />
+        <option value="$PROJECT_DIR$/frame/src/main/java/module-info.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java" />
+        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" />
+        <option value="$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java" />
       </list>
     </option>
   </component>
@@ -395,6 +328,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+              <item name="asynchornized" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dao" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="factory" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="frame" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="proxy" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -427,6 +393,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="asynchronous" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="executor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="asynchronous" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
@@ -733,6 +717,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="proxyhandler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="frame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -802,39 +795,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-              <item name="asynchornized" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="dao" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="factory" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="frame" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="proxy" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -843,7 +803,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jdk9" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -1053,7 +1013,9 @@
       <workItem from="1532586165464" duration="6283000" />
       <workItem from="1532867161988" duration="11005000" />
       <workItem from="1532946237245" duration="3858000" />
-      <workItem from="1533195741933" duration="2669000" />
+      <workItem from="1533195741933" duration="5514000" />
+      <workItem from="1533529287907" duration="1606000" />
+      <workItem from="1533539210018" duration="4123000" />
     </task>
     <task id="LOCAL-00001" summary="重构为JDK9特性模块化">
       <created>1532331236996</created>
@@ -1160,7 +1122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532949918078</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="重构数据库查询条件结构——类层次替代标签类">
+      <created>1533198623871</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533198623871</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1196,7 +1165,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89994000" />
+    <option name="totallyTimeSpent" value="98568000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1213,6 +1182,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3290461" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -1224,22 +1194,21 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.20948827" />
+      <window_info anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.21375267" />
       <window_info anchor="right" id="Database" order="5" weight="0.19989339" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
-      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3290461" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290461" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1293,7 +1262,9 @@
     <MESSAGE value="更新dao层，处理访问问题" />
     <MESSAGE value="更新BeanFactory逻辑" />
     <MESSAGE value="优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化" />
+    <MESSAGE value="重构数据库查询条件结构——类层次替代标签类" />
+    <MESSAGE value="更新——beanBuffer读取储存时使用原对象(可能报错)" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新——beanBuffer读取储存时使用原对象(可能报错)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1305,234 +1276,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncAbstractExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Process.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/config/BeanDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="887" column="16" selection-start-line="887" selection-start-column="16" selection-end-line="887" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/frame/Autowired.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/config/FactoryConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="85" column="141" lean-forward="true" selection-start-line="85" selection-start-column="141" selection-end-line="85" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/systemFile/SFUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7354">
-          <caret line="106" column="19" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/service/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactoryHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="996" column="14" selection-start-line="996" selection-start-column="14" selection-end-line="996" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/OtherClassTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="66" column="64" lean-forward="true" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/SingleFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AsyncProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/DefaultProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandlerBuild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/factory/BeanBufferFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ServiceLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1777" column="39" selection-start-line="1777" selection-start-column="39" selection-end-line="1777" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/test/java/module-info.java" />
     <entry file="file://$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/FactoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1547,13 +1290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/DaoBuild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1561,63 +1297,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/CriteriaState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/CriteriaState.java" />
     <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectOperator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1628,16 +1312,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Select.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1645,33 +1319,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionCriteria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1684,8 +1335,1283 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/Criteria.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ConditionCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/LogicCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/ChildSelectCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/util/Waitable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/util/Build.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/BeanBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/FutureTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="65" column="42" lean-forward="true" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/RunnableFuture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="47" column="56" lean-forward="true" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/java.util.concurrent.Future">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>java.util.concurrent.Future</OriginalElement>
+          <nodes>
+            <node x="" y="">java.util.concurrent.CompletableFuture.OrRun</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.AnyOf</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniApply</node>
+            <node x="" y="">java.util.concurrent.ScheduledFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Signaller</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.OrAccept</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.AsynchronousCompletionTask</node>
+            <node x="" y="">java.util.concurrent.ScheduledThreadPoolExecutor.ScheduledFutureTask</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.BiAccept</node>
+            <node x="" y="">java.util.concurrent.Future</node>
+            <node x="" y="">com.sun.xml.internal.ws.util.CompletedFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Timeout</node>
+            <node x="" y="">java.util.concurrent.RunnableScheduledFuture</node>
+            <node x="" y="">sun.nio.ch.CompletedFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniCompose</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniAccept</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniRun</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniHandle</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.AsyncRun</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.TaskSubmitter</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniCompletion</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.DelayedCompleter</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.AsyncSupply</node>
+            <node x="" y="">sun.nio.ch.PendingFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Completion</node>
+            <node x="" y="">jdk.incubator.http.internal.common.MinimalFuture.ExceptionalSupplier</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Delayer.DaemonThreadFactory</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.AltResult</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniWhenComplete</node>
+            <node x="" y="">java.util.concurrent.ExecutorCompletionService.QueueingFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.ThreadPerTaskExecutor</node>
+            <node x="" y="">java.util.concurrent.FutureTask</node>
+            <node x="" y="">jdk.incubator.http.internal.common.MinimalFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.BiRelay</node>
+            <node x="" y="">java.util.concurrent.FutureTask.WaitNode</node>
+            <node x="" y="">java.io.ObjectStreamClass.EntryFuture</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.MinimalStage</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.CoCompletion</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniExceptionally</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.BiCompletion</node>
+            <node x="" y="">jdk.management.resource.internal.FutureWrapper</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.DelayedExecutor</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Delayer</node>
+            <node x="" y="">java.util.concurrent.RunnableFuture</node>
+            <node x="" y="">com.sun.corba.se.impl.orbutil.closure.Future</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.OrApply</node>
+            <node x="" y="">com.sun.glass.ui.InvokeLaterDispatcher.Future</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.BiApply</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.BiRun</node>
+            <node x="" y="">com.mysql.cj.protocol.x.ErrorToFutureCompletionHandler</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.Canceller</node>
+            <node x="" y="">java.util.concurrent.CompletableFuture.UniRelay</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="107.0" y="429.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/concurrent/Future.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="87" column="19" lean-forward="true" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JIGSAW/myFrame.asynchronous">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JIGSAW</ID>
+          <OriginalElement>myFrame.asynchronous</OriginalElement>
+          <nodes>
+            <node x="" y="">myFrame.dao</node>
+            <node x="" y="">java.sql</node>
+            <node x="" y="">myFrame.proxy</node>
+            <node x="" y="">myFrame.daoDatabase</node>
+            <node x="" y="">myFrame.asynchronous</node>
+            <node x="" y="">myFrame.daoFileStore</node>
+            <node x="" y="">java.logging</node>
+            <node x="" y="">java.xml</node>
+            <node x="" y="">myFrame.frame</node>
+            <node x="" y="">myFrame.factory</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="335.0" y="140.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/asynchronous.executor.Execute">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>asynchronous.executor.Execute</OriginalElement>
+          <nodes>
+            <node x="" y="">java.lang.FunctionalInterface</node>
+            <node x="" y="">asynchronous.executor.Execute</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="79.0" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/dao.db.sql.Result">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>dao.db.sql.Result</OriginalElement>
+          <nodes>
+            <node x="" y="">dao.db.sql.Del</node>
+            <node x="" y="">dao.db.sql.CreateTable</node>
+            <node x="" y="">dao.db.sql.Update</node>
+            <node x="" y="">dao.db.sql.DelTable</node>
+            <node x="" y="">dao.db.sql.Select</node>
+            <node x="" y="">dao.db.sql.Result</node>
+            <node x="" y="">dao.db.sql.Add</node>
+            <node x="" y="">dao.db.sql.Edit</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="130.0" y="412.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncAbstractExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/proxy.factory.impl.ProxyFactory">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>proxy.factory.impl.ProxyFactory</OriginalElement>
+          <nodes>
+            <node x="" y="">proxy.action.ProxyAction</node>
+            <node x="" y="">proxy.action.BeforeAction</node>
+            <node x="" y="">proxy.action.ThrowsExceptionAction</node>
+            <node x="" y="">factory.BeanFactoryHandler</node>
+            <node x="" y="">proxy.handler.ProxyHandlerBuild</node>
+            <node x="" y="">proxy.handler.ProxyHandler</node>
+            <node x="" y="">proxy.factory.impl.ProxyFactory</node>
+            <node x="" y="">proxy.annotation.Check</node>
+            <node x="" y="">proxy.action.CheckAction</node>
+            <node x="" y="">proxy.handler.DefaultProxyHandler</node>
+            <node x="" y="">proxy.handler.AsyncProxyHandler</node>
+            <node x="" y="">proxy.annotation.AfterReturn</node>
+            <node x="" y="">proxy.annotation.ThrowsException</node>
+            <node x="" y="">proxy.annotation.Async</node>
+            <node x="" y="">proxy.annotation.Before</node>
+            <node x="" y="">proxy.action.AfterReturnAction</node>
+            <node x="" y="">proxy.handler.AopProxyHandler</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="722.0" y="494.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/factory.build.FactoryBuilder">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>factory.build.FactoryBuilder</OriginalElement>
+          <nodes>
+            <node x="1230.6745560936233" y="643.0">factory.BeanFactory</node>
+            <node x="2265.3021304143113" y="324.5">proxy.action.ProxyAction</node>
+            <node x="593.75" y="1351.0">factory.build.FactoryBuilder</node>
+            <node x="1271.7220204465962" y="904.5">util.Build</node>
+            <node x="2761.6745560936233" y="654.5">proxy.action.BeforeAction</node>
+            <node x="2351.6745560936233" y="654.5">proxy.action.ThrowsExceptionAction</node>
+            <node x="845.927130414311" y="301.0">factory.BeanFactoryHandler</node>
+            <node x="355.0" y="174.0">config.Config</node>
+            <node x="2437.0" y="1086.5">proxy.handler.ProxyHandlerBuild</node>
+            <node x="0.0" y="185.0">config.BeanDefinition</node>
+            <node x="224.2943956820004" y="585.0">config.FactoryConfig</node>
+            <node x="820.6745560936234" y="869.0">factory.SingleFactory</node>
+            <node x="166.5" y="904.5">config.FactoryConfigByAnnotation</node>
+            <node x="3173.2301099677147" y="277.5">proxy.handler.ProxyHandler</node>
+            <node x="437.6745560936233" y="1075.0">factory.ConfigFactoryImpl</node>
+            <node x="403.5" y="857.5">factory.ConfigFactory</node>
+            <node x="2295.8333333333335" y="1351.5">proxy.factory.impl.ProxyFactory</node>
+            <node x="1612.6745560936236" y="643.0">proxy.action.CheckAction</node>
+            <node x="3054.6745560936233" y="631.0">proxy.handler.DefaultProxyHandler</node>
+            <node x="3196.3245560936234" y="892.5">proxy.handler.AsyncProxyHandler</node>
+            <node x="1444.7187970809775" y="313.0">factory.Factory</node>
+            <node x="57.5" y="0.0">config.BeanDefinition.FileClassLoader</node>
+            <node x="1988.6745560936236" y="654.5">proxy.action.AfterReturnAction</node>
+            <node x="2397.5" y="857.0">proxy.handler.AopProxyHandler</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="factory.ConfigFactory" target="factory.BeanFactory">
+              <point x="36.0" y="-73.5" />
+              <point x="583.5" y="807.0" />
+              <point x="1250.7856672047346" y="807.0" />
+              <point x="-160.8888888888889" y="38.0" />
+            </edge>
+            <edge source="factory.build.FactoryBuilder" target="factory.ConfigFactoryImpl">
+              <point x="-20.25" y="-74.0" />
+              <point x="695.0" y="1311.0" />
+              <point x="618.6745560936233" y="1311.0" />
+              <point x="0.0" y="108.0" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.handler.DefaultProxyHandler">
+              <point x="100.0" y="-74.0" />
+              <point x="2647.5" y="827.0" />
+              <point x="3084.8745560936236" y="827.0" />
+              <point x="-120.80000000000001" y="50.0" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.handler.ProxyHandler">
+              <point x="66.66666666666686" y="-74.0" />
+              <point x="2614.166666666667" y="817.0" />
+              <point x="3044.1745560936233" y="817.0" />
+              <point x="3044.1745560936233" y="555.0" />
+              <point x="3199.7301099677147" y="555.0" />
+              <point x="-132.5" y="62.0" />
+            </edge>
+            <edge source="proxy.action.CheckAction" target="proxy.action.ProxyAction">
+              <point x="0.0" y="-38.0" />
+              <point x="1790.6745560936236" y="555.0" />
+              <point x="2279.8021304143113" y="555.0" />
+              <point x="-43.5" y="15.0" />
+            </edge>
+            <edge source="factory.SingleFactory" target="factory.BeanFactory">
+              <point x="118.66666666666652" y="-62.0" />
+              <point x="1117.3412227602898" y="827.0" />
+              <point x="1331.230111649179" y="827.0" />
+              <point x="-80.44444444444434" y="38.0" />
+            </edge>
+            <edge source="factory.build.FactoryBuilder" target="config.FactoryConfig">
+              <point x="-101.25" y="-74.0" />
+              <point x="614.0" y="1331.0" />
+              <point x="156.0" y="1331.0" />
+              <point x="156.0" y="827.0" />
+              <point x="241.72296711057197" y="827.0" />
+              <point x="-104.57142857142844" y="96.0" />
+            </edge>
+            <edge source="factory.build.FactoryBuilder" target="factory.BeanFactory">
+              <point x="60.75" y="-74.0" />
+              <point x="776.0" y="1321.0" />
+              <point x="1187.1745560936233" y="1321.0" />
+              <point x="1187.1745560936233" y="837.0" />
+              <point x="1371.4523338714012" y="837.0" />
+              <point x="-40.22222222222217" y="38.0" />
+            </edge>
+            <edge source="factory.SingleFactory" target="factory.BeanFactoryHandler">
+              <point x="0.0" y="-62.0" />
+              <point x="998.6745560936234" y="797.0" />
+              <point x="994.5495560936234" y="797.0" />
+              <point x="994.5495560936234" y="565.0" />
+              <point x="964.427130414311" y="565.0" />
+              <point x="0.0" y="38.5" />
+            </edge>
+            <edge source="config.FactoryConfig" target="config.Config">
+              <point x="30.5" y="-96.0" />
+              <point x="376.7943956820004" y="565.0" />
+              <point x="416.25" y="565.0" />
+              <point x="-61.25" y="165.5" />
+            </edge>
+            <edge source="config.BeanDefinition.FileClassLoader" target="config.BeanDefinition">
+              <point x="55.0" y="62.0" />
+              <point x="222.5" y="149.0" />
+              <point x="251.25" y="149.0" />
+              <point x="83.75" y="-154.5" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="proxy.handler.ProxyHandler">
+              <point x="96.68749999999989" y="-96.5" />
+              <point x="2644.1875" y="1055.0" />
+              <point x="3506.8245560936234" y="1055.0" />
+              <point x="3506.8245560936234" y="555.0" />
+              <point x="3411.7301099677147" y="555.0" />
+              <point x="79.5" y="62.0" />
+            </edge>
+            <edge source="factory.build.FactoryBuilder" target="util.Build">
+              <point x="101.25" y="-74.0" />
+              <point x="816.5" y="1331.0" />
+              <point x="1198.1745560936233" y="1331.0" />
+              <point x="1198.1745560936233" y="1055.0" />
+              <point x="1300.7220204465962" y="1055.0" />
+              <point x="-29.0" y="26.5" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="proxy.handler.DefaultProxyHandler">
+              <point x="41.437499999999886" y="-96.5" />
+              <point x="2588.9375" y="1035.0" />
+              <point x="3185.8245560936234" y="1035.0" />
+              <point x="3185.8245560936234" y="837.0" />
+              <point x="3205.6745560936233" y="837.0" />
+              <point x="0.0" y="50.0" />
+            </edge>
+            <edge source="factory.BeanFactoryHandler" target="factory.BeanFactory">
+              <point x="105.33333333333303" y="38.5" />
+              <point x="1069.760463747644" y="525.0" />
+              <point x="1411.6745560936233" y="525.0" />
+              <point x="0.0" y="-38.0" />
+            </edge>
+            <edge source="proxy.action.AfterReturnAction" target="proxy.action.ProxyAction">
+              <point x="0.0" y="-26.5" />
+              <point x="2160.1745560936233" y="565.0" />
+              <point x="2308.8021304143113" y="565.0" />
+              <point x="-14.5" y="15.0" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="proxy.handler.AsyncProxyHandler">
+              <point x="69.0625" y="-96.5" />
+              <point x="2616.5625" y="1045.0" />
+              <point x="3346.3245560936234" y="1045.0" />
+              <point x="0.0" y="38.5" />
+            </edge>
+            <edge source="factory.ConfigFactoryImpl" target="factory.BeanFactoryHandler">
+              <point x="144.80000000000018" y="-108.0" />
+              <point x="763.4745560936235" y="1055.0" />
+              <point x="756.5" y="1055.0" />
+              <point x="756.5" y="545.0" />
+              <point x="885.427130414311" y="545.0" />
+              <point x="-79.0" y="38.5" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.action.AfterReturnAction">
+              <point x="-33.33333333333337" y="-74.0" />
+              <point x="2514.166666666667" y="807.0" />
+              <point x="2160.1745560936233" y="807.0" />
+              <point x="0.0" y="26.5" />
+            </edge>
+            <edge source="factory.BeanFactory" target="factory.Factory">
+              <point x="120.66666666666652" y="-38.0" />
+              <point x="1532.3412227602898" y="565.0" />
+              <point x="1502.2187970809775" y="565.0" />
+              <point x="0.0" y="26.5" />
+            </edge>
+            <edge source="factory.ConfigFactory" target="config.FactoryConfig">
+              <point x="-108.0" y="-73.5" />
+              <point x="439.5" y="837.0" />
+              <point x="416.0086813962862" y="837.0" />
+              <point x="69.71428571428578" y="96.0" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.action.ThrowsExceptionAction">
+              <point x="0.0" y="-74.0" />
+              <point x="0.0" y="26.5" />
+            </edge>
+            <edge source="factory.ConfigFactoryImpl" target="factory.ConfigFactory">
+              <point x="-72.40000000000009" y="-108.0" />
+              <point x="546.2745560936232" y="1045.0" />
+              <point x="475.5" y="1045.0" />
+              <point x="-72.0" y="73.5" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="util.Build">
+              <point x="-96.6875" y="-96.5" />
+              <point x="2450.8125" y="1055.0" />
+              <point x="1358.7220204465962" y="1055.0" />
+              <point x="29.0" y="26.5" />
+            </edge>
+            <edge source="proxy.action.BeforeAction" target="proxy.action.ProxyAction">
+              <point x="0.0" y="-26.5" />
+              <point x="2897.6745560936233" y="555.0" />
+              <point x="2366.8021304143113" y="555.0" />
+              <point x="43.5" y="15.0" />
+            </edge>
+            <edge source="proxy.handler.AsyncProxyHandler" target="proxy.handler.DefaultProxyHandler">
+              <point x="-100.0" y="-38.5" />
+              <point x="3246.3245560936234" y="837.0" />
+              <point x="3266.0745560936234" y="837.0" />
+              <point x="60.39999999999998" y="50.0" />
+            </edge>
+            <edge source="factory.ConfigFactoryImpl" target="config.FactoryConfig">
+              <point x="-144.80000000000018" y="-108.0" />
+              <point x="473.87455609362314" y="1055.0" />
+              <point x="393.0" y="1055.0" />
+              <point x="393.0" y="827.0" />
+              <point x="381.1515385391431" y="827.0" />
+              <point x="34.85714285714266" y="96.0" />
+            </edge>
+            <edge source="factory.BeanFactory" target="factory.BeanFactoryHandler">
+              <point x="-120.66666666666674" y="-38.0" />
+              <point x="1291.0078894269568" y="535.0" />
+              <point x="1043.427130414311" y="535.0" />
+              <point x="79.0" y="38.5" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.action.CheckAction">
+              <point x="-66.66666666666674" y="-74.0" />
+              <point x="2480.8333333333335" y="817.0" />
+              <point x="1790.6745560936236" y="817.0" />
+              <point x="0.0" y="38.0" />
+            </edge>
+            <edge source="factory.build.FactoryBuilder" target="factory.BeanFactoryHandler">
+              <point x="20.25" y="-74.0" />
+              <point x="735.5" y="1311.0" />
+              <point x="810.1745560936234" y="1311.0" />
+              <point x="810.1745560936234" y="555.0" />
+              <point x="911.7604637476445" y="555.0" />
+              <point x="-52.666666666666515" y="38.5" />
+            </edge>
+            <edge source="proxy.handler.AsyncProxyHandler" target="proxy.handler.ProxyHandler">
+              <point x="100.0" y="-38.5" />
+              <point x="3446.3245560936234" y="837.0" />
+              <point x="3422.4" y="837.0" />
+              <point x="3422.4" y="565.0" />
+              <point x="3358.7301099677147" y="565.0" />
+              <point x="26.5" y="62.0" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="factory.BeanFactory">
+              <point x="-41.4375" y="-96.5" />
+              <point x="2506.0625" y="1035.0" />
+              <point x="1495.1907704465962" y="1035.0" />
+              <point x="1495.1907704465962" y="837.0" />
+              <point x="1492.1190005380677" y="837.0" />
+              <point x="80.44444444444434" y="38.0" />
+            </edge>
+            <edge source="config.FactoryConfigByAnnotation" target="config.FactoryConfig">
+              <point x="51.25" y="-26.5" />
+              <point x="320.25" y="837.0" />
+              <point x="311.43725282485775" y="837.0" />
+              <point x="-34.85714285714266" y="96.0" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="proxy.action.BeforeAction">
+              <point x="33.33333333333326" y="-74.0" />
+              <point x="2580.8333333333335" y="807.0" />
+              <point x="2897.6745560936233" y="807.0" />
+              <point x="0.0" y="26.5" />
+            </edge>
+            <edge source="proxy.factory.impl.ProxyFactory" target="proxy.handler.ProxyHandler">
+              <point x="152.57142857142844" y="-73.5" />
+              <point x="2626.404761904762" y="1331.0" />
+              <point x="3517.8245560936234" y="1331.0" />
+              <point x="3517.8245560936234" y="545.0" />
+              <point x="3464.7301099677147" y="545.0" />
+              <point x="132.5" y="62.0" />
+            </edge>
+            <edge source="proxy.factory.impl.ProxyFactory" target="proxy.handler.ProxyHandlerBuild">
+              <point x="50.85714285714289" y="-73.5" />
+              <point x="2524.690476190476" y="1331.0" />
+              <point x="2547.5" y="1331.0" />
+              <point x="0.0" y="96.5" />
+            </edge>
+            <edge source="config.FactoryConfig" target="config.BeanDefinition">
+              <point x="-30.5" y="-96.0" />
+              <point x="315.7943956820004" y="555.0" />
+              <point x="251.25" y="555.0" />
+              <point x="83.75" y="154.5" />
+            </edge>
+            <edge source="proxy.handler.DefaultProxyHandler" target="proxy.handler.ProxyHandler">
+              <point x="75.5" y="-50.0" />
+              <point x="3281.1745560936233" y="565.0" />
+              <point x="3305.7301099677147" y="565.0" />
+              <point x="-26.5" y="62.0" />
+            </edge>
+            <edge source="config.BeanDefinition" target="config.BeanDefinition.FileClassLoader">
+              <point x="-83.75" y="-154.5" />
+              <point x="83.75" y="149.0" />
+              <point x="112.5" y="149.0" />
+              <point x="-55.0" y="62.0" />
+            </edge>
+            <edge source="proxy.factory.impl.ProxyFactory" target="factory.BeanFactoryHandler">
+              <point x="-152.57142857142856" y="-73.5" />
+              <point x="2321.261904761905" y="1331.0" />
+              <point x="1209.1745560936233" y="1331.0" />
+              <point x="1209.1745560936233" y="555.0" />
+              <point x="990.7604637476445" y="555.0" />
+              <point x="26.333333333333485" y="38.5" />
+            </edge>
+            <edge source="proxy.handler.AopProxyHandler" target="factory.BeanFactory">
+              <point x="-133.33333333333337" y="-74.0" />
+              <point x="2414.166666666667" y="837.0" />
+              <point x="1532.3412227602898" y="837.0" />
+              <point x="120.66666666666652" y="38.0" />
+            </edge>
+            <edge source="proxy.handler.ProxyHandlerBuild" target="proxy.handler.AopProxyHandler">
+              <point x="-13.8125" y="-96.5" />
+              <point x="2533.6875" y="1025.0" />
+              <point x="2472.5" y="1025.0" />
+              <point x="-75.0" y="74.0" />
+            </edge>
+            <edge source="proxy.action.ThrowsExceptionAction" target="proxy.action.ProxyAction">
+              <point x="0.0" y="-26.5" />
+              <point x="2546.6745560936233" y="565.0" />
+              <point x="2337.8021304143113" y="565.0" />
+              <point x="14.5" y="15.0" />
+            </edge>
+            <edge source="proxy.factory.impl.ProxyFactory" target="factory.BeanFactory">
+              <point x="-50.85714285714289" y="-73.5" />
+              <point x="2422.976190476191" y="1311.0" />
+              <point x="1440.8967783158455" y="1311.0" />
+              <point x="1440.8967783158455" y="837.0" />
+              <point x="1411.6745560936233" y="837.0" />
+              <point x="0.0" y="38.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="230.0" y="702.0" />
+          <SelectedNodes>
+            <node>factory.build.FactoryBuilder</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/factory.factory.BeanBufferFactory">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>factory.factory.BeanBufferFactory</OriginalElement>
+          <nodes>
+            <node x="596.875" y="308.0">dao.beanBuffer.AbstractBeanBuffer</node>
+            <node x="364.67804621848734" y="0.0">dao.beanBuffer.BeanBuffer</node>
+            <node x="217.3082983193276" y="1310.0">dao.service.Dao</node>
+            <node x="793.9905462184873" y="1345.0">dao.fileStore.impl.FileStoreDao.FileStoreBeanBuffer</node>
+            <node x="526.8707983193276" y="1333.5">dao.db.impl.DatabaseDao.DBBeanBuffer</node>
+            <node x="0.0" y="1506.0">factory.factory.BeanBufferFactory</node>
+            <node x="423.61554621848734" y="1575.5">dao.db.impl.DatabaseDao</node>
+            <node x="710.6155462184873" y="1575.5">dao.fileStore.impl.FileStoreDao</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="factory.factory.BeanBufferFactory" target="dao.service.Dao">
+              <point x="50.0" y="-142.5" />
+              <point x="250.0" y="1486.0" />
+              <point x="248.5582983193276" y="1486.0" />
+              <point x="-93.75" y="73.0" />
+            </edge>
+            <edge source="dao.fileStore.impl.FileStoreDao" target="dao.beanBuffer.BeanBuffer">
+              <point x="125.0" y="-73.0" />
+              <point x="985.6155462184873" y="1486.0" />
+              <point x="966.4905462184873" y="1486.0" />
+              <point x="966.4905462184873" y="268.0" />
+              <point x="662.749474789916" y="268.0" />
+              <point x="137.57142857142867" y="119.0" />
+            </edge>
+            <edge source="dao.db.impl.DatabaseDao" target="dao.db.impl.DatabaseDao.DBBeanBuffer">
+              <point x="22.25" y="-73.0" />
+              <point x="579.3655462184873" y="1486.0" />
+              <point x="594.7457983193276" y="1486.0" />
+              <point x="-22.625" y="49.5" />
+            </edge>
+            <edge source="dao.fileStore.impl.FileStoreDao.FileStoreBeanBuffer" target="dao.beanBuffer.AbstractBeanBuffer">
+              <point x="40.5" y="-38.0" />
+              <point x="915.4905462184873" y="1285.0" />
+              <point x="877.75" y="1285.0" />
+              <point x="120.37499999999994" y="476.0" />
+            </edge>
+            <edge source="dao.db.impl.DatabaseDao" target="dao.service.Dao">
+              <point x="-111.25" y="-73.0" />
+              <point x="445.86554621848734" y="1486.0" />
+              <point x="373.5582983193276" y="1486.0" />
+              <point x="31.25" y="73.0" />
+            </edge>
+            <edge source="dao.fileStore.impl.FileStoreDao.FileStoreBeanBuffer" target="dao.fileStore.impl.FileStoreDao">
+              <point x="20.25" y="38.0" />
+              <point x="895.2405462184873" y="1486.0" />
+              <point x="885.6155462184873" y="1486.0" />
+              <point x="25.0" y="-73.0" />
+            </edge>
+            <edge source="dao.service.Dao" target="dao.beanBuffer.BeanBuffer">
+              <point x="0.0" y="-73.0" />
+              <point x="342.3082983193276" y="278.0" />
+              <point x="479.32090336134445" y="278.0" />
+              <point x="-45.85714285714289" y="119.0" />
+            </edge>
+            <edge source="factory.factory.BeanBufferFactory" target="dao.beanBuffer.BeanBuffer">
+              <point x="-50.0" y="-142.5" />
+              <point x="150.0" y="1486.0" />
+              <point x="194.50525210084027" y="1486.0" />
+              <point x="194.50525210084027" y="268.0" />
+              <point x="433.4637605042017" y="268.0" />
+              <point x="-91.71428571428567" y="119.0" />
+            </edge>
+            <edge source="dao.beanBuffer.AbstractBeanBuffer" target="dao.beanBuffer.BeanBuffer">
+              <point x="-80.25000000000006" y="-476.0" />
+              <point x="677.125" y="288.0" />
+              <point x="571.0351890756302" y="288.0" />
+              <point x="45.85714285714289" y="119.0" />
+            </edge>
+            <edge source="dao.db.impl.DatabaseDao.DBBeanBuffer" target="dao.db.impl.DatabaseDao">
+              <point x="22.625" y="49.5" />
+              <point x="639.9957983193276" y="1486.0" />
+              <point x="623.8655462184873" y="1486.0" />
+              <point x="66.75" y="-73.0" />
+            </edge>
+            <edge source="dao.db.impl.DatabaseDao.DBBeanBuffer" target="dao.beanBuffer.AbstractBeanBuffer">
+              <point x="45.25" y="-49.5" />
+              <point x="662.6207983193276" y="1285.0" />
+              <point x="717.25" y="1285.0" />
+              <point x="-40.125" y="476.0" />
+            </edge>
+            <edge source="dao.fileStore.impl.FileStoreDao" target="dao.fileStore.impl.FileStoreDao.FileStoreBeanBuffer">
+              <point x="-25.0" y="-73.0" />
+              <point x="835.6155462184873" y="1486.0" />
+              <point x="854.7405462184873" y="1486.0" />
+              <point x="-20.25" y="38.0" />
+            </edge>
+            <edge source="dao.fileStore.impl.FileStoreDao" target="dao.service.Dao">
+              <point x="-125.0" y="-73.0" />
+              <point x="735.6155462184873" y="1476.0" />
+              <point x="436.0582983193276" y="1476.0" />
+              <point x="93.75" y="73.0" />
+            </edge>
+            <edge source="dao.db.impl.DatabaseDao" target="dao.beanBuffer.BeanBuffer">
+              <point x="-66.75" y="-73.0" />
+              <point x="490.36554621848734" y="1486.0" />
+              <point x="481.38602941176464" y="1486.0" />
+              <point x="481.38602941176464" y="288.0" />
+              <point x="525.1780462184873" y="288.0" />
+              <point x="0.0" y="119.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="2.0" y="1640.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/dao.db.util.SQLFactory">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>dao.db.util.SQLFactory</OriginalElement>
+          <nodes>
+            <node x="482.375" y="800.5">dao.db.criteria.Criteria</node>
+            <node x="630.5498368298367" y="1876.0">dao.db.util.SQLFactory</node>
+            <node x="0.0" y="1238.0">dao.db.criteria.ConditionCriteria</node>
+            <node x="1115.6325172050174" y="731.0">dao.db.util.DBExecute</node>
+            <node x="1141.6480511155512" y="435.5">dao.db.sql.CreateTable</node>
+            <node x="577.4527777777778" y="1273.0">dao.db.criteria.LogicCriteria</node>
+            <node x="1637.604991952492" y="1583.0">dao.db.sql.Update</node>
+            <node x="39.0" y="731.0">dao.db.criteria.ConditionOperator</node>
+            <node x="1314.648051115551" y="447.5">dao.db.sql.DelTable</node>
+            <node x="917.3355511155511" y="401.0">dao.db.sql.Select</node>
+            <node x="1485.648051115551" y="447.5">dao.db.sql.Add</node>
+            <node x="1289.7249783549785" y="1706.0">dao.db.sql.Edit</node>
+            <node x="1656.648051115551" y="447.5">dao.db.sql.Del</node>
+            <node x="662.375" y="777.0">dao.db.criteria.LogicOperator</node>
+            <node x="280.70000000000005" y="765.5">dao.db.criteria.ChildSelectOperator</node>
+            <node x="1902.1519400044403" y="1729.5">factory.Factory</node>
+            <node x="1100.058311688312" y="1146.0">dao.db.sql.Result</node>
+            <node x="1608.466103063603" y="0.0">dao.db.util.GetConn</node>
+            <node x="1108.3575172050173" y="81.0">dao.db.sql.DBUtil</node>
+            <node x="218.0" y="1261.5">dao.db.criteria.ChildSelectCriteria</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.Edit">
+              <point x="19.08333333333337" y="107.5" />
+              <point x="1249.2158505383507" y="986.0" />
+              <point x="1387.1866622266627" y="986.0" />
+              <point x="1387.1866622266627" y="1656.0" />
+              <point x="1352.6416450216452" y="1656.0" />
+              <point x="-12.583333333333258" y="-50.0" />
+            </edge>
+            <edge source="dao.db.sql.DelTable" target="dao.db.sql.DBUtil">
+              <point x="0.0" y="-38.5" />
+              <point x="1390.148051115551" y="371.0" />
+              <point x="1293.3575172050173" y="371.0" />
+              <point x="0.0" y="84.5" />
+            </edge>
+            <edge source="dao.db.sql.Del" target="dao.db.sql.DBUtil">
+              <point x="0.0" y="-38.5" />
+              <point x="1732.148051115551" y="351.0" />
+              <point x="1441.3575172050173" y="351.0" />
+              <point x="148.0" y="84.5" />
+            </edge>
+            <edge source="dao.db.criteria.ConditionCriteria" target="dao.db.criteria.Criteria">
+              <point x="66.0" y="-96.5" />
+              <point x="165.0" y="1116.0" />
+              <point x="491.2638888888889" y="1116.0" />
+              <point x="-71.11111111111109" y="38.0" />
+            </edge>
+            <edge source="dao.db.sql.DelTable" target="dao.db.sql.Result">
+              <point x="-56.625" y="38.5" />
+              <point x="1333.523051115551" y="631.0" />
+              <point x="1066.5700172050174" y="631.0" />
+              <point x="1066.5700172050174" y="1026.0" />
+              <point x="1202.058311688312" y="1026.0" />
+              <point x="0.0" y="-188.5" />
+            </edge>
+            <edge source="dao.db.sql.Del" target="dao.db.sql.Result">
+              <point x="0.0" y="38.5" />
+              <point x="1732.148051115551" y="711.0" />
+              <point x="1635.3575172050173" y="711.0" />
+              <point x="1635.3575172050173" y="1126.0" />
+              <point x="1294.7855844155847" y="1126.0" />
+              <point x="92.72727272727275" y="-188.5" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="dao.db.criteria.Criteria">
+              <point x="-90.28571428571422" y="-96.5" />
+              <point x="698.2641225441225" y="1846.0" />
+              <point x="551.9075172050173" y="1846.0" />
+              <point x="551.9075172050173" y="1126.0" />
+              <point x="526.8194444444445" y="1126.0" />
+              <point x="-35.55555555555554" y="38.0" />
+            </edge>
+            <edge source="dao.db.sql.Edit" target="dao.db.sql.DBUtil">
+              <point x="-62.91666666666674" y="-50.0" />
+              <point x="1302.3083116883117" y="1686.0" />
+              <point x="832.875" y="1686.0" />
+              <point x="832.875" y="361.0" />
+              <point x="1145.3575172050173" y="361.0" />
+              <point x="-148.0" y="84.5" />
+            </edge>
+            <edge source="dao.db.sql.Del" target="dao.db.sql.Update">
+              <point x="60.40000000000009" y="38.5" />
+              <point x="1792.548051115551" y="711.0" />
+              <point x="1795.3480511155512" y="711.0" />
+              <point x="1795.3480511155512" y="1553.0" />
+              <point x="1780.9383252858254" y="1553.0" />
+              <point x="57.333333333333485" y="-26.5" />
+            </edge>
+            <edge source="dao.db.criteria.LogicCriteria" target="dao.db.criteria.LogicOperator">
+              <point x="64.40000000000009" y="-61.5" />
+              <point x="722.3527777777779" y="1126.0" />
+              <point x="782.375" y="1126.0" />
+              <point x="40.0" y="61.5" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.Del">
+              <point x="80.15000000000009" y="-107.5" />
+              <point x="1310.2825172050175" y="691.0" />
+              <point x="1671.7480511155509" y="691.0" />
+              <point x="-60.40000000000009" y="38.5" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="dao.db.sql.Result">
+              <point x="0.0" y="-96.5" />
+              <point x="788.5498368298367" y="1826.0" />
+              <point x="665.8575172050173" y="1826.0" />
+              <point x="665.8575172050173" y="1563.0" />
+              <point x="1125.558311688312" y="1563.0" />
+              <point x="-76.5" y="188.5" />
+            </edge>
+            <edge source="dao.db.sql.Edit" target="dao.db.sql.Result">
+              <point x="-37.75" y="-50.0" />
+              <point x="1327.4749783549785" y="1676.0" />
+              <point x="1176.558311688312" y="1676.0" />
+              <point x="-25.5" y="188.5" />
+            </edge>
+            <edge source="dao.db.sql.CreateTable" target="dao.db.util.DBExecute">
+              <point x="19.125" y="50.5" />
+              <point x="1237.2730511155512" y="621.0" />
+              <point x="1195.7825172050173" y="621.0" />
+              <point x="-34.35000000000002" y="-107.5" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.DelTable">
+              <point x="-11.450000000000045" y="-107.5" />
+              <point x="1218.6825172050171" y="641.0" />
+              <point x="1371.273051115551" y="641.0" />
+              <point x="-18.875" y="38.5" />
+            </edge>
+            <edge source="dao.db.sql.CreateTable" target="dao.db.sql.Update">
+              <point x="57.375" y="50.5" />
+              <point x="1275.5230511155512" y="621.0" />
+              <point x="1709.716103063603" y="621.0" />
+              <point x="1709.716103063603" y="1543.0" />
+              <point x="1685.3827697302697" y="1543.0" />
+              <point x="-38.22222222222217" y="-26.5" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.Select">
+              <point x="-103.05000000000007" y="-107.5" />
+              <point x="1127.0825172050172" y="611.0" />
+              <point x="1042.6355511155512" y="611.0" />
+              <point x="35.799999999999955" y="85.0" />
+            </edge>
+            <edge source="dao.db.sql.Update" target="dao.db.sql.Result">
+              <point x="-57.33333333333326" y="-26.5" />
+              <point x="1666.2716586191586" y="1553.0" />
+              <point x="1278.558311688312" y="1553.0" />
+              <point x="76.5" y="188.5" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="dao.db.sql.Edit">
+              <point x="45.14285714285711" y="-96.5" />
+              <point x="833.6926939726939" y="1836.0" />
+              <point x="1365.2249783549785" y="1836.0" />
+              <point x="0.0" y="50.0" />
+            </edge>
+            <edge source="dao.db.sql.DelTable" target="dao.db.sql.Update">
+              <point x="56.625" y="38.5" />
+              <point x="1446.773051115551" y="611.0" />
+              <point x="1720.716103063603" y="611.0" />
+              <point x="1720.716103063603" y="1553.0" />
+              <point x="1704.4938808413808" y="1553.0" />
+              <point x="-19.111111111110972" y="-26.5" />
+            </edge>
+            <edge source="dao.db.sql.Result" target="dao.db.util.DBExecute">
+              <point x="18.545454545454504" y="-188.5" />
+              <point x="1220.6037662337665" y="1016.0" />
+              <point x="1134.7158505383507" y="1016.0" />
+              <point x="-95.41666666666663" y="107.5" />
+            </edge>
+            <edge source="dao.db.sql.Select" target="dao.db.util.DBExecute">
+              <point x="71.59999999999991" y="85.0" />
+              <point x="1078.4355511155509" y="601.0" />
+              <point x="1149.9825172050173" y="601.0" />
+              <point x="-80.15000000000009" y="-107.5" />
+            </edge>
+            <edge source="dao.db.sql.Add" target="dao.db.sql.DBUtil">
+              <point x="0.0" y="-38.5" />
+              <point x="1561.148051115551" y="361.0" />
+              <point x="1367.3575172050173" y="361.0" />
+              <point x="74.0" y="84.5" />
+            </edge>
+            <edge source="dao.db.sql.Add" target="dao.db.util.DBExecute">
+              <point x="-30.200000000000045" y="38.5" />
+              <point x="1530.9480511155512" y="671.0" />
+              <point x="1287.3825172050174" y="671.0" />
+              <point x="57.25" y="-107.5" />
+            </edge>
+            <edge source="dao.db.sql.Add" target="dao.db.sql.Result">
+              <point x="0.0" y="38.5" />
+              <point x="1561.148051115551" y="681.0" />
+              <point x="1464.3575172050173" y="681.0" />
+              <point x="1464.3575172050173" y="1116.0" />
+              <point x="1276.24012987013" y="1116.0" />
+              <point x="74.18181818181813" y="-188.5" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.Result">
+              <point x="-57.25" y="107.5" />
+              <point x="1172.8825172050174" y="1006.0" />
+              <point x="1239.149220779221" y="1006.0" />
+              <point x="37.09090909090912" y="-188.5" />
+            </edge>
+            <edge source="dao.db.sql.Select" target="dao.db.sql.Result">
+              <point x="-35.799999999999955" y="85.0" />
+              <point x="971.0355511155511" y="711.0" />
+              <point x="979.7673692973692" y="711.0" />
+              <point x="979.7673692973692" y="1056.0" />
+              <point x="1146.4219480519482" y="1056.0" />
+              <point x="-55.63636363636374" y="-188.5" />
+            </edge>
+            <edge source="dao.db.sql.Update" target="dao.db.util.GetConn">
+              <point x="76.44444444444446" y="-26.5" />
+              <point x="1800.0494363969365" y="1563.0" />
+              <point x="1840.0408288933293" y="1563.0" />
+              <point x="1840.0408288933293" y="381.0" />
+              <point x="1780.216103063603" y="381.0" />
+              <point x="57.25" y="165.5" />
+            </edge>
+            <edge source="dao.db.sql.Select" target="dao.db.sql.DBUtil">
+              <point x="-44.75" y="-85.0" />
+              <point x="962.0855511155511" y="371.0" />
+              <point x="1219.3575172050173" y="371.0" />
+              <point x="-74.0" y="84.5" />
+            </edge>
+            <edge source="dao.db.sql.CreateTable" target="dao.db.sql.Result">
+              <point x="-57.375" y="50.5" />
+              <point x="1160.7730511155512" y="621.0" />
+              <point x="1055.5700172050174" y="621.0" />
+              <point x="1055.5700172050174" y="1036.0" />
+              <point x="1183.5128571428575" y="1036.0" />
+              <point x="-18.545454545454504" y="-188.5" />
+            </edge>
+            <edge source="dao.db.criteria.LogicCriteria" target="dao.db.criteria.Criteria">
+              <point x="0.0" y="-61.5" />
+              <point x="657.9527777777778" y="1086.0" />
+              <point x="597.9305555555555" y="1086.0" />
+              <point x="35.55555555555554" y="38.0" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="factory.Factory">
+              <point x="135.42857142857133" y="-96.5" />
+              <point x="923.9784082584081" y="1856.0" />
+              <point x="1959.6519400044403" y="1856.0" />
+              <point x="0.0" y="26.5" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="dao.db.util.DBExecute">
+              <point x="90.28571428571422" y="-96.5" />
+              <point x="878.835551115551" y="1846.0" />
+              <point x="1891.6519400044403" y="1846.0" />
+              <point x="1891.6519400044403" y="966.0" />
+              <point x="1325.549183871684" y="966.0" />
+              <point x="95.41666666666674" y="107.5" />
+            </edge>
+            <edge source="dao.db.sql.Edit" target="dao.db.sql.Update">
+              <point x="37.75" y="-50.0" />
+              <point x="1402.9749783549785" y="1676.0" />
+              <point x="1680.604991952492" y="1676.0" />
+              <point x="-43.0" y="26.5" />
+            </edge>
+            <edge source="dao.db.sql.Edit" target="dao.db.util.DBExecute">
+              <point x="12.583333333333258" y="-50.0" />
+              <point x="1377.8083116883117" y="1666.0" />
+              <point x="1398.1866622266627" y="1666.0" />
+              <point x="1398.1866622266627" y="976.0" />
+              <point x="1287.3825172050174" y="976.0" />
+              <point x="57.25" y="107.5" />
+            </edge>
+            <edge source="dao.db.sql.Select" target="dao.db.util.GetConn">
+              <point x="44.75" y="-85.0" />
+              <point x="1051.585551115551" y="381.0" />
+              <point x="1665.716103063603" y="381.0" />
+              <point x="-57.25" y="165.5" />
+            </edge>
+            <edge source="dao.db.criteria.ConditionCriteria" target="dao.db.criteria.ConditionOperator">
+              <point x="0.0" y="-96.5" />
+              <point x="-20.0" y="107.5" />
+            </edge>
+            <edge source="dao.db.sql.Del" target="dao.db.util.DBExecute">
+              <point x="-30.200000000000045" y="38.5" />
+              <point x="1701.9480511155512" y="701.0" />
+              <point x="1333.1825172050171" y="701.0" />
+              <point x="103.04999999999995" y="-107.5" />
+            </edge>
+            <edge source="dao.db.sql.DelTable" target="dao.db.util.DBExecute">
+              <point x="18.875" y="38.5" />
+              <point x="1409.023051115551" y="651.0" />
+              <point x="1241.5825172050172" y="651.0" />
+              <point x="11.449999999999932" y="-107.5" />
+            </edge>
+            <edge source="dao.db.criteria.ChildSelectCriteria" target="dao.db.criteria.ConditionOperator">
+              <point x="-48.400000000000034" y="-73.0" />
+              <point x="290.5999999999999" y="1096.0" />
+              <point x="179.0" y="1096.0" />
+              <point x="60.0" y="107.5" />
+            </edge>
+            <edge source="dao.db.sql.Result" target="dao.db.criteria.Criteria">
+              <point x="-92.72727272727275" y="-188.5" />
+              <point x="1109.3310389610392" y="1076.0" />
+              <point x="615.7083333333333" y="1076.0" />
+              <point x="53.33333333333326" y="38.0" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.CreateTable">
+              <point x="-57.25" y="-107.5" />
+              <point x="1172.8825172050174" y="611.0" />
+              <point x="1199.0230511155512" y="611.0" />
+              <point x="-19.125" y="50.5" />
+            </edge>
+            <edge source="dao.db.criteria.ChildSelectCriteria" target="dao.db.criteria.Criteria">
+              <point x="96.80000000000001" y="-73.0" />
+              <point x="435.79999999999995" y="1126.0" />
+              <point x="509.04166666666663" y="1126.0" />
+              <point x="-53.33333333333337" y="38.0" />
+            </edge>
+            <edge source="dao.db.util.SQLFactory" target="dao.db.sql.Select">
+              <point x="-135.42857142857133" y="-96.5" />
+              <point x="653.1212654012654" y="1856.0" />
+              <point x="471.875" y="1856.0" />
+              <point x="471.875" y="711.0" />
+              <point x="935.2355511155512" y="711.0" />
+              <point x="-71.59999999999991" y="85.0" />
+            </edge>
+            <edge source="dao.db.sql.Add" target="dao.db.sql.Update">
+              <point x="60.40000000000009" y="38.5" />
+              <point x="1621.548051115551" y="591.0" />
+              <point x="1742.716103063603" y="591.0" />
+              <point x="19.1111111111112" y="-26.5" />
+            </edge>
+            <edge source="dao.db.criteria.ChildSelectCriteria" target="dao.db.criteria.ChildSelectOperator">
+              <point x="0.0" y="-73.0" />
+              <point x="339.0" y="1106.0" />
+              <point x="321.95000000000005" y="1106.0" />
+              <point x="-41.25" y="73.0" />
+            </edge>
+            <edge source="dao.db.util.DBExecute" target="dao.db.sql.Add">
+              <point x="34.35000000000002" y="-107.5" />
+              <point x="1264.4825172050173" y="661.0" />
+              <point x="1500.748051115551" y="661.0" />
+              <point x="-60.39999999999998" y="38.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="422.0" y="793.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/asynchronous.executor.AsyncAbstractExecutor">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>asynchronous.executor.AsyncAbstractExecutor</OriginalElement>
+          <nodes>
+            <node x="" y="">asynchronous.executor.AsyncExecuteManage</node>
+            <node x="" y="">asynchronous.executor.Execute</node>
+            <node x="" y="">asynchronous.model.AsyncAbstractEvent</node>
+            <node x="" y="">asynchronous.model.AsyncResult</node>
+            <node x="" y="">asynchronous.executor.AsyncLevel</node>
+            <node x="" y="">asynchronous.executor.AsyncResultExecutor</node>
+            <node x="" y="">asynchronous.executor.AsyncAbstractExecutor.ThreadPool</node>
+            <node x="" y="">asynchronous.executor.AsyncAbstractExecutor.AsyncExecutorImp</node>
+            <node x="" y="">asynchronous.model.ThreadState</node>
+            <node x="" y="">asynchronous.executor.AsyncAbstractExecutor</node>
+            <node x="" y="">asynchronous.model.AsyncEvent</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="540.0" y="420.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ComparableTimSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="214" column="39" selection-start-line="214" selection-start-column="39" selection-end-line="214" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6490">
+          <caret line="1313" column="32" selection-start-line="1313" selection-start-column="32" selection-end-line="1313" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/DaoBuild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/DefaultProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/AopProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/ConfigFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/factory/BeanFactoryHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/factory/src/main/java/factory/build/FactoryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="51" column="88" lean-forward="true" selection-start-line="51" selection-start-column="88" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoFileStore/src/main/java/dao/fileStore/impl/FileStoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/proxyhandler/ProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/reflect/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="1088" column="36" selection-start-line="1088" selection-start-column="36" selection-end-line="1088" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1015">
+          <caret line="111" column="60" lean-forward="true" selection-start-line="111" selection-start-column="60" selection-end-line="111" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/beanBuffer/AbstractBeanBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1669">
+          <caret line="299" column="81" lean-forward="true" selection-start-line="299" selection-start-column="81" selection-end-line="299" selection-end-column="81" />
+          <folding>
+            <element signature="e#12258#12259#0" expanded="true" />
+            <element signature="e#12317#12318#0" expanded="true" />
+            <element signature="e#12875#12876#0" expanded="true" />
+            <element signature="e#12934#12935#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandlerBuild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
