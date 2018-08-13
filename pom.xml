@@ -17,6 +17,7 @@
         <module>proxy</module>
         <module>factory</module>
         <module>frameTest</module>
+        <module>log</module>
     </modules>
 
     <properties>

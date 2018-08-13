@@ -13,11 +13,13 @@
         <module name="factory" />
         <module name="frame" />
         <module name="frameTest" />
+        <module name="log" />
         <module name="proxy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dao.database" target="10" />
+      <module name="Log" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>
