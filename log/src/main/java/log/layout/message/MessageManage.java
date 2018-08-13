@@ -9,10 +9,9 @@ public class MessageManage {
     private static Map<String, Message> messageMap;
 
     static{
-        messageMap = new HashMap<>();
+        messageMap = new HashMap<>(20);
 
-        // TODO 未添加信息源
-        messageMap.put("level", null);
+        messageMap.put("level", MessageImpl.getInstance());
 
         messageMap.put("line", ClassInfoMessage.getInstance());
         messageMap.put("method", ClassInfoMessage.getInstance());
@@ -21,21 +20,21 @@ public class MessageManage {
         messageMap.put("module_version", ClassInfoMessage.getInstance());
         messageMap.put("thread", ClassInfoMessage.getInstance());
 
-        messageMap.put("year", DataMessage.getInstance());
-        messageMap.put("month", DataMessage.getInstance());
-        messageMap.put("week_of_year", DataMessage.getInstance());
-        messageMap.put("week_of_month", DataMessage.getInstance());
+        messageMap.put("year", DateMessage.getInstance());
+        messageMap.put("month", DateMessage.getInstance());
+        messageMap.put("week_of_year", DateMessage.getInstance());
+        messageMap.put("week_of_month", DateMessage.getInstance());
 
-        messageMap.put("date", DataMessage.getInstance());
-        messageMap.put("date_of_year", DataMessage.getInstance());
-        messageMap.put("date_of_month", DataMessage.getInstance());
-        messageMap.put("date_of_week", DataMessage.getInstance());
+        messageMap.put("date", DateMessage.getInstance());
+        messageMap.put("day", DateMessage.getInstance());
+        messageMap.put("day_of_year", DateMessage.getInstance());
+        messageMap.put("day_of_week", DateMessage.getInstance());
 
-        messageMap.put("am_or_pm", DataMessage.getInstance());
-        messageMap.put("hour", DataMessage.getInstance());
-        messageMap.put("hour_of_day", DataMessage.getInstance());
-        messageMap.put("minute", DataMessage.getInstance());
-        messageMap.put("second", DataMessage.getInstance());
+        messageMap.put("am_or_pm", DateMessage.getInstance());
+        messageMap.put("hour", DateMessage.getInstance());
+        messageMap.put("hour_of_day", DateMessage.getInstance());
+        messageMap.put("minute", DateMessage.getInstance());
+        messageMap.put("second", DateMessage.getInstance());
     }
 
     public static String get(String string){

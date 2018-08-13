@@ -1,22 +1,22 @@
 package log.impl;
 
-import log.appander.Appender;
 import log.layout.Layout;
+import log.config.LogConfig;
 import log.log.LoggerLevel;
 
 public class LoggerImpl extends AbstractLogger {
 
-    private Appender appender;
+    private LogConfig config;
+
+    public LogConfig getConfig() {
+        return config;
+    }
+
+    public void setConfig(LogConfig config) {
+        this.config = config;
+    }
 
     private Layout layout;
-
-    public Appender getAppender() {
-        return appender;
-    }
-
-    public void setAppender(Appender appender) {
-        this.appender = appender;
-    }
 
     public Layout getLayout() {
         return layout;
@@ -28,7 +28,7 @@ public class LoggerImpl extends AbstractLogger {
 
     @Override
     void out(LoggerLevel level, String text, Object[] objects) {
-        appender.out(level, clazz, layout.layout(text, objects));
+        config.getAppender(clazz, level).out(layout.layout(text, objects));
     }
 
 }

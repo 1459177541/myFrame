@@ -23,7 +23,9 @@ public class ClassInfoMessage implements Message{
     private static Map<String, Method> methodMap;
 
     static{
-        Map<String, Method> stringMethodMap = Stream.of(StackTraceElement.class.getMethods()).collect(Collectors.toMap(Method::getName,Function.identity()));
+        Map<String, Method> stringMethodMap = Stream.of(StackTraceElement.class.getMethods())
+                .filter(method -> 0 == method.getParameterCount())
+                .collect(Collectors.toMap(Method::getName, Function.identity()));
         methodMap = Map.of(
                 "line", stringMethodMap.get("getLineNumber"),
                 "method", stringMethodMap.get("getMethodName"),
