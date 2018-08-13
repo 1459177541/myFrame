@@ -1,4 +1,4 @@
-package FactoryAndAOP;
+package FactoryAndAOPTest;
 
 
 import proxy.annotation.Async;

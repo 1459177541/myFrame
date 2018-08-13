@@ -1,4 +1,4 @@
-package dao;
+package daoTest;
 
 
 import dao.beanBuffer.BeanBuffer;
@@ -11,13 +11,21 @@ public class TestDao {
 
     private BeanBuffer<Model> beanBuffer;
 
-    //TODO 加载不到服务，在DaoBuild类可以加载到服务
+    //TODO 加载不到服务,但在main方法可以加载
     @SuppressWarnings("unchecked")
     @Test
     @BeforeEach
     public void testFactory(){
         BeanBufferFactory factory = new BeanBufferFactory();
         beanBuffer = (BeanBuffer<Model>) factory.get(Model.class);
+    }
+
+    public static void main(String[] args) {
+        TestDao testDao = new TestDao();
+
+        BeanBufferFactory factory = new BeanBufferFactory();
+        //noinspection unchecked
+        testDao.beanBuffer = (BeanBuffer<Model>) factory.get(Model.class);
     }
 
     @Test

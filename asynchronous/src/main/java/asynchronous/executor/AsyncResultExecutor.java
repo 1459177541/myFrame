@@ -44,6 +44,10 @@ public class AsyncResultExecutor<T> extends AsyncAbstractExecutor {
 		return event.getResult();
 	}
 
+	public T waitAndGetResult(){
+	    return event.waitAndGetResult();
+    }
+
 	@Override
 	public ThreadState getState() {
 		return event.getState();

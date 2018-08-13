@@ -156,8 +156,12 @@ public class AsyncExecuteManage{
 	 * @param event 执行状态对象
 	 * @return 结果
 	 */
-	public static <E> E getResult(AsyncResult<E> event){
-		return event.waitAndGetResult();
+	public static <E> E getResult(AsyncResult<E> event) throws Exception {
+		return event.getResult();
 	}
+
+	public static <E> E waitAndGetResult(AsyncResult<E> event){
+	    return event.waitAndGetResult();
+    }
 
 }

@@ -12,6 +12,7 @@
         <module name="daoFileStore" />
         <module name="factory" />
         <module name="frame" />
+        <module name="frameTest" />
         <module name="proxy" />
       </profile>
     </annotationProcessing>

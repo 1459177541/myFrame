@@ -1,8 +1,7 @@
-package FactoryAndAOP;
+package FactoryAndAOPTest;
 
 import config.FactoryConfig;
 import factory.BeanFactory;
-import factory.BeanFactoryHandler;
 import factory.build.FactoryBuilder;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class OtherClassTest {
                 try {
                     add("outerClass"
                             ,"../myFrame/target/test-classes"
-                            ,"FactoryAndAOP.AutowiredModel3");
+                            ,"FactoryAndAOPTest.AutowiredModel3");
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }

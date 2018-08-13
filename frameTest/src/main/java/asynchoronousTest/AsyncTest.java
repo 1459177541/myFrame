@@ -1,4 +1,4 @@
-package asynchornized;
+package asynchoronousTest;
 
 
 import asynchronous.executor.AsyncAbstractExecutor;
@@ -102,9 +102,9 @@ public class AsyncTest {
                 System.err.println(" 等待:" + AsyncAbstractExecutor.getDefault().getWaitSize() + " 完成:" + AsyncAbstractExecutor.getDefault().getCompleteSize() + "++++++");
             }
 		});
-		System.err.println("e1 result: "+e1.getResult());
-		System.err.println("e2 result: "+e2.getResult());
-		System.err.println("e3 result: "+AsyncExecuteManage.getResult(e3));
+		System.err.println("e1 result: "+e1.waitAndGetResult());
+		System.err.println("e2 result: "+e2.waitAndGetResult());
+		System.err.println("e3 result: "+AsyncExecuteManage.waitAndGetResult(e3));
 		Thread.sleep(3000);
 
 	}

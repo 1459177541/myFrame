@@ -16,6 +16,7 @@
         <module>dao</module>
         <module>proxy</module>
         <module>factory</module>
+        <module>frameTest</module>
     </modules>
 
     <properties>
