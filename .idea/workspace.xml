@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/appender/Appender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/appender/AppenderMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleErrAppender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleOutAppender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/message/DateMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageImpl.java" afterDir="false" />
+    <list default="true" id="4e1cee51-c813-4864-b792-7a4b7751c05f" name="Default" comment="测试log及修复bug">
+      <change afterPath="$PROJECT_DIR$/frameTest/src/main/java/logTest/LogTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/src/main/java/log/config/LogDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/appander/Appender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frameTest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frameTest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frameTest/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/frameTest/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/log/src/main/java/module-info.java" afterDir="false" />
@@ -66,56 +64,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="module-info.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="module-info.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/log/src/main/java/module-info.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppenderMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/AppenderMethod.java">
+      <file leaf-file-name="LayoutImp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Appender.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/Appender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageManage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractLogConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+            <state relative-caret-position="641">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,11 +85,84 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoggerLevel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java">
+      <file leaf-file-name="MessageImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="290">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#410#411#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractLogConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogDefinition.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/LogDefinition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="41" column="68" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#283#284#0" expanded="true" />
+                <element signature="e#717#718#0" expanded="true" />
+                <element signature="e#744#745#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#217#218#0" expanded="true" />
+                <element signature="e#246#247#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frameTest/src/main/java/logTest/LogTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="30" column="54" lean-forward="true" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#301#728#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerBuild.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+                <element signature="e#550#551#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,10 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/module-info.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/criteria/Criteria.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/util/SQLFactory.java" />
-        <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/sql/Result.java" />
         <option value="$PROJECT_DIR$/factory/src/test/java/FactoryAndAOP/AutowiredTest.java" />
         <option value="$PROJECT_DIR$/proxy/src/main/java/proxy/handler/ProxyHandler.java" />
         <option value="$PROJECT_DIR$/frame/src/main/java/proxyhandler/ProxyHandler.java" />
@@ -165,7 +196,6 @@
         <option value="$PROJECT_DIR$/daoDatabase/src/main/java/dao/db/impl/DatabaseDao.java" />
         <option value="$PROJECT_DIR$/proxy/src/main/java/proxy/factory/impl/ProxyFactory.java" />
         <option value="$PROJECT_DIR$/factory/src/test/java/dao/Model.java" />
-        <option value="$PROJECT_DIR$/frameTest/src/main/java/module-info.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncAbstractExecutor.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncResultExecutor.java" />
         <option value="$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncExecuteManage.java" />
@@ -179,29 +209,34 @@
         <option value="$PROJECT_DIR$/log/src/main/java/log/log/Logger.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appander/appander.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appander/Appander.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appander/message/Message.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appander/message/MessageManage.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/Message.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/DataMessage.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageImpl.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/DateMessage.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appander/Appender.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/log/LogConfig.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleAppender.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appender/Appender.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleErrAppender.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleOutAppender.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/appender/AppenderMethod.java" />
+        <option value="$PROJECT_DIR$/frameTest/src/main/java/module-info.java" />
+        <option value="$PROJECT_DIR$/frameTest/src/main/java/logTest/logTest.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/config/LogDefinition.java" />
+        <option value="$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java" />
+        <option value="$PROJECT_DIR$/frameTest/src/main/java/logTest/LogTest.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java" />
         <option value="$PROJECT_DIR$/log/src/main/java/module-info.java" />
-        <option value="$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java" />
       </list>
     </option>
   </component>
@@ -348,38 +383,6 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
-              <item name="asynchornized" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="dao" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="factory" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="frame" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
-              <item name="proxy" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -784,6 +787,15 @@
             <path>
               <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
               <item name="myFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="frameTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myFrame" type="462c0819:PsiDirectoryNode" />
               <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -936,6 +948,38 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="asynchronous" type="616d4139:PackageViewModuleNode" />
+              <item name="asynchornized" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="dao" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="factory" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="frame" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="myFrame" type="58d84e3e:PackageViewProjectNode" />
+              <item name="proxy" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -944,6 +988,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/factory/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../text" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -951,7 +996,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
@@ -980,7 +1025,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LayoutImp">
+  <component name="RunManager" selected="JUnit.LogTest.logTest">
     <configuration name="DaoBuild" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="factory.build.DaoBuild" />
       <module name="factory" />
@@ -1017,19 +1062,19 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="AsyncTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LogTest.logTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="frameTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="asynchoronousTest.*" />
+          <option name="PATTERN" value="logTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="asynchoronousTest" />
-      <option name="MAIN_CLASS_NAME" value="asynchoronousTest.AsyncTest" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="PACKAGE_NAME" value="logTest" />
+      <option name="MAIN_CLASS_NAME" value="logTest.LogTest" />
+      <option name="METHOD_NAME" value="logTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1103,18 +1148,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestDao.testFactory" />
-      <item itemvalue="JUnit.AsyncTest.test2" />
       <item itemvalue="Application.DaoBuild" />
       <item itemvalue="Application.TestDao" />
       <item itemvalue="Application.LayoutImp" />
+      <item itemvalue="JUnit.LogTest.logTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LogTest.logTest" />
         <item itemvalue="Application.LayoutImp" />
         <item itemvalue="Application.TestDao" />
         <item itemvalue="JUnit.TestDao.testFactory" />
         <item itemvalue="Application.DaoBuild" />
-        <item itemvalue="JUnit.AsyncTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -1148,7 +1193,9 @@
       <workItem from="1533539210018" duration="5975000" />
       <workItem from="1534135721725" duration="327000" />
       <workItem from="1534136092558" duration="2874000" />
-      <workItem from="1534159165792" duration="9314000" />
+      <workItem from="1534159165792" duration="9441000" />
+      <workItem from="1534171896605" duration="1059000" />
+      <workItem from="1534224195607" duration="9607000" />
     </task>
     <task id="LOCAL-00001" summary="重构为JDK9特性模块化">
       <created>1532331236996</created>
@@ -1276,43 +1323,50 @@
       <option name="project" value="LOCAL" />
       <updated>1534150234604</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="完善log基本功能，未进行测试">
+      <created>1534168604955</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1534168604955</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AsyncTest - 2018.08.13 at 13h 07m 31s.xml">
-      <configuration name="AsyncTest" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 34m 36s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AsyncTest_test1 - 2018.08.13 at 13h 12m 37s.xml">
-      <configuration name="AsyncTest.test1" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 42m 38s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AsyncTest_test1 - 2018.08.13 at 13h 17m 29s.xml">
-      <configuration name="AsyncTest.test1" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 42m 54s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AsyncTest_test1 - 2018.08.13 at 13h 20m 23s.xml">
-      <configuration name="AsyncTest.test1" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 48m 53s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AsyncTest_test2 - 2018.08.13 at 13h 21m 18s.xml">
-      <configuration name="AsyncTest.test2" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 49m 23s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testFactory - 2018.08.13 at 13h 24m 13s.xml">
-      <configuration name="TestDao.testFactory" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 49m 32s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testFactory - 2018.08.13 at 13h 28m 47s.xml">
-      <configuration name="TestDao.testFactory" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 54m 16s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testFactory - 2018.08.13 at 13h 29m 09s.xml">
-      <configuration name="TestDao.testFactory" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 54m 24s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testFactory - 2018.08.13 at 13h 30m 01s.xml">
-      <configuration name="TestDao.testFactory" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 15h 58m 48s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestDao_testFactory - 2018.08.13 at 13h 32m 21s.xml">
-      <configuration name="TestDao.testFactory" configurationId="JUnit" />
+    <history-entry file="LogTest_logTest - 2018.08.14 at 16h 01m 13s.xml">
+      <configuration name="LogTest.logTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122548000" />
+    <option name="totallyTimeSpent" value="133341000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1341,7 +1395,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290461" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.22014925" />
+      <window_info active="true" anchor="right" content_ui="combo" x="1278" y="151" width="396" height="933" id="Project" order="3" visible="true" weight="0.22228146" />
       <window_info anchor="right" id="Database" order="5" weight="0.19989339" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
@@ -1349,8 +1403,8 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
-      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1412,11 +1466,13 @@
     <MESSAGE value="重构数据库查询条件结构——类层次替代标签类" />
     <MESSAGE value="更新——beanBuffer读取储存时使用原对象(可能报错)" />
     <MESSAGE value="添加日记模块(log)，模仿自log4j" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加日记模块(log)，模仿自log4j" />
+    <MESSAGE value="完善log基本功能，未进行测试" />
+    <MESSAGE value="测试log及修复bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试log及修复bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1424,27 +1480,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncExecuteManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="159" column="26" selection-start-line="159" selection-start-column="26" selection-end-line="159" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncResultExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asynchronous/src/main/java/asynchronous/executor/AsyncAbstractExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frameTest/src/main/java/FactoryAndAOPTest/AutowiredTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1466,13 +1501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="245" selection-start-line="245" selection-end-line="245" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frameTest/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1489,13 +1517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameTest/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1535,10 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1028" column="18" selection-start-line="1028" selection-start-column="18" selection-end-line="1028" selection-end-column="18" />
-          <folding>
-            <element signature="e#6467#6468#0" expanded="true" />
-            <element signature="e#6515#6516#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1553,24 +1570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2489">
           <caret line="174" column="63" lean-forward="true" selection-start-line="174" selection-start-column="63" selection-end-line="174" selection-end-column="63" />
-          <folding>
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#4158#4159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1578,10 +1577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="1391" column="15" selection-start-line="1391" selection-start-column="15" selection-end-line="1391" selection-end-column="15" />
-          <folding>
-            <element signature="e#53092#53093#0" expanded="true" />
-            <element signature="e#53130#53131#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1589,10 +1584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="386" column="24" lean-forward="true" selection-start-line="386" selection-start-column="24" selection-end-line="386" selection-end-column="24" />
-          <folding>
-            <element signature="e#10462#10463#0" expanded="true" />
-            <element signature="e#10503#10504#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1607,24 +1598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="2644" column="21" selection-start-line="2644" selection-start-column="21" selection-end-line="2644" selection-end-column="21" />
-          <folding>
-            <element signature="e#112036#112037#0" expanded="true" />
-            <element signature="e#112082#112083#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="409" column="19" selection-start-line="409" selection-start-column="19" selection-end-line="409" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="2733" column="30" selection-start-line="2733" selection-start-column="15" selection-end-line="2733" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1649,55 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="88" lean-forward="true" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#169#170#0" expanded="true" />
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/DateMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -1710,44 +1634,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleAppender.java" />
     <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/impl/ConsoleErrAppender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1755,58 +1646,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java">
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config.java" />
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appander/Appender.java" />
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/AppenderMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-          </folding>
+        <state>
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appander/Appender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="294">
+          <caret line="242" column="6" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1817,38 +1672,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/appender/AppenderMethod.java">
+    <entry file="file://$PROJECT_DIR$/frame/src/main/java/util/Build.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameTest/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="492" column="16" selection-start-line="492" selection-start-column="16" selection-end-line="492" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/ClassInfoMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="52" column="120" selection-start-line="52" selection-start-column="120" selection-end-line="52" selection-end-column="120" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/Layout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/message/MessageImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#410#411#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/src/main/java/log/log/LoggerLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="330">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Map.java">
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/LogConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="242" column="6" selection-start-line="242" selection-start-column="6" selection-end-line="242" selection-end-column="6" />
+        <state relative-caret-position="176">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="2123" column="18" selection-start-line="2123" selection-start-column="18" selection-end-line="2123" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="245" selection-start-line="245" selection-end-line="245" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/impl/AbstractLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
-            <element signature="e#59547#59548#0" expanded="true" />
-            <element signature="e#59606#59607#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/AbstractLogConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        <state relative-caret-position="377">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/config/LogDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="41" column="68" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/layout/LayoutImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/impl/LoggerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="37" column="66" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameTest/src/main/java/logTest/LogTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="30" column="54" lean-forward="true" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#301#728#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/log/log/LoggerBuild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>

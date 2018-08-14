@@ -1,17 +1,18 @@
 package log.layout;
 
 import log.layout.message.MessageManage;
+import log.log.LoggerLevel;
 
 import java.util.ArrayList;
 import java.util.Formatter;
 
 public class LayoutImp implements Layout {
     @Override
-    public String layout(String text, Object[] objects) {
-        return layout(new StringBuilder(text), objects);
+    public String layout(String text, LoggerLevel level, Object[] objects) {
+        return layout(new StringBuilder(text), level, objects);
     }
 
-    private String layout(StringBuilder text, Object[] objects){
+    private String layout(StringBuilder text,LoggerLevel level, Object[] objects){
         int left = text.indexOf("{");
         int right = text.indexOf("}");
         ArrayList<String> args = new ArrayList<>();
@@ -21,7 +22,11 @@ public class LayoutImp implements Layout {
                 int index = Integer.parseInt(sub);
                 args.add(objects[index].toString());
             }catch (NumberFormatException e) {
-                args.add(MessageManage.get(sub));
+                if ("level".equals(sub)){
+                    args.add(MessageManage.get(sub, new Object[]{level}));
+                }else {
+                    args.add(MessageManage.get(sub));
+                }
             }
             text.delete(left, right + 1);
             left = text.indexOf("{");

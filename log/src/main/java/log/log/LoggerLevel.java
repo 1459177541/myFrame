@@ -16,4 +16,6 @@ public enum  LoggerLevel {
     public String toString() {
         return name;
     }
+
+    public static final int LENGTH = 6;
 }

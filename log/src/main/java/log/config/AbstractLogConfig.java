@@ -10,26 +10,74 @@ import java.util.Objects;
 
 public abstract class AbstractLogConfig implements LogConfig {
 
-    protected Map<Class, Map<LoggerLevel, AppenderMethod>> appenderMap;
+    protected Map<Class, LogDefinition> classLogDefinitionMap = new HashMap<>();
 
-    protected Map<LoggerLevel, AppenderMethod> defaultAppender;
+    protected LogDefinition defaultLogDefinition = new LogDefinition();
+
+    {
+        init();
+    }
 
     @Override
     public Appender getAppender(Class clazz, LoggerLevel level) {
         AppenderMethod appenderMethod = null;
-        if (Objects.requireNonNull(appenderMap).containsKey(clazz)){
-            appenderMethod = appenderMap.get(clazz).get(level);
+        if (Objects.requireNonNull(classLogDefinitionMap).containsKey(clazz)){
+            appenderMethod = classLogDefinitionMap.get(clazz).getAppender(level);
         }
         if(null == appenderMethod){
-            appenderMethod = Objects.requireNonNull(defaultAppender).get(level);
+            appenderMethod = defaultLogDefinition.getAppender(level);
         }
         return Objects.requireNonNull(appenderMethod, "未找到配置").getAppender();
     }
 
+    @Override
+    public String getFormat(Class clazz, LoggerLevel level) {
+        String format = null;
+        if (Objects.requireNonNull(classLogDefinitionMap).containsKey(clazz)){
+            format = classLogDefinitionMap.get(clazz).getFormat(level);
+        }
+        if (null == format){
+            format = defaultLogDefinition.getFormat(level);
+        }
+        return format;
+    }
+
     public LogConfig addConfig(Class clazz, LoggerLevel level, AppenderMethod appenderMethod){
-        Map<LoggerLevel, AppenderMethod> classMap = appenderMap.computeIfAbsent(clazz, k -> new HashMap<>(6));
-        classMap.put(level, appenderMethod);
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
+        logDefinition.addAppender(level, appenderMethod);
         return this;
     }
+
+    public LogConfig addConfig(Class clazz, LoggerLevel level, String format){
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
+        logDefinition.addFormat(level, format);
+        return this;
+    }
+
+    public LogConfig addConfig(Class clazz, LoggerLevel level, AppenderMethod appenderMethod, String format){
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
+        logDefinition.addAppender(level, appenderMethod);
+        logDefinition.addFormat(level, format);
+        return this;
+    }
+
+    public LogConfig addDefaultConfig(LoggerLevel level, AppenderMethod appenderMethod){
+        defaultLogDefinition.addAppender(level, appenderMethod);
+        return this;
+    }
+
+    public LogConfig addDefaultConfig(LoggerLevel level, String format){
+        defaultLogDefinition.addFormat(level, format);
+        return this;
+    }
+
+    public LogConfig addDefaultConfig(LoggerLevel level, AppenderMethod appenderMethod, String format){
+        defaultLogDefinition.addAppender(level, appenderMethod);
+        defaultLogDefinition.addFormat(level, format);
+        return this;
+    }
+
+
+    public abstract void init();
 
 }

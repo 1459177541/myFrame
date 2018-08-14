@@ -33,7 +33,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void trace(Object obj) {
-        trace(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+        out(LoggerLevel.TRACE,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override
@@ -48,7 +48,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void debug(Object obj) {
-        debug(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+        out(LoggerLevel.DEBUG,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override
@@ -63,7 +63,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void info(Object obj) {
-        info(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+       out(LoggerLevel.INFO,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override
@@ -78,7 +78,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void warn(Object obj) {
-        warn(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+       out(LoggerLevel.WARN,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override
@@ -93,7 +93,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void error(Object obj) {
-        error(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+        out(LoggerLevel.ERROR,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override
@@ -108,7 +108,7 @@ public abstract class AbstractLogger implements Logger {
 
     @Override
     public void fatal(Object obj) {
-        fatal(Optional.ofNullable(obj).map(Object::toString).orElse("null"));
+        out(LoggerLevel.FATAL,Optional.ofNullable(obj).map(Object::toString).orElse("null"),null);
     }
 
     @Override

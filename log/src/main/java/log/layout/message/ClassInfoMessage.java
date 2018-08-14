@@ -3,6 +3,7 @@ package log.layout.message;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -12,7 +13,7 @@ public class ClassInfoMessage implements Message{
     /**
      * 堆栈层数，未经测试
      */
-    private static final int STACK_NUMBER = 5;
+    private static final int STACK_NUMBER = 9;
 
     private static Message instance = new ClassInfoMessage();
 
@@ -46,9 +47,10 @@ public class ClassInfoMessage implements Message{
         if ("thread".equals(name)){
             return Thread.currentThread().getName();
         }
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[STACK_NUMBER];
         try {
-            return methodMap.get(name).invoke(stackTraceElement).toString();
+            return Optional.ofNullable(methodMap.get(name).invoke(stackTraceElement)).map(Object::toString).orElse("null");
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }

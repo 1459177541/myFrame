@@ -7,6 +7,6 @@ public interface LogConfig {
 
     Appender getAppender(Class clazz, LoggerLevel level);
 
-
+    String getFormat(Class clazz, LoggerLevel level);
 
 }
