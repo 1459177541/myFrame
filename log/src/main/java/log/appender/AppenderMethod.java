@@ -2,20 +2,24 @@ package log.appender;
 
 import log.appender.impl.ConsoleErrAppender;
 import log.appender.impl.ConsoleOutAppender;
+import log.appender.impl.FileStoreAppender;
+
+import java.util.function.Supplier;
 
 public enum AppenderMethod {
 
-    CONSOLE_OUT(new ConsoleOutAppender()),
-    CONSOLE_ERR(new ConsoleErrAppender());
+    FILE_STORT(FileStoreAppender.getAppender()),
+    CONSOLE_OUT(ConsoleOutAppender.getAppender()),
+    CONSOLE_ERR(ConsoleErrAppender.getAppender());
 
-    private Appender appender;
+    private Supplier<Appender> appender;
 
-    AppenderMethod(Appender appender){
+    AppenderMethod(Supplier<Appender> appender){
         this.appender = appender;
     }
 
     public Appender getAppender(){
-        return appender;
+        return appender.get();
     }
 
 }

@@ -1,8 +1,11 @@
 package log.config;
 
+import log.appender.Appender;
 import log.appender.AppenderMethod;
+import log.appender.impl.FileStoreAppender;
 import log.log.LoggerLevel;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -13,7 +16,8 @@ public class LogDefinition {
 
     private Map<LoggerLevel, String> formatMap = new HashMap<>(LoggerLevel.LENGTH);
 
-    private Map<LoggerLevel, AppenderMethod> appenderMap = new HashMap<>(LoggerLevel.LENGTH);
+    private Map<LoggerLevel, Appender> appenderMap = new HashMap<>(LoggerLevel.LENGTH);
+
 
     public Class getClazz() {
         return clazz;
@@ -30,7 +34,14 @@ public class LogDefinition {
     }
 
     public LogDefinition addAppender(LoggerLevel level, AppenderMethod appenderMethod){
-        appenderMap.put(level, appenderMethod);
+        appenderMap.put(level, appenderMethod.getAppender());
+        return this;
+    }
+
+    public LogDefinition addFile(LoggerLevel level, String fileName){
+        FileStoreAppender appender = (FileStoreAppender) AppenderMethod.FILE_STORT.getAppender();
+        appender.setFile(new File(fileName));
+        appenderMap.put(level, appender);
         return this;
     }
 
@@ -38,7 +49,7 @@ public class LogDefinition {
         return get(level, formatMap);
     }
 
-    public AppenderMethod getAppender(LoggerLevel level){
+    public Appender getAppender(LoggerLevel level){
         return Objects.requireNonNull(get(level, appenderMap),"未找到配置");
     }
 

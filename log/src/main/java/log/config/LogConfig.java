@@ -9,4 +9,5 @@ public interface LogConfig {
 
     String getFormat(Class clazz, LoggerLevel level);
 
+
 }

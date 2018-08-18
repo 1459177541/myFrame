@@ -20,14 +20,14 @@ public abstract class AbstractLogConfig implements LogConfig {
 
     @Override
     public Appender getAppender(Class clazz, LoggerLevel level) {
-        AppenderMethod appenderMethod = null;
+        Appender appenderMethod = null;
         if (Objects.requireNonNull(classLogDefinitionMap).containsKey(clazz)){
             appenderMethod = classLogDefinitionMap.get(clazz).getAppender(level);
         }
         if(null == appenderMethod){
             appenderMethod = defaultLogDefinition.getAppender(level);
         }
-        return Objects.requireNonNull(appenderMethod, "未找到配置").getAppender();
+        return Objects.requireNonNull(appenderMethod, "未找到配置");
     }
 
     @Override
@@ -61,6 +61,19 @@ public abstract class AbstractLogConfig implements LogConfig {
         return this;
     }
 
+    public LogConfig addConfigByFileStore(Class clazz, LoggerLevel level, String fileName){
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
+        logDefinition.addFile(level, fileName);
+        return this;
+    }
+
+    public LogConfig addConfigByFileStore(Class clazz, LoggerLevel level, String fileName, String format){
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
+        logDefinition.addFormat(level, format);
+        logDefinition.addFile(level, format);
+        return this;
+    }
+
     public LogConfig addDefaultConfig(LoggerLevel level, AppenderMethod appenderMethod){
         defaultLogDefinition.addAppender(level, appenderMethod);
         return this;
@@ -77,6 +90,16 @@ public abstract class AbstractLogConfig implements LogConfig {
         return this;
     }
 
+    public LogConfig addDefaultConfigByConfig(LoggerLevel level, String fileName){
+        defaultLogDefinition.addFile(level, fileName);
+        return this;
+    }
+
+    public LogConfig addDefaultConfigByFileStore(LoggerLevel level, String fileName, String format){
+        defaultLogDefinition.addFormat(level, format);
+        defaultLogDefinition.addFile(level, fileName);
+        return this;
+    }
 
     public abstract void init();
 
