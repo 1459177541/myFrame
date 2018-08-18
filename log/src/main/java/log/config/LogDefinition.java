@@ -1,5 +1,6 @@
 package log.config;
 
+
 import log.appender.Appender;
 import log.appender.AppenderMethod;
 import log.appender.impl.FileStoreAppender;
@@ -8,9 +9,8 @@ import log.log.LoggerLevel;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public class LogDefinition {
+public final class LogDefinition {
 
     private Class clazz;
 
@@ -23,34 +23,34 @@ public class LogDefinition {
         return clazz;
     }
 
-    public LogDefinition setClazz(Class clazz) {
+    LogDefinition setClazz(Class clazz) {
         this.clazz = clazz;
         return this;
     }
 
-    public LogDefinition addFormat(LoggerLevel level, String formatString){
+    LogDefinition addFormat(LoggerLevel level, String formatString){
         formatMap.put(level, formatString);
         return this;
     }
 
-    public LogDefinition addAppender(LoggerLevel level, AppenderMethod appenderMethod){
+    LogDefinition addAppender(LoggerLevel level, AppenderMethod appenderMethod){
         appenderMap.put(level, appenderMethod.getAppender());
         return this;
     }
 
-    public LogDefinition addFile(LoggerLevel level, String fileName){
+    LogDefinition addFile(LoggerLevel level, String fileName){
         FileStoreAppender appender = (FileStoreAppender) AppenderMethod.FILE_STORT.getAppender();
         appender.setFile(new File(fileName));
         appenderMap.put(level, appender);
         return this;
     }
 
-    public String getFormat(LoggerLevel level){
+    String getFormat(LoggerLevel level){
         return get(level, formatMap);
     }
 
-    public Appender getAppender(LoggerLevel level){
-        return Objects.requireNonNull(get(level, appenderMap),"未找到配置");
+    Appender getAppender(LoggerLevel level){
+        return get(level, appenderMap);
     }
 
     private <T> T get(LoggerLevel level, Map<LoggerLevel, T> map){

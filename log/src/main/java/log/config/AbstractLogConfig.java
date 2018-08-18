@@ -7,6 +7,7 @@ import log.log.LoggerLevel;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public abstract class AbstractLogConfig implements LogConfig {
 
@@ -14,30 +15,39 @@ public abstract class AbstractLogConfig implements LogConfig {
 
     protected LogDefinition defaultLogDefinition = new LogDefinition();
 
+    protected static LogConfig defaultLogConfig = null;
+
     {
         init();
     }
 
+    public LogConfig toDefault(){
+        defaultLogConfig = this;
+        return this;
+    }
+
+    public static LogConfig getDefaultLogConfig(){
+        return Objects.requireNonNull(defaultLogConfig, "未设置默认配置");
+    }
+
     @Override
     public Appender getAppender(Class clazz, LoggerLevel level) {
-        Appender appenderMethod = null;
-        if (Objects.requireNonNull(classLogDefinitionMap).containsKey(clazz)){
-            appenderMethod = classLogDefinitionMap.get(clazz).getAppender(level);
+        Appender appender = Optional.ofNullable(classLogDefinitionMap.get(clazz))
+                .map(logDefinition -> logDefinition.getAppender(level))
+                .orElse(defaultLogDefinition.getAppender(level));
+        if (null == appender && defaultLogConfig != this){
+            return defaultLogConfig.getAppender(clazz, level);
         }
-        if(null == appenderMethod){
-            appenderMethod = defaultLogDefinition.getAppender(level);
-        }
-        return Objects.requireNonNull(appenderMethod, "未找到配置");
+        return Objects.requireNonNull(appender, "未找到配置");
     }
 
     @Override
     public String getFormat(Class clazz, LoggerLevel level) {
-        String format = null;
-        if (Objects.requireNonNull(classLogDefinitionMap).containsKey(clazz)){
-            format = classLogDefinitionMap.get(clazz).getFormat(level);
-        }
-        if (null == format){
-            format = defaultLogDefinition.getFormat(level);
+        String format = Optional.ofNullable(classLogDefinitionMap.get(clazz))
+                .map(logDefinition -> logDefinition.getFormat(level))
+                .orElse(defaultLogDefinition.getFormat(level));
+        if (null == format && null != defaultLogConfig && defaultLogConfig != this){
+            return defaultLogConfig.getFormat(clazz, level);
         }
         return format;
     }
@@ -68,9 +78,9 @@ public abstract class AbstractLogConfig implements LogConfig {
     }
 
     public LogConfig addConfigByFileStore(Class clazz, LoggerLevel level, String fileName, String format){
-        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c));
-        logDefinition.addFormat(level, format);
-        logDefinition.addFile(level, format);
+        LogDefinition logDefinition = classLogDefinitionMap.computeIfAbsent(clazz, c->new LogDefinition().setClazz(c))
+                .addFormat(level, format)
+                .addFile(level, fileName);
         return this;
     }
 
@@ -85,8 +95,8 @@ public abstract class AbstractLogConfig implements LogConfig {
     }
 
     public LogConfig addDefaultConfig(LoggerLevel level, AppenderMethod appenderMethod, String format){
-        defaultLogDefinition.addAppender(level, appenderMethod);
-        defaultLogDefinition.addFormat(level, format);
+        defaultLogDefinition.addAppender(level, appenderMethod)
+                .addFormat(level, format);
         return this;
     }
 
@@ -96,8 +106,8 @@ public abstract class AbstractLogConfig implements LogConfig {
     }
 
     public LogConfig addDefaultConfigByFileStore(LoggerLevel level, String fileName, String format){
-        defaultLogDefinition.addFormat(level, format);
-        defaultLogDefinition.addFile(level, fileName);
+        defaultLogDefinition.addFormat(level, format)
+                .addFile(level, fileName);
         return this;
     }
 

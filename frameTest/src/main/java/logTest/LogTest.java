@@ -8,16 +8,19 @@ import log.log.LoggerLevel;
 import org.junit.jupiter.api.Test;
 
 public class LogTest {
+
     private final Logger LOGGER = new LoggerBuild().setClazz(LogTest.class).setConfig(new AbstractLogConfig() {
         @Override
         public void init() {
             addConfig(LogTest.class, LoggerLevel.FATAL, AppenderMethod.CONSOLE_ERR);
-            addConfig(LogTest.class, LoggerLevel.ERROR, AppenderMethod.CONSOLE_ERR);
+            addConfigByFileStore(LogTest.class, LoggerLevel.ERROR, "err_log.txt"
+                    , "%s{year}-%s{month}-%s{day} %s{hour_of_day}:%s{minute}:%s{second} [%s{level}] - %s{text}");
             addConfig(LogTest.class, LoggerLevel.INFO, AppenderMethod.CONSOLE_OUT);
             addConfig(LogTest.class, LoggerLevel.DEBUG, AppenderMethod.CONSOLE_OUT
                     , "%s{year}-%s{month}-%s{day} %s{hour_of_day}:%s{minute}:%s{second} [%s{level}] - %s{text}");
         }
-    }).build();
+    }.toDefault()).build();
+
 
     @Test
     public void logTest(){
@@ -30,6 +33,14 @@ public class LogTest {
         LOGGER.debug("debug");
         LOGGER.debug("%s{0} %s{1}", "Hello", "World");
         LOGGER.debug(new StringBuilder("%s{class}.%s{method}:%s{line}"));
+
+        LOGGER.error("test");
+    }
+
+    @Test
+    public void defaultLogTest(){
+        final Logger LOGGER2 = new LoggerBuild().setClazz(LogTest.class).build();
+        LOGGER2.debug("default log config");
     }
 
 }

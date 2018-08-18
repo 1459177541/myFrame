@@ -26,7 +26,7 @@ public class FileStoreAppender implements Appender {
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream);
                 BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter)
                 ) {
-            bufferedWriter.write(text);
+            bufferedWriter.write(text+System.lineSeparator());
         } catch (IOException e) {
             e.printStackTrace();
         }

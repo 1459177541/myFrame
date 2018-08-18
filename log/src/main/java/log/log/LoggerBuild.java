@@ -1,5 +1,6 @@
 package log.log;
 
+import log.config.AbstractLogConfig;
 import log.config.LogConfig;
 import log.impl.LoggerImpl;
 import log.layout.Layout;
@@ -47,8 +48,8 @@ public class LoggerBuild implements Build<Logger> {
     public Logger build() {
         LoggerImpl logger = new LoggerImpl();
         logger.setClazz(Objects.requireNonNull(clazz));
-        logger.setLayout(Objects.requireNonNullElseGet(layout,LayoutImp::new));
-        logger.setConfig(Objects.requireNonNull(config));
+        logger.setLayout(Objects.requireNonNullElseGet(layout, LayoutImp::new));
+        logger.setConfig(Objects.requireNonNullElseGet(config, AbstractLogConfig::getDefaultLogConfig));
         return logger;
     }
 
