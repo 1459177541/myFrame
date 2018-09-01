@@ -13,7 +13,7 @@ public class ClassInfoMessage implements Message{
     /**
      * 堆栈层数，未经测试
      */
-    private static final int STACK_NUMBER = 9;
+    private static final int STACK_NUMBER = 10;
 
     private static Message instance = new ClassInfoMessage();
 
@@ -38,8 +38,7 @@ public class ClassInfoMessage implements Message{
 
     @Override
     public String get() {
-        StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[STACK_NUMBER];
-        return stackTraceElement.toString();
+        return getStackTraceElement().toString();
     }
 
     @Override
@@ -47,8 +46,7 @@ public class ClassInfoMessage implements Message{
         if ("thread".equals(name)){
             return Thread.currentThread().getName();
         }
-        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[STACK_NUMBER];
+        StackTraceElement stackTraceElement = getStackTraceElement();
         try {
             return Optional.ofNullable(methodMap.get(name).invoke(stackTraceElement)).map(Object::toString).orElse("null");
         } catch (IllegalAccessException | InvocationTargetException e) {
@@ -65,5 +63,19 @@ public class ClassInfoMessage implements Message{
     @Override
     public String get(String name, Object[] objects) {
         return null;
+    }
+
+    private StackTraceElement getStackTraceElement(){
+        //TODO 未能成功过滤非符合条件
+//        if (this.getClass().getModule().isNamed()){
+//            return Stream.of(Thread.currentThread().getStackTrace())
+//                    .filter(stackTraceElement ->
+//                            !("myFrame.log".equals(stackTraceElement.getMethodName())
+//                                    || "java.base".equals(stackTraceElement.getModuleName())))
+//                    .findFirst()
+//                    .orElse(Thread.currentThread().getStackTrace()[STACK_NUMBER]);
+//        }else {
+            return Thread.currentThread().getStackTrace()[STACK_NUMBER];
+//        }
     }
 }
