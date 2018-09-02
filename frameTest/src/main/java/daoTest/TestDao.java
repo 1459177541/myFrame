@@ -33,7 +33,7 @@ public class TestDao {
         if (beanBuffer.size()==0) {
             add();
         }
-        print("init");
+        print("defaultInit");
         Model m = new Model("Test5",5);
 
         beanBuffer.add(m);

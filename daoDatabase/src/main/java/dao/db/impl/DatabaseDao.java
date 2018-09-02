@@ -9,6 +9,7 @@ import dao.beanBuffer.AbstractBeanBuffer;
 import dao.beanBuffer.BeanBuffer;
 import dao.beanBuffer.BeanBufferState;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,13 +57,14 @@ public class DatabaseDao implements Dao {
     }
 
     @Override
-    public void setProperties(Properties properties) {
+    public boolean loadProperties(Properties properties) {
         conn = new GetConn(properties);
+        return true;
     }
 
     @Override
-    public void saveProperties(String propertiesFileName) throws IOException {
-        conn.saveProperties(propertiesFileName);
+    public boolean saveProperties(File propertiesFile) {
+        return conn.saveProperties(propertiesFile);
     }
 
 

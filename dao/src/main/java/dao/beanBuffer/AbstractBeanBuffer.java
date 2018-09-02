@@ -436,7 +436,7 @@ public abstract class AbstractBeanBuffer<T> implements BeanBuffer<T>, Waitable {
                     });
         }
 
-        private List<BeanFactoryHandler> beanFactoryHandlers;
+        private List<BeanFactoryHandler> beanFactoryHandlers = new LinkedList<>();
 
         @Override
         public <T> Object get(Class<T> clazz) {

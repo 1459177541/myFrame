@@ -1,17 +1,20 @@
 package dao.db.util;
 
+import config.properties.Configurable;
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Objects;
 import java.util.Properties;
 
-public class GetConn {
+public class GetConn implements Configurable {
 
-	private final String jdbcDriver;
-	private final String dbUrl;
-	private final String userName;
-	private final String userPassword;
+	private String jdbcDriver;
+	private String dbUrl;
+	private String userName;
+	private String userPassword;
 
 	private Connection connection = null;
 
@@ -31,11 +34,7 @@ public class GetConn {
     }
 
     public GetConn(Properties properties) {
-        jdbcDriver = properties.getProperty("jdbcDriver");
-        dbUrl = properties.getProperty("dbUrl");
-        userName = properties.getProperty("userName");
-        userPassword = properties.getProperty("userPassword");
-        restart();
+        loadProperties(properties);
     }
 
 	public GetConn(String userName, String userPassword, String databaseName){
@@ -54,13 +53,28 @@ public class GetConn {
         restart();
     }
 
-    public void saveProperties(String fileName) throws IOException {
+    @Override
+    public final boolean loadProperties(Properties properties) {
+        jdbcDriver = properties.getProperty("jdbcDriver");
+        dbUrl = properties.getProperty("dbUrl");
+        userName = properties.getProperty("userName");
+        userPassword = properties.getProperty("userPassword");
+        return restart();
+    }
+
+    @Override
+    public boolean saveProperties(File propertiesFile) {
         Properties properties = new Properties(4);
         properties.setProperty("jdbcDriver",jdbcDriver);
         properties.setProperty("dbUrl",dbUrl);
         properties.setProperty("userName",userName);
         properties.setProperty("userPassword",userPassword);
-        properties.store(new FileOutputStream(fileName),"jdbc config");
+        try {
+            properties.store(new FileOutputStream(propertiesFile), "JDBC config");
+        } catch (IOException e) {
+            return false;
+        }
+        return true;
     }
 
     public Connection getConn() {

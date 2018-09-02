@@ -8,6 +8,7 @@ import dao.beanBuffer.AbstractBeanBuffer;
 import dao.beanBuffer.BeanBuffer;
 import dao.beanBuffer.BeanBufferState;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.util.stream.Collectors;
 
 import static asynchronous.executor.AsyncLevel.SYSTEM;
 
-public class FileStoreDao implements Dao {
+public class FileStoreDao implements Dao{
 
     private Properties properties;
 
@@ -47,15 +48,20 @@ public class FileStoreDao implements Dao {
     }
 
     @Override
-    public void setProperties(Properties properties) {
+    public boolean loadProperties(Properties properties) {
         this.properties = properties;
+        return true;
     }
 
     @Override
-    public void saveProperties(String propertiesFileName) throws IOException {
-        properties.store(new FileOutputStream(propertiesFileName),"fileStore config");
+    public boolean saveProperties(File propertiesFile) {
+        try {
+            properties.store(new FileOutputStream(propertiesFile), "file store config");
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
-
 
     private class FileStoreBeanBuffer<T> extends AbstractBeanBuffer<T> {
 

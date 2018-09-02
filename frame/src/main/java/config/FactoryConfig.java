@@ -2,6 +2,7 @@ package config;
 
 import frame.Single;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
@@ -70,20 +71,33 @@ public abstract class FactoryConfig extends Config<String, BeanDefinition> {
     }
 
     @Override
-    protected void initConfig(Properties properties) {
-        properties.forEach((name,clazz)-> {
+    public boolean loadProperties(Properties properties) {
+//        properties.forEach((name,clazz)-> {
+//            try {
+//                add((String) name,Class.forName((String) clazz));
+//            } catch (ClassNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//        });
+        for (Map.Entry entry : properties.entrySet()) {
             try {
-                add((String) name,Class.forName((String) clazz));
+                add((String)entry.getKey(),Class.forName((String)entry.getValue()));
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                return false;
             }
-        });
+        }
+        return true;
     }
 
     @Override
-    public void saveConfig(String name) throws IOException {
+    public boolean saveProperties(File propertiesFile) {
         Properties properties = new Properties(config.size());
         properties.putAll(config.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> entry.getValue().getClassName())));
-        properties.store(new FileOutputStream(Objects.requireNonNull(name)),"工厂文件注释信息");
+        try {
+            properties.store(new FileOutputStream(propertiesFile),"工厂文件注释信息");
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 }
