@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public interface Configurable {
 
-    default boolean loadPropertiaes(String propertiesFileName){
+    default boolean loadProperties(String propertiesFileName){
         File file = new File(propertiesFileName);
         if (file.exists()) {
             return loadProperties(file);
